@@ -1,5 +1,5 @@
 # KonoProject
-HTMLver:
- CSSver:
-  JSver:
- PHPver:
+HTMLver:  
+ CSSver:  
+  JSver:  
+ PHPver:  
