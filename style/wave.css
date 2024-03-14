@@ -1,16 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height : 100vh;
-    background: #29313A;
-}
+/*body {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    min-height : 100vh;*/
+/*    background: #29313A;*/
+/*}*/
 
 .input-box {
     position: relative;
