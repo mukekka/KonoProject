@@ -30,9 +30,12 @@ body{
     float: left;
     padding: 10px 10px;
 }
-#logo p{
+#logo a{
+    text-decoration: none;
+}
+#logo a p{
     font-family: TL;
-    margin: 20px;
+margin: 0;
 }
 #search{
 
