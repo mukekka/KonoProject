@@ -1,0 +1,34 @@
+#subject{
+    height: 720px;
+    margin: 0;
+    position: relative;
+}
+#main{
+    width: 87.6%;
+    height: 670px;
+    /*background: coral;*/
+    float: left;
+}
+#page1{
+    width: auto;
+    height: auto;
+    /*background: pink;*/
+    text-align: center;
+}
+/*--------------------------------------------------*/
+#AD{
+    border: 1px solid darkgray;
+    font-size: 13px;
+    width: 7%;
+    height: 260px;
+    /*background: cornflowerblue;*/
+    text-align: left;
+    float: right;
+}
+#AD ul{
+    margin: 0 10px 0 0;
+    list-style: none;
+}
+#AD0{
+    color: red;
+}

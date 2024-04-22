@@ -1,0 +1,38 @@
+#footer{
+
+    background: #a8a8a8;
+    text-align: center;
+}
+#linkwe{
+    text-align: right;
+}
+#copyright{
+    font-size: 15px;
+    color: #423e3e;
+}
+#lang{
+    float: left;
+    margin: 5px auto auto 5px;
+}
+#lang select{
+    background-color: #a8a8a8;
+    color: #423e3e;
+}
+#lang input{
+    margin: 5px auto auto 0px;
+    background-color: #c5c5c5;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    height: 20px;
+}
+#linkwe a{
+    margin: 10px 5px;
+    text-decoration: none;
+}
+#linkwe a:link,#linkwe a:visited{
+    color: #423e3e;
+}
+#linkwe a:hover{
+    color: #4F4F4F;
+}

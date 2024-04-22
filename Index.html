@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>INFINITY</title>
-    <link href="style/header.css" rel="stylesheet" type="text/css">
+    <link href="style/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
+    <link href="style/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
+    <link href="style/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
+    <link href="style/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
 </head>
 <body>
     <div id="header">
@@ -23,7 +26,8 @@
             </ul>
         </div>
         <div id="login">
-            <button>登入</button>
+            <a>离线用户</a>
+            <input type="button" value="登陆">
         </div>
 <!--        <div id="search">-->
 <!--            <input type="text" placeholder="热搜">-->
@@ -40,16 +44,21 @@
         </div>
         <div id="AD">
             <ul>
-                <li><a href="#AD1">家乐福盛大开业</a></li>
-                <li><a href="#AD2">法师控制强，冰霜秒全场</a></li>
-                <li><a href="#AD3">轻松玩节奏爽，一人攻沙虐全场</a></li>
-                <li><a href="#AD4">博爱男科割一送一</a></li>
-                <li><a href="#AD5">广告位招租</a></li>
-                <li><a href="#AD6">专治早泄</a></li>
-                <li><a href="#AD7">广告位招租</a></li>
-                <li><a href="#AD8">网易春风</a></li>
-                <li><a href="#AD9">广告位招租</a></li>
-                <li><a href="#AD10">广告位招租</a></li>
+                <li>
+                    <a href="#AD0" id="AD0">
+                        《佺诗三千首》
+                    </a>
+                </li>
+                <li><a href="#AD1">1.家乐福盛大开业</a></li>
+                <li><a href="#AD2">2.法师控制强，冰霜秒全场</a></li>
+                <li><a href="#AD3">3.轻松玩节奏爽<br>一人攻沙虐全场</a></li>
+                <li><a href="#AD4">4.博爱男科割一送一</a></li>
+                <li><a href="#AD5">5.网易春风</a></li>
+                <li><a href="#AD6">6.专治早泄</a></li>
+                <li><a href="#AD7">7.火影回档佐助</a></li>
+                <li><a href="#AD8">8.广告位招租</a></li>
+                <li><a href="#AD9">9.广告位招租</a></li>
+                <li><a href="#AD10">10.广告位招租</a></li>
             </ul>
         </div>
     </div>
@@ -64,7 +73,7 @@
             </select>
             <input type="button" value="确定" onclick="setLang()">
         </div>
-        <p id="language">简体中文</p>
+        <!-- <p id="language">简体中文</p> -->
         <div id="linkwe">
             <a href="#">联系我们</a>
             <a href="#">隐私</a>
