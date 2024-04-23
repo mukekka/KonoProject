@@ -3,7 +3,6 @@
     position: fixed;
     top:0;
     width: 100%;
-    /*height: 40px;*/
     background: #FFFFFF;
     z-index: 301;
     box-shadow: 0 1px 5px grey;
@@ -12,21 +11,20 @@
 .hiddened{
     top: -40px;
 }
+/*---------------------*/
 #logo{
-    margin-left: 150px;
+    margin-left: 10%;
     font-family: TL;
     float: left;
     padding: 10px 10px;
 }
 #logo a{
-    text-decoration: none;
     font-size: 20px;
 }
 #logo a:hover{
     color: #39C5BB;
     -webkit-tap-highlight-color: transparent;
-    transition: color .5s ease-in-out;
-    font-weight: bolder;
+    transition: color .10s ease-in-out;
 }
 /*---------------------*/
 .header-site{
@@ -49,10 +47,10 @@
 }
 .header-site-nav-proj a{
     text-decoration: none;
+    text-decoration: ;
 }
 .header-site-nav-proj a:hover{
     color: #39C5BB;
-    /*border-bottom: 2px solid blue;*/
     -webkit-tap-highlight-color: transparent;
     transition: color .2s ease-in-out;
     font-weight: bold;
@@ -63,7 +61,7 @@
 /*---------------------*/
 #search{
     float: right;
-    margin: 6px 10px 0px auto;
+    margin: 6px 29% 0px auto;
 }
 /*---------------------*/
 #login{

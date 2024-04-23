@@ -16,4 +16,9 @@
 }
 body{
     font-family: SS;
+    /* background: #39C5BB; */
+}
+* a{
+	text-decoration: none;
+    color: black;
 }
