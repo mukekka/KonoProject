@@ -9,35 +9,55 @@
     <link href="style/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
 </head>
 <body>
-    <div id="header">
+<!--    <div id="header">-->
+    <div class="header">
         <div id="logo">
             <a href="Index.html">
-                <p >INFINITY</p>
+                <p>INFINITY</p>
                 <!-- <img src="image/Infinity透明.png" height="80" width="67"> -->
             </a>
         </div>
-        <div class="vp-head-site-navs-container">
-            <ul class="vp-head-site-navs-7">
-                <li class="vp-head-series"><a href="#">骁龙8Gen3</a></li>
-                <li class="vp-head-series"><a href="#">天玑9000</a></li>
-                <li class="vp-head-series"><a href="#">麒麟9000</a></li>
-                <li class="vp-head-series"><a href="#">苹果A</a></li>
-                <li class="vp-head-series"><a href="#">苹果M</a></li>
+        <div class="header-site">
+            <ul class="header-site-nav">
+                <li class="header-site-nav-proj">
+                    <a href="#">骁龙8Gen3</a>
+                </li>
+                <li class="header-site-nav-proj">
+                    <a href="#">天玑9000</a>
+                </li>
+                <li class="header-site-nav-proj">
+                    <a href="#">麒麟9000</a>
+                </li>
+                <li class="header-site-nav-proj">
+                    <a href="#">苹果A</a>
+                </li>
+                <li class="header-site-nav-proj">
+                    <a href="#">苹果M</a>
+                </li>
             </ul>
         </div>
         <div id="login">
             <a>离线用户</a>
             <input type="button" value="登陆">
         </div>
-<!--        <div id="search">-->
-<!--            <input type="text" placeholder="热搜">-->
-<!--            <button>搜索</button>-->
-<!--        </div>-->
+        <div id="search">
+            <input type="text" placeholder="热搜" id="searchInp">
+            <input type="button" value="搜索" id="searchBtn">
+        </div>
     </div>
-
+<!--    </div>-->
     <div id="subject">
         <div id="main">
-            <div id="page1">
+            <div id="page-left">
+                <ul>
+                    <li><a href="https://news.zol.com.cn/867/8674908.html" target="_blank">米哈游新游</a></li>
+                    <li>热点</li>
+                    <li>热点</li>
+                    <li>热点</li>
+                    <li>热点</li>
+                </ul>
+            </div>
+            <div id="page-main">
                 <h1>HUAWEI MATE60PRO</h1>
                 <img src="image/mate60p.jpg" height="630px">
             </div>
@@ -62,7 +82,6 @@
             </ul>
         </div>
     </div>
-
     <div id="footer">
         <div id="lang">
             <select id="langSelect">
@@ -85,5 +104,18 @@
         </div>
         <script src="script/lang.js" type="text/javascript" rel="script"></script>
     </div>
+
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            var scrollY = $(document).scrollTop();
+            if(scrollY > 20){
+                $(".header").addClass('hiddened');
+            }else{
+                $(".header").removeClass('hiddened');
+            }
+        })
+    })
+</script>
 </body>
 </html>
