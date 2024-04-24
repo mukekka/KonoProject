@@ -6,46 +6,36 @@
 }
 #main{
     padding-top: 0.5%;
-    width: 93%;
+    width: 100%;
     /*height: 670px;*/
     height: 94%;
-    /*background: coral;*/
     float: left;
 }
 #page-main{
-    width: 88.9%;
+    width: 89%;
     height: 100%;
-    /*background: grey;*/
     text-align: center;
     float: left;
     margin: 45px auto auto auto;
     box-shadow: 0 1px 5px grey;
 }
-#page-left{
+#page-side{
     width: 10%;
-    height: 100%;
-    /*background: darkgreen;*/
+    height: 50%;
     text-align: center;
-    float: left;
-    margin: 45px 10px auto 5px;
+    float: right;
+    margin: 45px 5px auto 10px;
     box-shadow: 0 1px 5px grey;
-}
-#page-left ul li a{
-
 }
 /*--------------------------------------------------*/
 #AD{
     border: 1px solid darkgray;
-    font-size: 55%;
-    width: 6%;
-    height: 300px;
-    margin-top: 45px;
+    font-size: 80%;
+    width: 10%;
+    height: 30%;
+    margin-top: 10px;
     text-align: left;
     float: right;
-}
-#AD ul{
-    margin: 0 9px 0 0;
-    list-style: none;
 }
 #AD0{
     color: red;
