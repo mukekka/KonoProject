@@ -1,0 +1,111 @@
+/*--------------------------------------------------*/
+.header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    background: #FFFFFF;
+    z-index: 301;
+    /* box-shadow: 0 1px 5px #39C5BB; */
+    transition: top .5s;
+
+    animation: MikuAndTianyi 5s infinite;
+    animation-fill-mode: forwards;
+}
+.hiddened{
+    top: -40px;
+}
+/*---------------------*/
+#logo{
+    margin-left: 1%;
+    font-family: TL;
+    float: left;
+    padding: 10px 10px;
+}
+#logo a{
+    font-size: 20px;
+    transition: all 0.25s ease-in-out;
+}
+#logo a:hover{
+    color: #39C5BB;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.5s ease-in-out;
+}
+/*---------------------*/
+.header-site{
+    line-height: 10px;
+    position: relative;
+    margin: 14px 1%;
+    display: inline-block;
+    margin-right: 39%;
+}
+.header-site-nav{
+    padding: 0;
+    display: inline-table;
+}
+.header-site-nav-proj{
+    line-height: 10px;
+    margin: 0;
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px;
+    transition: border-top-color 2s ;
+}
+.header-site-nav-proj a{
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+}
+.header-site-nav-proj a:hover{
+    color: #39C5BB;
+    -webkit-tap-highlight-color: transparent;
+    transition: color .2s ease-in-out;
+    font-weight: bold;
+    padding-top: 5px;
+    animation: ButtonGradient 1s;
+    animation-fill-mode: forwards;
+}
+.header-site-nav-proj a:link,a:visited{
+    color: darkslategrey;
+}
+/*---------------------*/
+#login{
+    float: right;
+    margin: 6px 10px 0px 5%;
+}
+#login input{
+    background-color: #39C5BB;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    width: 50px;
+    height: 30px;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+#login a{
+    color: #423e3e;
+}
+#login a:hover{
+
+}
+/*--------------------Anima------------------------------*/
+@keyframes MikuAndTianyi {
+    0%{
+        box-shadow: 0 5px 5px #39C5BB;
+    }
+    70%{
+        box-shadow: 0 5px 5px #66CCFF;
+    }
+    100%{
+        box-shadow: 0 5px 5px #39C5BB;
+    }
+}
+/*---------------------*/
+@keyframes ButtonGradient {
+    from{
+        border-top: 4px solid #00000000;
+    }
+    to{
+        border-top: 4px solid #39C5BB;
+    }
+}

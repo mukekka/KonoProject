@@ -1,0 +1,77 @@
+@font-face {
+    font-family: SS;
+    src: url('../../font/SourceHanSansSC-Bold-2.otf');
+}
+@font-face {
+    font-family: TL;
+    src: url('../../font/Tachyon Light.ttf');
+}
+body{
+    background-color: #39C5BB;
+    padding: 10%;
+    display: block;
+}
+/*-------------------------------------------------------*/
+#logo{
+    margin: auto;
+}
+#logo p{
+    color: #FFFFFF;
+    font-size: 40px;
+    font-family: TL;
+    text-align: center;
+}
+/*-------------------------------------------------------*/
+#subject *{
+    font-family: SS;
+}
+#subject{
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    padding-top: 0px;
+    padding-bottom: auto;
+    display: block;
+    margin: auto;
+    width: 30%;
+    height: 250px;
+    background-color: #FFFFFF;
+}
+.input-box{
+    padding-top: 10px;
+}
+#subject .input-box input:focus,.input-box input:valid{
+    animation: toLong 0.25s;
+    animation-fill-mode: forwards;
+}
+#PW,#DISPW,#REG{
+    display: inline-block;
+}
+label,a{
+    color: #39C5BB;
+    text-decoration: none;
+}
+#REG{
+    margin-left: 3%;
+}
+#Login{
+    margin: auto;
+    padding-top: 15px;
+}
+#Login a input{
+    font-size: 150%;
+    width: 50%;
+    padding: 5px;
+    border: none;
+    background-color: #39C5BB;
+    color: #FFFFFF;
+}
+/*-------------------------------------------------------*/
+@keyframes toLong {
+    from{
+        padding-top: 0px;
+    }
+    to{
+        padding-top: 40px;
+    }
+}

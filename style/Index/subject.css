@@ -1,0 +1,42 @@
+#subject{
+    height: 1600px;
+    margin: 0;
+    position: relative;
+    display: block;
+}
+#main{
+    padding-top: 0.5%;
+    width: 100%;
+    /*height: 670px;*/
+    height: 94%;
+    float: left;
+}
+#page-main{
+    width: 89%;
+    height: 100%;
+    text-align: center;
+    float: left;
+    margin: 45px auto auto auto;
+    box-shadow: 0 1px 5px grey;
+}
+#page-side{
+    width: 10%;
+    height: 50%;
+    text-align: center;
+    float: right;
+    margin: 45px 5px auto 10px;
+    box-shadow: 0 1px 5px grey;
+}
+/*--------------------------------------------------*/
+#AD{
+    border: 1px solid darkgray;
+    font-size: 80%;
+    width: 10%;
+    height: 30%;
+    margin-top: 10px;
+    text-align: left;
+    float: right;
+}
+#AD0{
+    color: red;
+}

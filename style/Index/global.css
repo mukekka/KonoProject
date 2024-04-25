@@ -1,0 +1,33 @@
+/*----------------Font define----------------------------*/
+@font-face {
+    font-family: CS;
+    src: url('../../font/Comic Sans MS.ttf');
+}
+@font-face {
+    font-family: SS;
+    src: url('../../font/SourceHanSansSC-Bold-2.otf');
+}
+@font-face {
+    font-family: TL;
+    src: url('../../font/Tachyon Light.ttf');
+}
+/*-----------------Macro set-----------------------------*/
+:root{
+    
+}
+/*-----------------Global set----------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: SS;
+    /* background: #39C5BB; */
+}
+* a{
+	text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
