@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>注册</title>
+        <link href="style/Login/login.css" type="text/css" rel="stylesheet">
+        <link href="style/wave.css" type="text/css" rel="stylesheet">
+        <style>
+            #subject{
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        
+    <div id="logo">
+        <p>INFINITY</p>
+    </div>
+    <div id="subject">
+        <div class="input-box" id="UserName">
+            <input type="text" required onclick="">
+            <label>请输入用户名</label>
+        </div>
+        <script src="script/wave.js"></script>
+        <div id="Password">
+            <div class="input-password-box">
+                <input id="passwordinput" type="password" required placeholder="请输入密码">
+            </div>
+        </div>
+        <div id="RePassword">
+            <div class="input-password-box">
+                <input id="repasswordinput" type="password" required placeholder="请再次输入密码">
+            </div>
+        </div>
+        <div id="remember">
+            <div id="PW">
+                <input type="checkbox">
+                <label>记住密码</label>
+            </div>
+            <div id="DISPW">
+                <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
+                <label id="DISPWLA">隐藏密码</label>
+            </div>
+            <script>
+                function displayPassword(){
+                    var flag = document.querySelector('#DISPWIN');
+                    if(flag.checked){
+                        document.getElementById('DISPWLA').innerHTML = '显示密码';
+                        document.getElementById("passwordinput").type="text";
+                        document.getElementById("repasswordinput").type="text";
+                    }else{
+                        document.getElementById('DISPWLA').innerHTML = '隐藏密码';
+                        document.getElementById("passwordinput").type="password";
+                        document.getElementById("repasswordinput").type="password";
+                    }
+                }
+            </script>
+        </div>
+        <div id="Login">
+            <input type="button" value="注册" onclick="passwordtest()">
+            <script>
+                function passwordtest(){
+                    var pw1,pw2;
+                    pw1 = document.getElementById('passwordinput').value;
+                    pw2 = document.getElementById('repasswordinput').value;
+                    if(pw1==""||pw2==""){
+                        console.log("null");
+                    }else if(pw1!==pw2){
+                        console.log("no");
+                    }else{
+                        console.log("yes");
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    </body>
+</html>

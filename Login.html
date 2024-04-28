@@ -4,6 +4,11 @@
     <title>登陆</title>
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
     <link href="style/wave.css" type="text/css" rel="stylesheet">
+    <style>
+        #UserName{
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <div id="logo">
@@ -30,12 +35,11 @@
                 <label id="DISPWLA">隐藏密码</label>
             </div>
             <div id="REG">
-                <a href="#">注册</a>
+                <a href="Registered.html">注册</a>
             </div>
             <script>
                 function displayPassword(){
                     var flag = document.querySelector('#DISPWIN');
-
                     if(flag.checked){
                         document.getElementById('DISPWLA').innerHTML = '显示密码';
                         document.getElementById("passwordinput").type="text";
