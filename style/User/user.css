@@ -1,0 +1,16 @@
+@font-face {
+    font-family: SS;
+    src: url('../../font/SourceHanSansSC-Bold-2.otf');
+}
+@font-face {
+    font-family: TL;
+    src: url('../../font/Tachyon Light.ttf');
+}
+/*--------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: SS;
+}

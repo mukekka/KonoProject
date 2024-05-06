@@ -1,0 +1,62 @@
+.header-site{
+    line-height: 10px;
+    /*position: relative;*/
+    margin: 6px 1%;
+    display: inline-flex;
+    margin-right: 25%;
+}
+.header-site-nav{
+    padding: 0;
+    display: inline-table;
+}
+.header-site-nav-proj{
+    line-height: 10px;
+    margin: 0;
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 10px;
+    transition: border-top-color 2s ;
+}
+.header-site-nav-proj a{
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+}
+.header-site-nav-proj a:hover{
+    color: #39C5BB;
+    -webkit-tap-highlight-color: transparent;
+    transition: color .2s ease-in-out;
+    font-weight: bold;
+    padding-top: 5px;
+    animation: ButtonGradient 1s;
+    animation-fill-mode: forwards;
+}
+.header-site-nav-proj a:link,a:visited{
+    color: darkslategrey;
+}
+/*-------------------------------------------------------*/
+#SD8Gen,#DS9,#KR9,#AA,#AM{
+    height: 100%;
+    line-height: 27px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+#SD8Gen:hover,#DS9:hover,#KR9:hover,#AA:hover,#AM:hover{
+    overflow: visible;
+    z-index:999;
+    cursor: pointer;
+}
+.son2{
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+}
+
+@keyframes menu-long {
+    from{
+        height: 30px;
+    }
+    to{
+        height: 90px;
+    }
+}
