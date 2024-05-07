@@ -48,14 +48,15 @@
     font-size: 15px;
     display: inline-block;
     text-align: center;
-    padding: 0 10px;
+    padding: 0px 10px;
+    padding-bottom: 5px;
     transition: border-top-color 2s ;
 }
-.header-site-nav-proj a{
+.header-site-nav-proj div a{
     text-decoration: none;
     transition: color 0.5s ease-in-out;
 }
-.header-site-nav-proj a:hover{
+.header-site-nav-proj div a:hover{
     color: #39C5BB;
     -webkit-tap-highlight-color: transparent;
     transition: color .2s ease-in-out;
@@ -64,8 +65,37 @@
     animation: ButtonGradient 1s;
     animation-fill-mode: forwards;
 }
-.header-site-nav-proj a:link,a:visited{
+.header-site-nav-proj div a:link,a:visited{
     color: darkslategrey;
+}
+/*---------------------*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    /* display: block; */
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 88px;
+    /* box-shadow: 0px 8px 16px 1px rgba(0,0,0,0.2); */
+    /* padding: 0; */
+    margin-top: 6.5px;
+    border-radius: 5px;
+}
+.dropdown-content p{
+    text-align: center;
+    padding:10px 0;
+}
+.dropdown-content p a:hover{
+    transition: none;
+    animation: none;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: toLong 0.1s ease-in-out;
+    animation-fill-mode: forwards;
 }
 /*---------------------*/
 #login{
@@ -107,5 +137,13 @@
     }
     to{
         border-top: 4px solid #39C5BB;
+    }
+}
+@keyframes toLong {
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 90px;
     }
 }

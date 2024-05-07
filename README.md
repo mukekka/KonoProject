@@ -1,7 +1,9 @@
 # KonoProject
-HTMLver:5  
- CSSver:3  
-  JSver:  
- PHPver:  
-   Font:思源黑体,Comic Sans MS,Tachyon Light  
-BV1mp4y1d7bU&
+  
+使用字体:思源黑体,Tachyon Light  
+
+Wave效果：BV1mp4y1d7bU&  
+
+参考网站:  
+vivo.com  
+apple.com
