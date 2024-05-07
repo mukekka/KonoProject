@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
 
-        </style>
     </head>
     <body>
-        <canvas id="canvas" data-type="canvas" data-maxvalue="8" data-value="8_耐久_0|1_炮击_0|1_雷击_0|8_航空_0|5_机动_0|5_防空_0" height="200" width="225"></canvas>
+        <canvas width="400" height="400" id="canvas">
+            <p>此浏览器不支持canvas</p>
+        </canvas>
+        <script>
+            var canvas = document.getElementById("canvas");
+            var cc = canvas.getContext("2d");
+
+            // 填充一个背景
+            cc.fillStyle = "#00000000";
+            cc.rect(0 , 0 , 400 , 400);
+            cc.fill();
+
+            cc.beginPath();
+            for (var i = 0 ; i < 6 ; i++) {
+	            var x =  Math.cos((i * 60)/180 * Math.PI) * 150 + 200 ;
+	            var y = -Math.sin((i * 60)/180 * Math.PI) * 150 + 200;	
+	            cc.lineTo(x,y);
+            }
+            cc.closePath();
+		
+            cc.lineWidth = 2;
+            cc.fillStyle = "#9e1219";
+            cc.fill();
+        </script>
     </body>
 </html>
