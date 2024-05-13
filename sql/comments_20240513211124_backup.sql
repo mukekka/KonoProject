@@ -16,28 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `anno`
---
-
-DROP TABLE IF EXISTS `anno`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `anno` (
-  `comment` text NOT NULL COMMENT 'lqyj',
-  `Time` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `anno`
---
-
-LOCK TABLES `anno` WRITE;
-/*!40000 ALTER TABLE `anno` DISABLE KEYS */;
-/*!40000 ALTER TABLE `anno` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `articletable`
 --
 
@@ -74,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-09 11:40:30
+-- Dump completed on 2024-05-13 21:11:24

@@ -16,29 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `password`
---
-
-DROP TABLE IF EXISTS `password`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `password` (
-  `UserID` int(32) NOT NULL COMMENT '用户ID',
-  `Password` char(32) NOT NULL COMMENT '用户密码'
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `password`
---
-
-LOCK TABLES `password` WRITE;
-/*!40000 ALTER TABLE `password` DISABLE KEYS */;
-INSERT INTO `password` VALUES (1,'1145141919810'),(2,'123456');
-/*!40000 ALTER TABLE `password` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -46,7 +23,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `UserID` int(32) unsigned zerofill NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `UserID` int(16) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
   `UserName` varchar(32) DEFAULT '注册用户' COMMENT '用户名',
   `MakeTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `Sex` enum('男','女','秀吉','武装直升机','沃尔玛购物袋') DEFAULT NULL COMMENT '性别',
@@ -54,9 +31,11 @@ CREATE TABLE `users` (
   `Email` varchar(64) DEFAULT NULL COMMENT '邮箱',
   `Birthday` date DEFAULT NULL COMMENT '生日',
   `Head` int(32) DEFAULT NULL COMMENT '头像(文件路径)',
-  `Hash` char(32) NOT NULL DEFAULT '' COMMENT '用户哈希(MD5)',
+  `Hash` char(64) NOT NULL COMMENT '用户哈希(SHA256),用于验证用户。用户ID+用户名+用户密码,所以保存好你的密码，因为站长也不知道你的密码',
   `TAG` set('成员','会员','站长') NOT NULL DEFAULT '成员',
-  PRIMARY KEY (`UserID`)
+  `STATE` enum('正常','封禁','注销','') NOT NULL DEFAULT '正常' COMMENT '用户状态',
+  PRIMARY KEY (`UserID`),
+  UNIQUE KEY `UserName` (`UserName`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,7 +45,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (00000000000000000000000000000001,'Koizumi','2024-05-09 10:06:39','男','是站长呢','koizumi.369c@outlook.com','1969-12-31',1,'32150285b345c48aa3492f9212f61ca2','站长'),(00000000000000000000000000000002,'璟','2024-05-09 10:06:39','沃尔玛购物袋','这人是条懒狗，什么都没有说。','1413661607@qq.com','1997-01-01',2,'e10adc3949ba59abbe56e057f20f883e','会员');
+INSERT INTO `users` VALUES (1,'Koizumi','2024-05-09 10:06:39','男','是站长呢','koizumi.369c@outlook.com','1969-12-31',1,'1bad5920602982327e9d87841a6f1814cebf49781c9d69bd8f000e8cd1bee441','站长','正常'),(2,'璟','2024-05-09 10:06:39','沃尔玛购物袋','这人是条懒狗，什么都没有说。','1413661607@qq.com','1997-01-01',2,'55d7cfd1f2e125ba8f9ac7bfca477eb796a80a063ac5dd1333723938ce699c25','会员','正常');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-09 11:40:45
+-- Dump completed on 2024-05-13 21:11:39
