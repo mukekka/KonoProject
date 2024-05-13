@@ -24,16 +24,16 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `UserID` int(16) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  `UserName` varchar(32) DEFAULT '注册用户' COMMENT '用户名',
-  `MakeTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UserName` varchar(32) NOT NULL DEFAULT '注册用户' COMMENT '用户名',
+  `MakeTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `Sex` enum('男','女','秀吉','武装直升机','沃尔玛购物袋') DEFAULT NULL COMMENT '性别',
   `Resume` varchar(256) DEFAULT '这人是条懒狗，什么都没有说。' COMMENT '简介',
   `Email` varchar(64) DEFAULT NULL COMMENT '邮箱',
   `Birthday` date DEFAULT NULL COMMENT '生日',
   `Head` int(32) DEFAULT NULL COMMENT '头像(文件路径)',
-  `Hash` char(64) NOT NULL COMMENT '用户哈希(SHA256),用于验证用户。用户ID+用户名+用户密码,所以保存好你的密码，因为站长也不知道你的密码',
-  `TAG` set('成员','会员','站长') NOT NULL DEFAULT '成员',
-  `STATE` enum('正常','封禁','注销','') NOT NULL DEFAULT '正常' COMMENT '用户状态',
+  `Hash` char(64) DEFAULT NULL COMMENT '用户哈希(SHA256),用于验证用户。用户ID+用户名+用户密码,所以保存好你的密码，因为站长也不知道你的密码',
+  `TAG` set('成员','会员','站长') DEFAULT '成员' COMMENT '"地位"',
+  `STATE` enum('正常','封禁','注销','') DEFAULT '正常' COMMENT '用户状态',
   PRIMARY KEY (`UserID`),
   UNIQUE KEY `UserName` (`UserName`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-13 21:11:39
+-- Dump completed on 2024-05-13 21:34:24
