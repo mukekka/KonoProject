@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<head>
+<html>
+<head xmlns="">
     <meta charset="UTF-8">
     <title>登陆</title>
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
@@ -14,15 +15,16 @@
     <div id="logo">
         <p>INFINITY</p>
     </div>
+    <form action="#" method="POST">
     <div id="subject">
         <div class="input-box" id="UserName">
-            <input type="text" required onclick="">
+            <input type="text" required name="UserName">
             <label>请输入用户名</label>
         </div>
         <script src="script/wave.js"></script>
         <div id="Password">
             <div class="input-password-box">
-                <input id="passwordinput" type="password" required placeholder="请输入密码">
+                <input id="passwordinput" type="password" required placeholder="请输入密码" name="Password">
             </div>
         </div>
         <div id="remember">
@@ -33,9 +35,6 @@
             <div id="DISPW">
                 <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
                 <label id="DISPWLA">隐藏密码</label>
-            </div>
-            <div id="REG">
-                <a href="Registered.html">注册</a>
             </div>
             <script>
                 function displayPassword(){
@@ -50,11 +49,18 @@
                 }
             </script>
         </div>
+        <div id="REG">
+            <a href="Registered(Dep).htm">注册</a>
+        </div>
         <div id="Login">
             <a>
-                <input type="button" value="登陆">
+                <input type="button" value="登陆" name="submit">
             </a>
         </div>
     </div>
+    </form>
+<?php
+
+?>
 </body>
 </html>
