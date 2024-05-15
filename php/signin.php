@@ -1,7 +1,7 @@
 <?php
     function con($conlog){
-        echo "<script>console.log('$conlog');</script>";
-    }
+    echo "<script>console.log('$conlog');</script>";
+}
 
     $username = $_POST["UserName"];
     $password = $_POST["Password"];
@@ -12,14 +12,14 @@
 
     $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
     if($UserInfo[0]){
-        con('用户存在');
-        $signinHash = hash('sha256',hash('sha256',$UserInfo[0].$username.$password).'INFINITY');//计算用户Hash
-        if($UserInfo[2]==$signinHash){//相符=密码正确
-            con('密码正确');
-        }else{
-            con('密码错误');
-        }
+    con('用户存在');
+    $signinHash = hash('sha256',hash('sha256',$UserInfo[0].$username.$password).'INFINITY');//计算用户Hash
+    if($UserInfo[2]==$signinHash){//相符=密码正确
+        con('密码正确');
     }else{
+        con('密码错误');
+    }
+}else{
         con('用户不存在');
     }
 

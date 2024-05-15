@@ -137,16 +137,19 @@
             }
         }
 
-
         $UserInfo['UserName'] = UserNameText($UserName,$link);
         $UserInfo['UserPass'] = PasswordText($Password,$rePassword);
         $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserName'],$UserInfo['UserPass']);
-        con("用户ID:".$UserInfo['UserID'].",用户名:".$UserInfo['UserName'].",用户密码:".$UserInfo['UserPass'].",用户Hash:".$UserInfo['UserHash']);
 
-//    $inSql =  mysqli_query($link,"INSERT INTO users (UserName,Sex,Resume,Hash,TAG) VALUES ('$getNewName','女','博麗神社のみこ','$UserHash','会员')");//写入数据
+        $regToSqlVal1 = $UserInfo['UserName'];
+        $regToSqlVal2 = $UserInfo['UserHash'];
+        $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
+        con("用户ID:".$UserInfo['UserID'].",用户名:".$UserInfo['UserName'].",用户密码:".$UserInfo['UserPass'].",用户Hash:".$UserInfo['UserHash']);
+//        $inSql =  mysqli_query($link,$regToSql);//写入数据
 
         mysqli_close($link);//结束连接
         }
     ?>
     </body>
 </html>
+<!--博麗霊夢,博麗神社のみこ-->
