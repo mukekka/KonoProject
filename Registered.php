@@ -58,14 +58,11 @@
         </div>
         <div id="Login">
             <input type="submit" value="注册" name="submit">
-            <div style="display: none">
-                <?php if(!isset($_POST["submit"])){ ?>
-            </div>
         </div>
     </form>
     <div style="display: none">
-    <?php
-        }else{
+        <?php
+        if(isset($_POST["submit"])){
         function con($conlog){
             echo "<script>console.log('$conlog');</script>";
         }//控制台输出
@@ -144,7 +141,7 @@
         $regToSqlVal2 = $UserInfo['UserHash'];
         $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
         con("用户ID:".$UserInfo['UserID'].",用户名:".$UserInfo['UserName'].",用户密码:".$UserInfo['UserPass'].",用户Hash:".$UserInfo['UserHash']);
-//        $inSql =  mysqli_query($link,$regToSql);//写入数据
+        $inSql =  mysqli_query($link,$regToSql);//写入数据
 
         mysqli_close($link);//结束连接
         }

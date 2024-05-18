@@ -8,7 +8,7 @@
 }
 body{
     background-color: #39C5BB;
-    padding: 10%;
+    padding: 5%;
     display: block;
 }
 p,a,span,label{
@@ -39,6 +39,7 @@ p,a,span,label{
     width: 50%;
     height: 250px;
     background-color: #FFFFFF;
+    z-index: 1;
 }
 .input-box{
     padding-top: 10px;
@@ -69,6 +70,10 @@ label,a{
     background-color: #39C5BB;
     color: #FFFFFF;
     border-radius: 5px;
+}
+#message{
+    border: #FF0000;
+    z-index: 200;
 }
 /*-------------------------------------------------------*/
 @keyframes toLong {
