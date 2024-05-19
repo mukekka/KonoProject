@@ -14,9 +14,6 @@
 .hiddened{
     top: -40px;
 }
-.header:hover{
-    display: none;
-}
 /*---------------------*/
 #logo{
     margin-left: 1%;

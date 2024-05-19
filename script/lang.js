@@ -48,8 +48,9 @@ function setCookie(name, value, expires, path, domain, secure) {
 function getCookie(name) {
     var cookiearr = document.cookie.split("=");
     for (var i = 0; i < cookiearr.length; i+=2) {
-        if (cookiearr[0] == name) return cookiearr[1];
+        if (cookiearr[i] == name) return cookiearr[i+1];
     }
+    return null;
 }
 
 var selectElement = document.getElementById('langSelect');

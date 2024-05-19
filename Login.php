@@ -3,8 +3,11 @@
 <head xmlns="">
     <meta charset="UTF-8">
     <title>登陆</title>
+    <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
     <link href="style/Login/wave.css" type="text/css" rel="stylesheet">
+    <script src="script/userset.js"></script>
     <style>
         #UserName{
             padding-top: 10px;
@@ -29,7 +32,7 @@
         </div>
         <div id="remember">
             <div id="PW">
-                <input type="checkbox">
+                <input type="checkbox" name="rempass[]" value="true">
                 <label>记住密码</label>
             </div>
             <div id="DISPW">
@@ -37,6 +40,11 @@
                 <label id="DISPWLA">隐藏密码</label>
             </div>
             <script>
+                function rempassword(){
+
+
+                }
+
                 function displayPassword(){
                     var flag = document.querySelector('#DISPWIN');
                     if(flag.checked){
@@ -77,6 +85,7 @@
 
             $username = $_POST["UserName"];
             $password = $_POST["Password"];
+//            echo implode(",",$_POST["rempass"]);
 
             $link = new mysqli('localhost','root','123456','users');//连接到数据库
             if($link->connect_error)con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
@@ -88,6 +97,11 @@
                 $signinHash = getHash($UserInfo[0],$username,$password);//计算用户Hash
                 if($UserInfo[2]==$signinHash){//相符=密码正确
                     alt('密码正确');
+                    setcookie('user',urlencode($UserInfo[1]),time()+60*60*24*30);
+                    setcookie('hash',$UserInfo[2],time()+60*60*24*30);
+                    alt('三秒后跳转至主页');
+                    $url = "http://www.infinity.com";
+                    echo "<meta http-equiv='refresh' content ='3;url=$url'>";
                 }else{
                     alt('密码错误');
                 }
@@ -98,9 +112,8 @@
             con('用户ID:'.$UserInfo[0]);
             con('用户名:'.$username);
             con('用户密码:'.$password);
-
             mysqli_close($link);
-        }
+            }
         ?>
 </body>
 </html>
