@@ -1,4 +1,4 @@
-var langSelect,value,langCookie;
+var langSelect,value;
 var langArr = ['SC','TC','EN','JP']
 
 function setLang(){
@@ -8,22 +8,22 @@ function setLang(){
         case 'SC':
             setCookie('lang','SC',365,"/");
             // document.getElementById('language').innerHTML = '简体中文';
-            console.log(value);
+            // console.log(value);
             break;
         case 'TC':
             setCookie('lang','TC',365,"/");
             // document.getElementById('language').innerHTML = '繁體中文';
-            console.log(value);
+            // console.log(value);
             break;
         case 'EN':
             setCookie('lang','EN',365,"/");
             // document.getElementById('language').innerHTML = 'English';
-            console.log(value);
+            // console.log(value);
             break;
         case 'JP':
             setCookie('lang','JP',365,"/");
             // document.getElementById('language').innerHTML = '日本語';
-            console.log(value);
+            // console.log(value);
             break;
     }
 }
@@ -46,32 +46,32 @@ function setCookie(name, value, expires, path, domain, secure) {
     document.cookie = cookieString;
 }
 function getCookie(name) {
-    let cookieName = name + "=";
-    let cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i].trim();
-        if (cookie.indexOf(cookieName) === 0) {
-            return decodeURIComponent(cookie.substring(cookieName.length));
-        }
+    var cookiearr = document.cookie.split("=");
+    for (var i = 0; i < cookiearr.length; i+=2) {
+        if (cookiearr[0] == name) return cookiearr[1];
     }
-    return null;
 }
 
-langCookie = getCookie('lang');
+var selectElement = document.getElementById('langSelect');
+var langCookie = getCookie('lang');
 switch (langCookie){
     case langCookie != langArr:
         setCookie('lang','SC','365','/')
         break;
     case 'SC':
-        document.getElementById('language').innerHTML = '简体中文';
+        // console.log('SC');
+        selectElement.value = 'SC';
         break;
     case 'TC':
-        document.getElementById('language').innerHTML = '繁體中文';
+        // console.log('TC');
+        selectElement.value = 'TC';
         break;
     case 'EN':
-        document.getElementById('language').innerHTML = 'English';
+        // console.log('EN');
+        selectElement.value = 'EN';
         break;
     case 'JP':
-        document.getElementById('language').innerHTML = '日本語';
+        // console.log('JP');
+        selectElement.value = 'JP';
         break;
 }

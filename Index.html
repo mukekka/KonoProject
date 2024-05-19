@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <title>INFINITY</title>
+    <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
     <script src="script/jquery-3.2.1.min.js"></script>
     <link href="style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
     <link href="style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
@@ -76,7 +79,7 @@
                 <li class="header-site-nav-proj">
                     <div class="dropdown">
                         <a id="UserInfo" href="#">离线用户</a>
-                        <div class="dropdown-content">
+                        <div class="dropdown-content" style="left: 10px">
                             <p><a href="Login.php">登录</a></p>
                             <p><a href="User.html">设置</a></p>
                             <p><a href="#">登出</a></p>
@@ -136,7 +139,7 @@
 
     <div id="footer">
         <div id="lang">
-            <select id="langSelect">
+            <select id="langSelect" >
                 <option value="SC">简体中文</option>
                 <option value="TC">繁體中文</option>
                 <option value="EN">English</option>
@@ -144,7 +147,7 @@
             </select>
             <input type="button" value="确定" onclick="setLang()">
         </div>
-        <!-- <p id="language">简体中文</p> -->
+        <script src="script/lang.js" type="text/javascript" rel="script"></script>
         <div id="linkwe">
             <a href="#">联系我们</a>
             <a href="#">隐私</a>
@@ -154,7 +157,6 @@
         <div id="copyright">
             <p>&regMacrohard2024基情提供</p>
         </div>
-        <script src="script/lang.js" type="text/javascript" rel="script"></script>
     </div>
-</body>
+  </body>
 </html>
