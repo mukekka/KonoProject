@@ -7,6 +7,7 @@
     <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
     <link href="style/Login/wave.css" type="text/css" rel="stylesheet">
+    <script src="script/funclib.js"></script>
     <script src="script/userset.js"></script>
     <style>
         #UserName{
@@ -31,31 +32,14 @@
             </div>
         </div>
         <div id="remember">
-            <div id="PW">
-                <input type="checkbox" name="rempass[]" value="true">
-                <label>记住密码</label>
-            </div>
+<!--            <div id="PW">-->
+<!--                <input type="checkbox" name="rempass[]" value="true">-->
+<!--                <label>记住密码</label>-->
+<!--            </div>-->
             <div id="DISPW">
                 <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
                 <label id="DISPWLA">隐藏密码</label>
             </div>
-            <script>
-                function rempassword(){
-
-
-                }
-
-                function displayPassword(){
-                    var flag = document.querySelector('#DISPWIN');
-                    if(flag.checked){
-                        document.getElementById('DISPWLA').innerHTML = '显示密码';
-                        document.getElementById("passwordinput").type="text";
-                    }else{
-                        document.getElementById('DISPWLA').innerHTML = '隐藏密码';
-                        document.getElementById("passwordinput").type="password";
-                    }
-                }
-            </script>
             <div id="Wasure">
                 <a href="#">忘记密码</a>
             </div>
@@ -68,6 +52,7 @@
         </div>
     </div>
     </form>
+    <div style="display: none">
         <?php
             if (isset($_POST["submit"])) {
             function con($conlog){
@@ -97,7 +82,7 @@
                 $signinHash = getHash($UserInfo[0],$username,$password);//计算用户Hash
                 if($UserInfo[2]==$signinHash){//相符=密码正确
                     alt('密码正确');
-                    setcookie('user',urlencode($UserInfo[1]),time()+60*60*24*30);
+                    setcookie('user',$UserInfo[1],time()+60*60*24*30);
                     setcookie('hash',$UserInfo[2],time()+60*60*24*30);
                     alt('三秒后跳转至主页');
                     $url = "http://www.infinity.com";
@@ -115,5 +100,6 @@
             mysqli_close($link);
             }
         ?>
+</div>
 </body>
 </html>

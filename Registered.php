@@ -5,6 +5,7 @@
         <title>注册</title>
         <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
         <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
+        <script src="script/funclib.js"></script>
         <link href="style/Login/login.css" type="text/css" rel="stylesheet">
         <link href="style/Login/wave.css" type="text/css" rel="stylesheet">
         <style>
@@ -43,20 +44,6 @@
                 <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
                 <label id="DISPWLA">隐藏密码</label>
             </div>
-            <script>
-                function displayPassword(){
-                    var flag = document.querySelector('#DISPWIN');
-                    if(flag.checked){
-                        document.getElementById('DISPWLA').innerHTML = '显示密码';
-                        document.getElementById("passwordinput").type="text";
-                        document.getElementById("repasswordinput").type="text";
-                    }else{
-                        document.getElementById('DISPWLA').innerHTML = '隐藏密码';
-                        document.getElementById("passwordinput").type="password";
-                        document.getElementById("repasswordinput").type="password";
-                    }
-                }
-            </script>
         </div>
         <div id="Login">
             <input type="submit" value="注册" name="submit">

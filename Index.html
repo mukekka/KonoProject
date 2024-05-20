@@ -6,7 +6,7 @@
     <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
     <script src="script/jquery-3.2.1.min.js"></script>
-    <script src="script/userset.js"></script>
+    <script src="script/funclib.js"></script>
     <link href="style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
     <link href="style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
     <link href="style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
@@ -79,16 +79,24 @@
             <ul class="header-site-nav">
                 <li class="header-site-nav-proj">
                     <div class="dropdown">
-                        <a id="UserInfo" href="#">离线用户</a>
-                        <div class="dropdown-content" style="left: 10px">
+                        <a id="UserID" href="#">离线用户</a>
+                        <div class="dropdown-content" style="right: -10px">
                             <p><a href="Login.php">登录</a></p>
                             <p><a href="User.html">设置</a></p>
-                            <p><a href="#">登出</a></p>
+                            <p><a href="#" id="logoff">登出</a></p>
+                            <script>
+                                document.getElementById('logoff').onclick=function(){
+                                    setCookie('user','','365','/');
+                                    setCookie('hash','','365','/');
+                                    location.reload();
+                                };
+                            </script>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
+        <script src="script/userset.js"></script>
         <div class="container">
             <form action="" class="parent">
                 <input type="text" placeholder="热搜">

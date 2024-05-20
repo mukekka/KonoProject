@@ -27,31 +27,6 @@ function setLang(){
             break;
     }
 }
-function setCookie(name, value, expires, path, domain, secure) {
-    let cookieString = name + "=" + encodeURIComponent(value);
-    if (expires) {
-        let expirationDate = new Date();
-        expirationDate.setTime(expirationDate.getTime() + expires * 24 * 60 * 60 * 1000);
-        cookieString += "; expires=" + expirationDate.toUTCString();
-    }
-    if (path) {
-        cookieString += "; path=" + path;
-    }
-    if (domain) {
-        cookieString += "; domain=" + domain;
-    }
-    if (secure) {
-        cookieString += "; secure";
-    }
-    document.cookie = cookieString;
-}
-function getCookie(name) {
-    var cookiearr = document.cookie.split("=");
-    for (var i = 0; i < cookiearr.length; i+=2) {
-        if (cookiearr[i] == name) return cookiearr[i+1];
-    }
-    return null;
-}
 
 var selectElement = document.getElementById('langSelect');
 var langCookie = getCookie('lang');
