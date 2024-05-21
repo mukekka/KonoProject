@@ -15,20 +15,29 @@
             margin-top: 10px;
         }
         #subject{
+            border-radius: 5px;
+            margin:25px auto;
+            padding: 20px;
             top: 35px;
-            padding-top: 10px;
-            height: 500px;
-            box-shadow: 0 1px 5px grey;
+            height: auto;
+            width: 500px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.14);
         }
         #subject div{
             margin: 10px auto auto 5px;
         }
-        .text{
-            border-left: none;
-            border-right: none;
-            border-top: none;
+        .inputtext{
+            border-radius: 3px;
+            padding: 2px;
+            border: #a8a8a8 solid 1px;
             outline: none;
-            color: ;
+            transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
+        }
+        .inputtext:hover{
+            border:gray solid 1px;
+        }
+        .inputtext:focus{
+            border: #66CCFF solid 1px;
         }
         #button{
             padding-bottom: 0;
@@ -43,11 +52,19 @@
             height: 25px;
             border: none;
         }
+        @keyframes bordercolor {
+            from{
+                border: #4F4F4F solid 1px;
+            }
+            to{
+                border: #66CCFF solid 1px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-            <div id="logo">
+            <div id="logo" style="margin-left: 40%">
                 <a href="Index.html">
                     <p>INFINITY</p>
                 </a>
@@ -58,33 +75,35 @@
         <form action="#" method="post">
             <div>
                 <label>用户名:</label>
-                <input type="text" name="name" id="name" class="text">
+                <input type="text" name="name" id="name" class="inputtext">
                 <script>
                     document.getElementById('name').placeholder = decodeURIComponent(getCookie('user')).toString();
                 </script>
             </div>
             <div id="Sex">
                 <label>性别:</label>
-                <input type="radio" checked="checked" value=null name="mysex"/>无
-                <input type="radio" value="男" name="mysex"/>男
-                <input type="radio" value="女" name="mysex"/>女
-                <input type="radio" value="武装直升机" name="mysex"/>武装直升机
-                <input type="radio" value="沃尔玛购物袋" name="mysex"/>沃尔玛购物袋
-                <input type="radio" value="秀吉" name="mysex"/>秀吉
+                <select style="outline: none;" class="inputtext">
+                    <option>无</option>
+                    <option>男</option>
+                    <option>女</option>
+                    <option>武装直升机</option>
+                    <option>沃尔玛购物袋</option>
+                    <option>秀吉</option>
+                </select>
             </div>
             <div>
                 <label>生日:</label>
-                <input type="date" name="birthday" id="birthday">
+                <input type="date" name="birthday" id="birthday" class="inputtext">
             </div>
             <div>
                 <label>邮箱:</label>
-                <input type="email" name="email" class="text" id="email">
+                <input type="email" name="email" class="inputtext" id="email" >
             </div>
             <div>
                 <label>个人简介:</label><br>
-                <textarea id="resume" name="myresume" style="width:25%;height:100px;font-family: 宋体;font-size: 2px"></textarea>
+                <textarea maxlength="127" id="resume" name="myresume" style="width:50%;height:100px;font-family: 宋体;font-size: 12px;" class="inputtext"></textarea>
             </div>
-            <div style="font-size: 5px;color: #4F4F4F">
+            <div style="font-size: 12px;color: #4F4F4F">
                 <h>用户ID:</h><h id="id"></h><br>
                 <h>创建时间:</h><h id="maketime"></h><br>
                 <h>账号状态:</h><h id="state"></h><br>

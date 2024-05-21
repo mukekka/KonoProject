@@ -21,7 +21,7 @@
     <form action="#" method="POST">
     <div id="subject">
         <div class="input-box" id="UserName">
-            <input type="text" required onclick="" name="UserName">
+            <input type="text" required onclick="" name="UserName" style="outline: none">
             <label>请输入用户名</label>
         </div>
         <script src="script/wave.js"></script>

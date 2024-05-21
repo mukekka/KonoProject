@@ -22,7 +22,7 @@
     <form action="#" method="POST">
     <div id="subject">
         <div class="input-box" id="UserName">
-            <input type="text" required name="UserName">
+            <input type="text" required name="UserName" style="outline: none">
             <label>请输入用户名</label>
         </div>
         <script src="script/wave.js"></script>
@@ -89,10 +89,9 @@
                 con('用户存在');
                 $signinHash = getHash($UserInfo[0],$username,$password);//计算用户Hash
                 if($UserInfo[2]==$signinHash){//相符=密码正确
-                    alt('密码正确');
                     setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
                     setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
-                    alt('点击跳转至主页');
+                    alt('登录成功。点击跳转至主页');
                     $url = "http://www.infinity.com";
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }else{
