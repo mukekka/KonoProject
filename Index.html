@@ -82,12 +82,15 @@
                         <a id="UserID" href="#">离线用户</a>
                         <div class="dropdown-content" style="right: -10px">
                             <p><a href="Login.php" id="signin">登录</a></p>
-                            <p><a href="User.html" id="setup">设置</a></p>
+                            <p><a href="Userset.php" id="setup">设置</a></p>
                             <p><a href="#" id="logoff">登出</a></p>
                             <script>
                                 if(getCookie('user')==''){
                                     document.getElementById('signin').innerText = '登录'.toString();
                                     document.getElementById('signin').href = 'Login.php';
+                                }else if(getCookie('user')==null) {
+                                    setCookie('user','','365','/');
+                                    setCookie('hash','','365','/');
                                 }else{
                                     document.getElementById('signin').innerText = '支持'.toString();
                                     document.getElementById('signin').href = 'reisen.html';

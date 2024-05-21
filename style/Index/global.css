@@ -1,9 +1,5 @@
 /*----------------Font define----------------------------*/
 @font-face {
-    font-family: CS;
-    src: url('../../font/Comic Sans MS.ttf');
-}
-@font-face {
     font-family: SS;
     src: url('../../font/SourceHanSansSC-Bold-2.otf');
 }

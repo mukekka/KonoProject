@@ -32,14 +32,22 @@
             </div>
         </div>
         <div id="remember">
-<!--            <div id="PW">-->
-<!--                <input type="checkbox" name="rempass[]" value="true">-->
-<!--                <label>记住密码</label>-->
-<!--            </div>-->
             <div id="DISPW">
                 <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
                 <label id="DISPWLA">隐藏密码</label>
             </div>
+            <script>
+                function displayPassword(){
+                    var flag = document.querySelector('#DISPWIN');
+                    if(flag.checked){
+                        document.getElementById('DISPWLA').innerHTML = '显示密码'.toString();
+                        document.getElementById("passwordinput").type="text";
+                    }else{
+                        document.getElementById('DISPWLA').innerHTML = '隐藏密码'.toString();
+                        document.getElementById("passwordinput").type="password";
+                    }
+                }
+            </script>
             <div id="Wasure">
                 <a href="#">忘记密码</a>
             </div>
@@ -82,11 +90,11 @@
                 $signinHash = getHash($UserInfo[0],$username,$password);//计算用户Hash
                 if($UserInfo[2]==$signinHash){//相符=密码正确
                     alt('密码正确');
-                    setcookie('user',$UserInfo[1],time()+60*60*24*30);
-                    setcookie('hash',$UserInfo[2],time()+60*60*24*30);
-                    alt('三秒后跳转至主页');
+                    setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
+                    setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
+                    alt('点击跳转至主页');
                     $url = "http://www.infinity.com";
-                    echo "<meta http-equiv='refresh' content ='3;url=$url'>";
+                    echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }else{
                     alt('密码错误');
                 }
@@ -94,9 +102,9 @@
                 alt('用户不存在');
             }
 
-            con('用户ID:'.$UserInfo[0]);
-            con('用户名:'.$username);
-            con('用户密码:'.$password);
+//            con('用户ID:'.$UserInfo[0]);
+//            con('用户名:'.$username);
+//            con('用户密码:'.$password);
             mysqli_close($link);
             }
         ?>

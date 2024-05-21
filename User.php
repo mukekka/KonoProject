@@ -32,13 +32,10 @@
     </style>
 </head>
 <body>
-    <div id="header">
-
-    </div>
     <div id="subject">
         <form>
             <div style="width:740px;">
-                <p style="color:#00AED1;width:100%;font-size:25px;text-align:center;font-weight:bolder;font-family: TL">INFINITY</p>
+                <p style="color:#39C5BB;width:100%;font-size:25px;text-align:center;font-weight:bolder;font-family: TL">INFINITY</p>
                 <div style="border:2px solid black;width:100%;height:450px;">
                     <span style="display:block;width:70px;height:20px;left:30px;position:relative;top:-15px;text-align:center;background-color:white;color:red;">用户信息</span>
                     <div style="padding-left:2.5%;display:block;">
@@ -52,12 +49,6 @@
                             <tr class="input">
                                 <td class="one">性别</td>
                                 <td>
-                                    <input type="radio" checked="checked" value=null name="mysex"/>无
-                                    <input type="radio" value="男" name="mysex"/>男
-                                    <input type="radio" value="女" name="mysex"/>女
-                                    <input type="radio" value="武装直升机" name="mysex"/>武装直升机
-                                    <input type="radio" value="沃尔玛购物袋" name="mysex"/>沃尔玛购物袋
-                                    <input type="radio" value="秀吉" name="mysex"/>秀吉
                                 </td>
                             </tr>
                             <tr class="input">

@@ -20,16 +20,16 @@ function getCookie(name) {
     var cookiearr = document.cookie.split(";");
     for (var i = 0; i < cookiearr.length; i++)
         if (cookiename = cookiearr[i].split("=")[0].trim() == name) return cookiearr[i].split("=")[1];
-    return null;
+    return '';
 }
 function displayPassword(){
     var flag = document.querySelector('#DISPWIN');
     if(flag.checked){
-        document.getElementById('DISPWLA').innerHTML = 'ÏÔÊ¾ÃÜÂë';
+        document.getElementById('DISPWLA').innerHTML = 'æ˜¾ç¤ºå¯†ç '.toString();
         document.getElementById("passwordinput").type="text";
         document.getElementById("repasswordinput").type="text";
     }else{
-        document.getElementById('DISPWLA').innerHTML = 'Òþ²ØÃÜÂë';
+        document.getElementById('DISPWLA').innerHTML = 'éšè—å¯†ç '.toString();
         document.getElementById("passwordinput").type="password";
         document.getElementById("repasswordinput").type="password";
     }

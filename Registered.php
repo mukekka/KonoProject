@@ -36,15 +36,25 @@
             </div>
         </div>
         <div id="remember">
-            <div id="PW">
-                <input type="checkbox">
-                <label>记住密码</label>
-            </div>
             <div id="DISPW">
                 <input id="DISPWIN" type="checkbox" onclick="displayPassword()">
                 <label id="DISPWLA">隐藏密码</label>
             </div>
         </div>
+        <script>
+            function displayPassword(){
+                var flag = document.querySelector('#DISPWIN');
+                if(flag.checked){
+                    document.getElementById('DISPWLA').innerHTML = '显示密码'.toString();
+                    document.getElementById("passwordinput").type="text";
+                    document.getElementById("repasswordinput").type="text";
+                }else{
+                    document.getElementById('DISPWLA').innerHTML = '隐藏密码'.toString();
+                    document.getElementById("passwordinput").type="password";
+                    document.getElementById("repasswordinput").type="password";
+                }
+            }
+        </script>
         <div id="Login">
             <input type="submit" value="注册" name="submit">
         </div>
@@ -125,14 +135,20 @@
         $UserInfo['UserName'] = UserNameText($UserName,$link);
         $UserInfo['UserPass'] = PasswordText($Password,$rePassword);
         $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserName'],$UserInfo['UserPass']);
-
-        $regToSqlVal1 = $UserInfo['UserName'];
-        $regToSqlVal2 = $UserInfo['UserHash'];
-        $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
-        con("用户ID:".$UserInfo['UserID'].",用户名:".$UserInfo['UserName'].",用户密码:".$UserInfo['UserPass'].",用户Hash:".$UserInfo['UserHash']);
-        $inSql =  mysqli_query($link,$regToSql);//写入数据
-
+        function registered($UserInfomation,$sqllink){
+            $regToSqlVal1 = $UserInfomation['UserName'];
+            $regToSqlVal2 = $UserInfomation['UserHash'];
+            $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
+            con("用户ID:".$UserInfomation['UserID'].",用户名:".$UserInfomation['UserName'].",用户密码:".$UserInfomation['UserPass'].",用户Hash:".$UserInfomation['UserHash']);
+            $inSql =  mysqli_query($sqllink,$regToSql);//写入数据
+            con($inSql);
+        }
+        registered($UserInfo,$link);
         mysqli_close($link);//结束连接
+
+        alt('点击跳转至登录');
+        $url = "http://www.infinity.com/Login.php";
+        echo "<meta http-equiv='refresh' content ='0;url=$url'>";
         }
     ?>
     </div>
