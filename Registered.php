@@ -21,18 +21,18 @@
     <form action="#" method="POST">
     <div id="subject">
         <div class="input-box" id="UserName">
-            <input type="text" required onclick="" name="UserName" style="outline: none">
+            <input type="text" required onclick="" name="UserName" style="outline: none" maxlength="32" title="用户名最大长度为32字">
             <label>请输入用户名</label>
         </div>
         <script src="script/wave.js"></script>
         <div id="Password">
             <div class="input-password-box">
-                <input id="passwordinput" type="password" required placeholder="请输入密码" name="Password">
+                <input id="passwordinput" type="password" required placeholder="请输入密码" name="Password" title="密码长度为5到16字">
             </div>
         </div>
         <div id="RePassword">
             <div class="input-password-box">
-                <input id="repasswordinput" type="password" required placeholder="请再次输入密码" name="rePassword">
+                <input id="repasswordinput" type="password" required placeholder="请再次输入密码" name="rePassword" title="密码长度为5到16字">
             </div>
         </div>
         <div id="remember">
@@ -120,7 +120,7 @@
                 }else{//名称未被使用
                     con('用户名未使用');
                     if (preg_match("/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/",$textUserName)){
-                        alt('用户名不符合规范，不允许有下划线以外的特殊字符');
+                        alt('用户名不符合规范，不允许有下划线以外的特殊字符。长度为32个字');
                         con('用户名不符合规范，不允许有下划线以外的特殊字符');
                     }else{
                         return $textUserName;
@@ -138,17 +138,16 @@
         function registered($UserInfomation,$sqllink){
             $regToSqlVal1 = $UserInfomation['UserName'];
             $regToSqlVal2 = $UserInfomation['UserHash'];
-            $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
+            $regToSql = "INSERT INTO users (UserName,Hash) VALUES (#'$regToSqlVal1',#'$regToSqlVal2')";
             con("用户ID:".$UserInfomation['UserID'].",用户名:".$UserInfomation['UserName'].",用户密码:".$UserInfomation['UserPass'].",用户Hash:".$UserInfomation['UserHash']);
             $inSql =  mysqli_query($sqllink,$regToSql);//写入数据
             con($inSql);
+            alt('点击跳转至登录');
+            $url = "http://www.infinity.com/Login.php";
+            echo "<meta http-equiv='refresh' content ='0;url=$url'>";
         }
         registered($UserInfo,$link);
         mysqli_close($link);//结束连接
-
-        alt('点击跳转至登录');
-        $url = "http://www.infinity.com/Login.php";
-        echo "<meta http-equiv='refresh' content ='0;url=$url'>";
         }
     ?>
     </div>
