@@ -8,7 +8,6 @@
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
     <link href="style/Login/wave.css" type="text/css" rel="stylesheet">
     <script src="script/funclib.js"></script>
-    <script src="script/userset.js"></script>
     <style>
         #UserName{
             padding-top: 10px;

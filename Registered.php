@@ -138,12 +138,12 @@
         function registered($UserInfomation,$sqllink){
             $regToSqlVal1 = $UserInfomation['UserName'];
             $regToSqlVal2 = $UserInfomation['UserHash'];
-            $regToSql = "INSERT INTO users (UserName,Hash) VALUES (#'$regToSqlVal1',#'$regToSqlVal2')";
+            $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
             con("用户ID:".$UserInfomation['UserID'].",用户名:".$UserInfomation['UserName'].",用户密码:".$UserInfomation['UserPass'].",用户Hash:".$UserInfomation['UserHash']);
             $inSql =  mysqli_query($sqllink,$regToSql);//写入数据
             con($inSql);
             alt('点击跳转至登录');
-            $url = "http://www.infinity.com/Login.php";
+            $url = "Login.php";
             echo "<meta http-equiv='refresh' content ='0;url=$url'>";
         }
         registered($UserInfo,$link);
