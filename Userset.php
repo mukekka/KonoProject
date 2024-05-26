@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>用户信息</title>
     <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
     <script src="script/funclib.js"></script>
@@ -190,103 +190,128 @@
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
             </div>
         </form>
-        <div style="display: none">
-            <?php
-                function con($conlog)
-                {
-                    echo "<script>console.log('$conlog');</script>";
+        <div style="display: none"><?php
+            function con($conlog){
+                echo "<script>console.log('$conlog');</script>";
+            }
+            function alt($altinfo){
+                echo "<script>alert($altinfo);</script>";
+            }
+            function printarr($arr){
+                foreach (array_keys($arr) as $key => $value) {
+                    con($key.'=>'.$value.',');
                 }
-                function alt($altinfo){
-                    echo "<script>alert($altinfo);</script>";
+            }
+            function getHash($ID,$Name,$Pass){
+                if(($Name!='')&&($Pass!='')){
+                    return hash('sha256',hash('sha256',$ID.$Name.$Pass).'INFINITY');
                 }
-                function getHash($ID,$Name,$Pass){
-                    if(($Name!='')&&($Pass!='')){
-                        return hash('sha256',hash('sha256',$ID.$Name.$Pass).'INFINITY');
-                    }
-                    //加密方式:ID+Name+Pass=Hash+salt=UserHash
-                }//获取用户哈希
-                if($_COOKIE['user']==""){
-                    alt('未登录。请先登录');
-                    $url="Login.php";
-                    echo "<meta http-equiv='refresh' content ='0;url=$url'>";
-                }
-                $link = new mysqli('localhost', 'root', '123456', 'users');//连接到数据库
-                if ($link->connect_error) con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
-                else con('连接成功');//连接成功
+                //加密方式:ID+Name+Pass=Hash+salt=UserHash
+            }//获取用户哈希
+            if($_COOKIE['user']==""){
+                alt('未登录。请先登录');
+                $url="Login.php";
+                echo "<meta http-equiv='refresh' content ='0;url=$url'>";
+            }
+            $link = new mysqli('localhost', 'root', '123456', 'users');//连接到数据库
+            if ($link->connect_error) {con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
+            else con('连接成功');//连接成功
 
-                $UserName = urldecode($_COOKIE['user']);
-                $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
-                echo "<script>
-                    document.getElementById('id').innerHTML='$UserInfo[UserID]';
-                    document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
-                    document.getElementById('state').innerHTML='$UserInfo[STATE]';
-                    document.getElementById('tag').innerHTML='$UserInfo[TAG]';
-                    document.getElementById('email').placeholder = '$UserInfo[Email]'.toString();
-                    document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
-                    document.getElementById('birthday').value = '$UserInfo[Birthday]';
-                    document.getElementById('sex').value = '$UserInfo[Sex]'
+            $UserName = urldecode($_COOKIE['user']);
+            $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
+            echo "<script>
+                document.getElementById('id').innerHTML='$UserInfo[UserID]';
+                document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
+                document.getElementById('state').innerHTML='$UserInfo[STATE]';
+                document.getElementById('tag').innerHTML='$UserInfo[TAG]';
+                document.getElementById('email').placeholder = '$UserInfo[Email]'.toString();
+                document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
+                document.getElementById('birthday').value = '$UserInfo[Birthday]';
+                document.getElementById('sex').value = '$UserInfo[Sex]'
                 </script>";
-                if (isset($_POST["submit"])) {
-                    $UserInfoUpload = array(
-                        "UserName"=>$_POST['name'],
-                        "UserSex"=>$_POST['sex'],
-                        "UserBirthday"=>$_POST['birthday'],
-                        "UserEmail"=>$_POST['email'],
-                        "UserResume"=>$_POST['myresume'],
-                        "UserPass"=>$_POST['passwordinput'],
-                        "UserRePass"=>$_POST['repasswordinput'],
-                        "UserOldPass"=>$_POST['oldpasswordinput'],
-                        "UserHash"=>""
-                    );
-                    if($UserInfoUpload[UserEmail]==''){
-                        $UserInfoUpload[UserEmail]=$UserInfo[Email];
-                    }
-                    if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码为空
-                        if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
-                            if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码不符合规范
-                                if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
-                                    con('新密码不能与旧密码相同');
-                                    exit();
-                                }elseif(strcmp(getHash($UserInfo[UserID],$_COOKIE['user'],$UserInfoUpload[UserOldPass]),$_COOKIE['hash'])==0){
-                                    if($UserInfoUpload[UserName]!=''){
-                                        $UserInfoUpload[UserHash] = getHash($UserInfo[UserID],$UserInfoUpload[UserName],$UserInfoUpload[UserPass]);
-                                    }else{
-                                        $UserInfoUpload[UserName] = $UserInfo[UserName];
-                                        $UserInfoUpload[UserHash] = getHash($UserInfo[UserID],$_COOKIE['user'],$UserInfoUpload[UserPass]);
-                                    }
-                                    con('已修改');
-                                }else{//密码不正确
-                                    con('原密码不正确');
-                                    exit();
+
+            if (isset($_POST["submit"])) {
+                $UserInfoUpload = array(
+                    "UserName"=>$_POST['name'],
+                    "UserSex"=>$_POST['sex'],
+                    "UserBirthday"=>$_POST['birthday'],
+                    "UserEmail"=>$_POST['email'],
+                    "UserResume"=>$_POST['myresume'],
+                    "UserPass"=>$_POST['passwordinput'],
+                    "UserRePass"=>$_POST['repasswordinput'],
+                    "UserOldPass"=>$_POST['oldpasswordinput'],
+                    "UserHash"=>"");
+                con($UserInfoUpload[UserEmail]);
+                if($UserInfoUpload[UserEmail]==''){
+                    $UserInfoUpload[UserEmail]=$UserInfo[Email];
+                }
+
+                function sqlload($UserInfo,$UserInfoUpload,$link){
+                    $sqlUpLoad="UPDATE users 
+                            SET UserName = '$UserInfoUpload[UserName]',
+                                Sex = '$UserInfoUpload[UserSex]',
+                                Birthday = '$UserInfoUpload[UserBirthday]',
+                                Resume = '$UserInfoUpload[UserResume]',
+                                Email = '$UserInfoUpload[UserEmail]',
+                                Hash = '$UserInfoUpload[UserHash]'
+                            WHERE users.UserID = $UserInfo[UserID];";
+                    mysqli_query($link,$sqlUpLoad);
+                    printarr($UserInfoUpload);
+                    setcookie('user',$UserInfoUpload[UserName],time()+60*60*24*30*12);
+                    setcookie('hash',$UserInfoUpload[UserHash],time()+60*60*24*30*12);
+                }
+                function sqlloadnoname($UserInfo,$UserInfoUpload,$link){
+                    $sqlUpLoad="UPDATE users 
+                            SET Sex = '$UserInfoUpload[UserSex]',
+                                Birthday = '$UserInfoUpload[UserBirthday]',
+                                Resume = '$UserInfoUpload[UserResume]',
+                                Email = '$UserInfoUpload[UserEmail]'
+                            WHERE users.UserID = $UserInfo[UserID];";
+                    mysqli_query($link,$sqlUpLoad);
+                    printarr($UserInfoUpload);
+                    con($UserInfoUpload[UserName].'\n'.$UserInfoUpload[UserHash]);
+                    setcookie('user',$UserInfoUpload[UserName],time()+60*60*24*30*12);
+                    setcookie('hash',$UserInfoUpload[UserHash],time()+60*60*24*30*12);
+                }
+                if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码不为空
+                    if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码相同
+                        if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码符合规范
+                            if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
+                                con('新密码不能与旧密码相同');
+                                exit();
+                            }elseif(strcmp(getHash($UserInfo[UserID],$_COOKIE['user'],$UserInfoUpload[UserOldPass]),$_COOKIE['hash'])==0){//新旧密码不相同
+                                if($UserInfoUpload[UserName]!=''){//不更改用户名
+                                    $UserInfoUpload[UserHash] = getHash($UserInfo[UserID],$UserInfoUpload[UserName],$UserInfoUpload[UserPass]);
                                 }
-                            }else{
-                                con('密码不符合规范!');
+                                else{
+                                    $UserInfoUpload[UserName] = $UserInfo[UserName];//更改用户名
+                                    $UserInfoUpload[UserHash] = getHash($UserInfo[UserID],$_COOKIE['user'],$UserInfoUpload[UserPass]);
+                                }
+                                sqlload($UserInfo,$UserInfoUpload,$link);
+//                                echo "<script>location.reload()</script>";
+                                con('已修改');
+                            }else{//密码不正确
+                                con('原密码不正确');
                                 exit();
                             }
                         }else{
-                            con('密码不相等!');
+                            con('密码不符合规范!');
                             exit();
                         }
                     }else{
-                        con('无密码');
+                        con('密码不相等!');
                         exit();
                     }
-                    $sqlUpLoad="UPDATE users 
-                                SET UserName = '$UserInfoUpload[UserName]',
-                                    Sex = '$UserInfoUpload[UserSex]',
-                                    Birthday = '$UserInfoUpload[UserBirthday]',
-                                    Resume = '$UserInfoUpload[UserResume]',
-                                    Email = '$UserInfoUpload[UserEmail]',
-                                    Hash = '$UserInfoUpload[UserHash]'
-                                WHERE users.UserID = $UserInfo[UserID];";
-                    $sqlupdate = mysqli_query($link,$sqlUpLoad);
-                    setcookie('user',$UserInfoUpload[UserName],time()+60*60*24*30*12);
-                    setcookie('hash',$UserInfoUpload[UserHash],time()+60*60*24*30*12);
-//                    $upload = "UPDATE users SET UserName = 'Koizumi2', Resume = '是站长呢(·ω·)2', Head = '12' WHERE users.UserID = 1";
+                }elseif (($UserInfoUpload[UserName]=='')and($UserInfoUpload[UserPass]=='')){//用户名和密码为空
+                    sqlloadnoname($UserInfo,$UserInfoUpload,$link);
+//                    echo "<script>location.reload()</script>";
+                }else{
+                    con('无密码');
+                    exit();
                 }
-                mysqli_close($link);
-            ?>
-        </div>
+            }
+            mysqli_close($link);
+        ?></div>
     </div>
 </body>
 </html>
