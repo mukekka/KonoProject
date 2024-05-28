@@ -8,6 +8,8 @@
     <script src="script/jquery-3.2.1.min.js"></script>
     <script src="script/howler.min.js"></script>
     <script src="script/funclib.js"></script>
+    <script src="script/popup.js"></script>
+    <link href="style/popup.css" rel="stylesheet" type="text/css"><!--弹窗-->
     <link href="style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
     <link href="style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
     <link href="style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
@@ -167,6 +169,12 @@
             </div>
         </div>
     </div>
+    <div id="pop">
+        <div id="popPRI" class="popup">
+            <h2 style="text-align: center">隐私</h2>
+            <br><button onclick="hidePopup('popPRI')">关闭弹窗</button>
+        </div>
+    </div>
     <div id="footer">
         <div id="lang">
             <select id="langSelect" >
@@ -180,7 +188,7 @@
         <script src="script/lang.js" type="text/javascript" rel="script"></script>
         <div id="linkwe">
             <a href="#">联系我们</a>
-            <a href="#">隐私</a>
+            <a href="#" onclick="showPopup('popPRI')">隐私</a>
             <a href="#">商标</a>
             <a href="#">使用条款</a>
         </div>
