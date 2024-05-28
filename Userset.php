@@ -241,7 +241,8 @@
                     "UserRePass"=>$_POST['repasswordinput'],
                     "UserOldPass"=>$_POST['oldpasswordinput'],
                     "UserHash"=>"");
-                con($UserInfoUpload[UserEmail]);
+
+
                 if($UserInfoUpload[UserEmail]==''){
                     $UserInfoUpload[UserEmail]=$UserInfo[Email];
                 }
