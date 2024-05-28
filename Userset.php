@@ -2,13 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>用户信息</title>
     <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
-    <script src="script/funclib.js"></script>
     <link href="style/Index/global.css" rel="stylesheet" type="text/css">
     <link href="style/Index/header.css" rel="stylesheet" type="text/css">
     <link href="style/Index/subject.css" rel="stylesheet" type="text/css">
+    <script src="script/jquery-3.2.1.min.js"></script>
+    <script src="script/funclib.js"></script>
     <style>
         *{
             font-family: SS;
@@ -40,12 +41,14 @@
             border: #a8a8a8 solid 1px;
             outline: none;
             transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
+            transition: color 0.3s cubic-bezier(.645,.045,.355,1);
         }
         .inputtext:hover{
             border:gray solid 1px;
         }
         .inputtext:focus{
-            border: #66CCFF solid 1px;
+            border: #39C5BB solid 1px;
+            color: #39C5BB;
         }
         #button{
             padding-bottom: 0;
@@ -71,6 +74,7 @@
     </style>
 </head>
 <body>
+    <script src="script/funclib.js"></script>
     <div class="header">
             <div id="logo" style="margin-left: 40%;">
                 <a href="Index.html">
@@ -84,7 +88,7 @@
             <table>
                 <tr>
                     <td>用户名:</td>
-                    <td><input type="text" name="name" id="name" class="inputtext" title="最大长度为32字" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
+                    <td><input type="text" name="name" id="name" class="inputtext" title="最大长度为32字。更新此项需要密码" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
                     <script>
                         document.getElementById('name').placeholder = decodeURIComponent(getCookie('user')).toString();
                     </script>
@@ -92,7 +96,7 @@
                 <tr>
                     <td>性别:</td>
                     <td>
-                        <select style="outline: none;appearance: none;width: 168px" class="inputtext" id="sex">
+                        <select style="outline: none;appearance: none;width: 168px" class="inputtext" id="sex" name="sex">
                             <option>无</option>
                             <option>男</option>
                             <option>女</option>
@@ -111,7 +115,7 @@
                 <tr>
                     <td>邮箱:</td>
                     <td>
-                        <input maxlength="254" type="email" name="email" class="inputtext" id="email" title="最大长度为254字" oninput="this.value=this.value.replace(/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)">
+                        <input maxlength="254" type="email" name="email" class="inputtext" id="email" title="最大长度为254字" placeholder="aminoac.6324@sxc.com">
                     </td>
                 </tr><!--邮箱-->
                 <tr>
@@ -128,6 +132,40 @@
                         }
                     </script>
                 </tr><!--简介-->
+                <tr>
+                    <td>
+                        用户密码:
+                    </td>
+                    <td>
+                        <input id="oldpasswordinput" name="oldpasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请输入旧密码"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input style="font-size: 12px;color: #4F4F4F" id="DISPWIN" type="checkbox" onclick="displayPassword()">
+                        <label style="font-size: 12px;color: #4F4F4F" id="DISPWLA">隐藏密码</label>
+                        <script>
+                            function displayPassword(){
+                                var flag = document.querySelector('#DISPWIN');
+                                if(flag.checked){
+                                    document.getElementById('DISPWLA').innerHTML = '显示密码'.toString();
+                                    document.getElementById("passwordinput").type="text";
+                                    document.getElementById("repasswordinput").type="text";
+                                    document.getElementById("oldpasswordinput").type="text";
+                                }else{
+                                    document.getElementById('DISPWLA').innerHTML = '隐藏密码'.toString();
+                                    document.getElementById("passwordinput").type="password";
+                                    document.getElementById("repasswordinput").type="password";
+                                    document.getElementById("oldpasswordinput").type="password";
+                                }
+                            }
+                        </script>
+                    </td>
+                    <td>
+                        <input id="passwordinput" name="passwordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请输入新密码"><br>
+                        <input id="repasswordinput" name="repasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请再次输入新密码" style="padding-top: 1px">
+                    </td>
+                </tr><!--用户密码-->
                 <tr style="font-size: 12px;color: #4F4F4F">
                     <td>用户ID:</td>
                     <td><h id="id"></h></td>
@@ -143,6 +181,9 @@
                 <tr style="font-size: 12px;color: #4F4F4F" >
                     <td><h id="tag"></td>
                 </tr>
+                <tr>
+                    <td><h id="sql"></td>
+                </tr>
                 <!--用户信息-->
             </table>
             <div id="button">
@@ -151,32 +192,75 @@
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
             </div>
         </form>
+        <script>
+        </script>
         <div style="display: none">
             <?php
                 function con($conlog)
-                    {
-                        echo "<script>console.log('$conlog');</script>";
-                    }
+                {
+                    echo "<script>console.log('$conlog');</script>";
+                }
+                function alt($altinfo){
+                    echo "<script>alert($altinfo);</script>";
+                }
+                function getHash($ID,$Pass){
+                    if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Name+Pass=Hash+salt=UserHash
+                }
+                if($_COOKIE['user']==""){
+                    alt('未登录。请先登录');
+                    $url="Login.php";
+                    echo "<meta http-equiv='refresh' content ='0;url=$url'>";
+                }
                 $link = new mysqli('localhost', 'root', '123456', 'users');//连接到数据库
-                if ($link->connect_error) con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
+                if ($link->connect_error){con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
                 else con('连接成功');//连接成功
 
                 $UserName = urldecode($_COOKIE['user']);
                 $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
-                con($UserInfo[Sex]);
                 echo "<script>
-                    document.getElementById('id').innerHTML='$UserInfo[UserID]';
-                    document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
-                    document.getElementById('state').innerHTML='$UserInfo[STATE]';
-                    document.getElementById('tag').innerHTML='$UserInfo[TAG]';
-                    document.getElementById('email').placeholder = '$UserInfo[Email]'.toString();
-                    document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
-                    document.getElementById('birthday').value = '$UserInfo[Birthday]';
-                    document.getElementById('sex').value = '$UserInfo[Sex]';
-                </script>";
-                if (isset($_POST["submit"])) {
+                        document.getElementById('id').innerHTML='$UserInfo[UserID]';
+                        document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
+                        document.getElementById('state').innerHTML='$UserInfo[STATE]';
+                        document.getElementById('tag').innerHTML='$UserInfo[TAG]';
+                        document.getElementById('email').placeholder = '$UserInfo[Email]'.toString();
+                        document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
+                        document.getElementById('birthday').value = '$UserInfo[Birthday]';
+                        document.getElementById('sex').value = '$UserInfo[Sex]'
+                    </script>";
 
+                if (isset($_POST["submit"])) {
+                $UserInfoUpload = array(
+                    "UserName"=>$_POST['name'],
+                    "UserSex"=>$_POST['sex'],
+                    "UserBirthday"=>$_POST['birthday'],
+                    "UserEmail"=>$_POST['email'],
+                    "UserResume"=>$_POST['myresume'],
+                    "UserOldPass"=>$_POST['oldpasswordinput'],
+                    "UserPass"=>$_POST['passwordinput'],
+                    "UserRePass"=>$_POST['repasswordinput'],
+                    "UserHash"=>""
+                );
+                //$upload = mysqli_query($link,"update users set UserName = '$UserInfoUpload[UserName]',Sex = '$UserInfoUpload[UserSex]',Birthday = '$UserInfoUpload[UserBirthday]',Resume = '$UserInfoUpload[UserResume]',Email = '$UserInfoUpload[UserEmail]' where users.UserID = $UserInfo[UserID];");
+                $upload = mysqli_query($link,"update users set Email = '$UserInfoUpload[UserEmail]' where users.UserID = '$UserInfo[UserID]';");
+
+                if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码为空
+                    if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
+                        if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码不符合规范
+                            if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
+                                con('新密码不能与旧密码相同');
+                            }else{//密码不正确
+                                con('原密码不正确');
+                            }
+                        }else{
+                            con('密码不符合规范!');
+                        }
+                    }else{
+                        con('密码不相等!');
+                    }
+                }else{
+                    con('无密码');
                 }
+            }mysqli_close($link);
             ?>
         </div>
     </div>

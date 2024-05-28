@@ -8,7 +8,6 @@
     <link href="style/Login/login.css" type="text/css" rel="stylesheet">
     <link href="style/Login/wave.css" type="text/css" rel="stylesheet">
     <script src="script/funclib.js"></script>
-    <script src="script/userset.js"></script>
     <style>
         #UserName{
             padding-top: 10px;
@@ -69,16 +68,12 @@
             function alt($altinfo){
                 echo "<script>alert('$altinfo');</script>";
             }
-            function getHash($ID,$Name,$Pass){
-                if(($Name!='')&&($Pass!='')){
-                    return hash('sha256',hash('sha256',$ID.$Name.$Pass).'INFINITY');
-                }
-                //加密方式:ID+Name+Pass=Hash+salt=UserHash
+            function getHash($ID,$Pass){
+                if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Name+Pass=Hash+salt=UserHash
             }//获取用户哈希
 
             $username = $_POST["UserName"];
             $password = $_POST["Password"];
-//            echo implode(",",$_POST["rempass"]);
 
             $link = new mysqli('localhost','root','123456','users');//连接到数据库
             if($link->connect_error)con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
@@ -87,12 +82,13 @@
             $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
             if($UserInfo[0]){
                 con('用户存在');
-                $signinHash = getHash($UserInfo[0],$username,$password);//计算用户Hash
+                $signinHash = getHash($UserInfo[0],$password);//计算用户Hash
+                con($signinHash);
                 if($UserInfo[2]==$signinHash){//相符=密码正确
                     setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
                     setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
                     alt('登录成功。点击跳转至主页');
-                    $url = "http://www.infinity.com";
+                    $url = "Index.html";
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }else{
                     alt('密码错误');
@@ -100,10 +96,6 @@
             }else{
                 alt('用户不存在');
             }
-
-//            con('用户ID:'.$UserInfo[0]);
-//            con('用户名:'.$username);
-//            con('用户密码:'.$password);
             mysqli_close($link);
             }
         ?>

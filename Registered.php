@@ -77,12 +77,9 @@
         else con('连接成功');//连接成功
 
         $getNewID = mysqli_fetch_array(mysqli_query($link,'select max(UserID)+1 from users'))[0];//获取新ID
-        function getHash($ID,$Name,$Pass){
-            if(($Name!='')&&($Pass!='')){
-                return hash('sha256',hash('sha256',$ID.$Name.$Pass).'INFINITY');
-            }
-            //加密方式:ID+Name+Pass=Hash+salt=UserHash
-        }//获取用户哈希
+        function getHash($ID,$Pass){
+            if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Pass=Hash+salt=UserHash
+        }
          //信息获取
         $Password = $_POST['Password'];//用户输入密码
         $rePassword = $_POST['rePassword'];//用户再次输入密码
@@ -134,16 +131,16 @@
 
         $UserInfo['UserName'] = UserNameText($UserName,$link);
         $UserInfo['UserPass'] = PasswordText($Password,$rePassword);
-        $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserName'],$UserInfo['UserPass']);
+        $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserPass']);
         function registered($UserInfomation,$sqllink){
             $regToSqlVal1 = $UserInfomation['UserName'];
             $regToSqlVal2 = $UserInfomation['UserHash'];
-            $regToSql = "INSERT INTO users (UserName,Hash) VALUES (#'$regToSqlVal1',#'$regToSqlVal2')";
+            $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
             con("用户ID:".$UserInfomation['UserID'].",用户名:".$UserInfomation['UserName'].",用户密码:".$UserInfomation['UserPass'].",用户Hash:".$UserInfomation['UserHash']);
             $inSql =  mysqli_query($sqllink,$regToSql);//写入数据
             con($inSql);
             alt('点击跳转至登录');
-            $url = "http://www.infinity.com/Login.php";
+            $url = "Login.php";
             echo "<meta http-equiv='refresh' content ='0;url=$url'>";
         }
         registered($UserInfo,$link);

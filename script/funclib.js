@@ -34,3 +34,18 @@ function displayPassword(){
         document.getElementById("repasswordinput").type="password";
     }
 }
+function showNotification(title,body,ico,time,audio){
+    if (ico==null) ico='image/Logo16.ico';
+    if (time==null) time=5000;
+    if (audio==null) audio='audio/system.wav';
+    var notification = new Notification(title,{body:body, icon:ico});
+    setTimeout(function (){notification.close()},time);
+    var sound = new Howl({
+        src: [audio],
+        autoplay: true, // 是否自动播放
+        loop: false, // 是否循环播放
+        volume: 1, // 音量大小，范围是0-1，默认为1
+        preload: true // 是否预加载音频，默认为true
+    });
+    sound.play();
+}
