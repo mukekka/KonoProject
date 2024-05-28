@@ -108,6 +108,11 @@
     animation-fill-mode: forwards;
 }
 /*---------------------*/
+#sound-player{
+    float: right;
+    height: 25px;
+}
+/*---------------------*/
 #login{
     float: right;
     margin: 6px 10px 0px 5%;
