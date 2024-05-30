@@ -1,0 +1,55 @@
+@charset "utf-8";
+@font-face {
+	font-family: ModerDOS;
+	src: url("font/ModerDOS437-2.ttf");
+}
+body {
+	background-color: grey;
+	margin: 0px;
+}
+#window {
+	background-color: #000000;
+	height: 400px;
+	width: 800px;
+	font-family: "ModerDOS";
+	font-size: 20px;
+	color: #CCCCCC;
+	resize: none;
+	outline: none;
+	position: fixed;
+	user-select: none;
+	text-decoration: none;
+	-webkit-appearance: none;
+	-webkit-text-fill-color: #CCCCCC;
+	white-space: nowrap;
+	caret: #CCCCCC;
+}
+#text {
+	background-color: #000;
+	height: 400px;
+	white-space: pre;
+}
+p{
+	height: 20px;
+	margin: 0;
+	padding: 0;
+}
+input {
+	display: inline-block;
+	font-family: "ModerDOS";
+	background-color: #000000;
+	border: none;
+	font-size: 20px;
+	color: #CCCCCC;
+	outline: none;
+	width: 100%;
+	word-wrap: break-word;
+}
+input::-moz-selection{
+	background-color: #CCCCCC;
+	color: #000000;
+}
+input::selection{
+	background-color: #CCCCCC;
+	color: #000000;
+}
