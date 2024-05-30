@@ -1,14 +1,64 @@
 .popup {
     display: none;
+    /*display: block;*/
     position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: auto;
+    height: 500px;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 20px;
+    border-radius: 5px;
+    padding: 5px 20px 20px 20px;
     z-index: 9999;
     font-size: 10px;
 }
+#popupButton{
+    border: none;
+    color: #FFFFFF;
+    background-color: #39C5BB;
+    width: 80px;
+    border-radius: 3px;
+    font-family: SS;
+    margin-left: 35%;
+}
+
+#popuptext{
+    overflow-y: scroll;
+    resize: none;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    border-radius: 5px;
+    border: #c3c3c3 solid 1px;
+    outline: none;
+    transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
+    transition: color 0.3s cubic-bezier(.645,.045,.355,1);
+    transition: background-color 5s cubic-bezier(.645,.045,.355,1);
+}
+#popuptext:hover{
+    border:#a8a8a8 solid 1px;
+}
+
+#popuptext::-webkit-scrollbar-thumb{/*滑块*/
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #c3c3c3;
+}
+#popuptext:hover::-webkit-scrollbar-thumb{
+    background-color: #a8a8a8;
+    margin-right: 1px;
+}
+
+#popuptext::-webkit-scrollbar{/*滚动条*/
+    width: 6px;
+}
+#popuptext::-webkit-scrollbar-track{/*滑轨*/
+    background-color: transparent;
+}
+#popuptext::-webkit-scrollbar-track-piece{}/*没有滑块的部分*/
+#popuptext::-webkit-scrollbar-corner{}/*横向和纵向交汇*/
+#popuptext::-webkit-resizer{}/*拖动按钮*/
+#popuptext::-webkit-scrollbar-button{}/*箭头按钮*/

@@ -1,0 +1,27 @@
+{
+	"header": [
+		{
+			"title": "INFINITY"
+		},
+		{
+			"nav": [
+				{
+					"SP": [
+						{
+							"nav-title": "高通"
+						},
+						{
+							"proj": "骁龙8Gen1"
+						},
+						{
+							"proj": "骁龙8Gen2"
+						},
+						{
+							"proj": "骁龙8Gen3"
+						}
+					]
+				}
+			]
+		}
+	]
+}

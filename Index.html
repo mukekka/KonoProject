@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>INFINITY</title>
-    <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
-    <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
-    <script src="script/jquery-3.2.1.min.js"></script>
-    <script src="script/howler.min.js"></script>
-    <script src="script/funclib.js"></script>
-    <script src="script/popup.js"></script>
-    <link href="style/popup.css" rel="stylesheet" type="text/css"><!--弹窗-->
-    <link href="style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
-    <link href="style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
-    <link href="style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
-    <link href="style/Index/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
+    <link rel="icon" href="/image/Logo32.ico" type="image/x-icon" sizes="32x32">
+    <link rel="icon" href="/image/Logo16.ico" type="image/x-icon" sizes="16x16">
+    <script src="/script/jquery-3.2.1.min.js"></script>
+    <script src="/script/howler.min.js"></script>
+    <script src="/script/funclib.js"></script>
+    <link href="/style/popup.css" rel="stylesheet" type="text/css"><!--弹窗-->
+    <link href="/style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
+    <link href="/style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
+    <link href="/style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
+    <link href="/style/Index/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
 </head>
 <body>
     <div class="header">
@@ -84,8 +83,8 @@
                     <div class="dropdown">
                         <a id="UserID" href="#" style="padding-right: 10px">离线用户</a>
                         <div class="dropdown-content" style="right: -10px">
-                            <p><a href="Login.php" id="signin">&nbsp;&nbsp;登录&nbsp;&nbsp;</a></p>
-                            <p><a href="Userset.php" id="setup">&nbsp;&nbsp;设置&nbsp;&nbsp;</a></p>
+                            <p><a href="/Login.php" id="signin">&nbsp;&nbsp;登录&nbsp;&nbsp;</a></p>
+                            <p><a href="/Userset.php" id="setup">&nbsp;&nbsp;设置&nbsp;&nbsp;</a></p>
                             <p><a href="#" id="logoff">&nbsp;&nbsp;登出&nbsp;&nbsp;</a></p>
                             <script>
                                 if(getCookie('user')==''){
@@ -122,12 +121,12 @@
         <div class="container">
             <form action="" class="parent">
                 <input type="text" placeholder="热搜">
-                <input type="button" value="搜索" onclick="showNotification('您有一条消息','这个还没做')">
+                <input type="button" value="搜索" onclick="showNotification('系统消息','这个还没做')">
             </form>
             <style>
-                @import 'style/Index/search-bar.css';
+                @import '/style/Index/search-bar.css';
             </style>
-            <script src="script/nav.js"></script>
+            <script src="/script/nav.js"></script>
         </div>
         <div id="sound-player">
 <!--            <audio controls src="audio/"></audio>-->
@@ -137,7 +136,7 @@
         <div id="main">
             <div id="page-main">
                 <h1>HUAWEI MATE60PRO</h1>
-                <img src="image/mate60p.jpg" height="630px">
+                <img src="/image/mate60p.jpg" height="630px">
             </div>
             <div id="page-side">
                 <ul>
@@ -148,7 +147,7 @@
                     <li><a href="#">热点</a></li>
                 </ul>
             </div>
-            <div id="AD">
+            <div id="AD" style="display: none">
                 <ul>
                     <li>
                         <a href="#AD0" id="AD0">
@@ -169,12 +168,7 @@
             </div>
         </div>
     </div>
-    <div id="pop">
-        <div id="popPRI" class="popup">
-            <h2 style="text-align: center">隐私</h2>
-            <br><button onclick="hidePopup('popPRI')">关闭弹窗</button>
-        </div>
-    </div>
+    <div id="pop"><div id="popup" class="popup"></div></div>
     <div id="footer">
         <div id="lang">
             <select id="langSelect" >
@@ -185,15 +179,16 @@
             </select>
             <input type="button" value="确定" onclick="setLang()">
         </div>
-        <script src="script/lang.js" type="text/javascript" rel="script"></script>
+        <script src="/script/lang.js" type="text/javascript" rel="script"></script>
         <div id="linkwe">
-            <a href="#">联系我们</a>
-            <a href="#" onclick="showPopup('popPRI')">隐私</a>
-            <a href="#">商标</a>
-            <a href="#">使用条款</a>
+            <a href="#">关于我们</a>
+            <a href="#" onclick="showPopup('popup','privacy')">隐私</a>
+            <a href="#" onclick="showPopup('popup','trademark')">商标</a>
+            <a href="#" onclick="showPopup('popup','use')">使用条款</a>
+            <script src="/script/popup.js"></script>
         </div>
         <div id="copyright">
-            <p>&regMacrohard2024基情提供</p>
+            <center><p>&regMacrohard2024基情提供</p></center>
         </div>
     </div>
   </body>

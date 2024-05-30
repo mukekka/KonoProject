@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/json/article/SC-article.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/About.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/article/SC-article.json" charset="GBK" />
     <file url="file://$PROJECT_DIR$/json/lang/en.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/lang/jp.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/lang/sc.json" charset="UTF-8" />
@@ -10,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/php/link-db.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/userset.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/script/funclib.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/script/popup.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/script/userset.js" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
