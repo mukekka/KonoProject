@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--原文章:
+https://blog.csdn.net/fhqiigu/article/details/17356647
+-->
+<html lang="ja">
+<head>
+	<meta charset="Shift_JIS"/>
+	<title>当社について</title>
+	<style>
+		@font-face {
+			font-family: ModerDOS;
+			src: url("font/ModerDOS437-2.ttf");
+		}
+		body {
+			background-color: grey;
+		}
+		#window {
+			margin: auto 30%;
+			display: block;
+			background-color: #000000;
+			height: 550px;
+			width: 550px;
+			font-family: "MS Gothic";
+			font-size: 13.75px;
+			color: #CCCCCC;
+			resize: none;
+			outline: none;
+			position: fixed;
+			user-select: none;
+			text-decoration: none;
+			-webkit-appearance: none;
+			-webkit-text-fill-color: #CCCCCC;
+			white-space: nowrap;
+			caret: #CCCCCC;
+			filter: blur(0.25px);
+		}
+		#text {
+			background-color: #000;
+			height: 550px;
+			white-space: pre;
+		}
+		p{
+			height: 13.75px;
+			margin: 0;
+			padding: 0;
+		}
+		input {
+			display: inline-block;
+			font-family: "MS Mincho";
+			background-color: #000000;
+			border: none;
+			font-size: 10px;
+			color: #CCCCCC;
+			outline: none;
+			height: 10px;
+			width: 325px;
+			word-wrap: break-word;
+		}
+		input::-moz-selection{
+			background-color: #CCCCCC;
+			color: #000000;
+		}
+		input::selection{
+			background-color: #CCCCCC;
+			color: #000000;
+		}
+	</style>
+	<script src="script/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(document).keyup(function (event) {
+				if (event.keyCode == 13) {
+					$.ajax({
+						type: "POST",
+						url: "ok.php",
+						data: "code=" + $("#in").val(),
+						success: function (msg) {
+							$("ul").append("<li>" + $("#in").val() + "</li>");  //将?入的?出到界面
+							$("ul").append("<li>" + msg + "</li>");             //?取返回?并?出
+							$("#in").val("");                               //清空?入框
+							$("#text").scrollTop($("#text").scrollTop() + 32);//??条拉到最下面，?示出?入框
+						}
+					});
+				}
+			});
+			$("#in")[0].focus();
+		});
+	</script>
+</head>
+<body>
+	<div id="window">
+		<div id="text">NEC PC-9800 ｼﾘｰｽﾞ　ﾊﾟｰｿﾅﾙ　ｺﾝﾋﾟｭｰﾀ
+
+ﾏｲｸﾛｿﾌﾄ　MS-DOS　ﾊﾞｰｼﾞｮﾝ　5.00A
+Copyright (C) 1981.1992 Microsoft Corp. /NEC Corporation
+
+HIMEM: XMSドライバ Ver.2.60 - 05/10/90
+XMS仕様バージョン 2.0
+Copyright　1988-1990 Microsoft-1990 Microsoft Corp./NEC Corpration
+
+64K ハイメモリ領域が有効です
+
+ＥＭＭ３８６ドライバ
+(C) Copyright Microsoft Corp. /NEC Corpration 1986,1991
+
+  ＥＭＳが使用可能です
+　　使用可能なページ数は   32です
+   使用可能なハンドル数は   64です
+   ページフレームアドレスは　C000Hです
+
+  プリンタが使用可能です
+
+　　ＲＳ-２３２Ｃインターフェースが使用可能です
+Microsoft (R) KKCFUNC ﾊﾞｰｼﾞｮﾝ　1.10
+Copyright (C) Microsoft Corp. 1991. All rights reserved.
+
+KKCFUNC が組み込まれました.
+
+  ＡＩかな漢字変換が使用可能です
+  辞書は、ドライブ　A: の NECAI.SYS  です
+
+Command ﾊﾞｰｼﾞｮﾝ 5.00A
+A:\>About.com
+┌──┬───────┬────┐
+│制作│Ｋｏｉｚｕｍｉ│ゞ清風ゃ│
+├──┼───────┼────┤
+A:\><input type="text" name="" id='in' maxlength="65">
+		</div>
+	</div>
+</body>
+</html>

@@ -22,6 +22,7 @@
     border-radius: 3px;
     font-family: SS;
     margin-left: 35%;
+    height: auto;
 }
 
 #popuptext{
@@ -62,3 +63,7 @@
 #popuptext::-webkit-scrollbar-corner{}/*横向和纵向交汇*/
 #popuptext::-webkit-resizer{}/*拖动按钮*/
 #popuptext::-webkit-scrollbar-button{}/*箭头按钮*/
+
+#popup h2,#popup h3,#popup p{
+    text-indent: 2em;
+}

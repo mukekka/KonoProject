@@ -19,7 +19,8 @@ function showPopup(id, article) {
                 div.innerHTML += '<' + lable + '>' + content + '</' + lable + '>';
             }
         }
-        div.innerHTML += '<br><button onclick="hidePopup(\'popup\')" id="popupButton">关闭</button>';
+        var button = data['other'][0]['content'];
+        div.innerHTML += '<br><button onclick="hidePopup(\'popup\')" id="popupButton">'+button+'</button>';
     });
 }
 
