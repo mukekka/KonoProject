@@ -1,0 +1,173 @@
+{
+	"lang": [
+		{
+			"id": "logoContent",
+			"content": "INFINITY",
+			"type": "p"
+		},
+		{
+			"id": "navTitle1",
+			"content": "Qualcomm(クアルコム)",
+			"type": "a"
+		},
+		{
+			"id": "navTitle1Opt1",
+			"content": "Snapdragon 8 Gen 1",
+			"type": "a"
+		},
+		{
+			"id": "navTitle1Opt2",
+			"content": "Snapdragon 8 Gen 2",
+			"type": "a"
+		},
+		{
+			"id": "navTitle1Opt3",
+			"content": "Snapdragon 8 Gen 3",
+			"type": "a"
+		},
+		{
+			"id": "navTitle2",
+			"content": "MediaTek (メディアテック)",
+			"type": "a"
+		},
+		{
+			"id": "navTitle2Opt1",
+			"content": "Dimensity 9000",
+			"type": "a"
+		},
+		{
+			"id": "navTitle2Opt2",
+			"content": "Dimensity 9200",
+			"type": "a"
+		},
+		{
+			"id": "navTitle2Opt3",
+			"content": "Dimensity 9300",
+			"type": "a"
+		},
+		{
+			"id": "navTitle3",
+			"content": "HiSilicon(ハイシリコン)",
+			"type": "a"
+		},
+		{
+			"id": "navTitle3Opt1",
+			"content": "Kirin 9000",
+			"type": "a"
+		},
+		{
+			"id": "navTitle3Opt2",
+			"content": "Kirin 9900",
+			"type": "a"
+		},
+		{
+			"id": "navTitle3Opt3",
+			"content": "Kirin 9900S",
+			"type": "a"
+		},
+		{
+			"id": "navTitle4",
+			"content": "Apple(アップル)",
+			"type": "a"
+		},
+		{
+			"id": "navTitle4Opt1",
+			"content": "A15",
+			"type": "a"
+		},
+		{
+			"id": "navTitle4Opt2",
+			"content": "A16",
+			"type": "a"
+		},
+		{
+			"id": "navTitle4Opt3",
+			"content": "A17Pro",
+			"type": "a"
+		},
+		{
+			"id": "navTitle5",
+			"content": "Apple M",
+			"type": "a"
+		},
+		{
+			"id": "navTitle5Opt1",
+			"content": "&nbsp;M1&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "navTitle5Opt2",
+			"content": "&nbsp;M2&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "navTitle5Opt3",
+			"content": "&nbsp;M3&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "offlineuser",
+			"content": "オフライン ユーザー",
+			"type": "a"
+		},
+		{
+			"id": "signin",
+			"content": "&nbsp;&nbsp;ログイン&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "setup",
+			"content": "&nbsp;&nbsp;セット&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "logoff",
+			"content": "&nbsp;&nbsp;ログアウト&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "okanekudasai",
+			"content": "&nbsp;&nbsp;お金ください&nbsp;&nbsp;",
+			"type": "a"
+		},
+		{
+			"id": "hotsearch",
+			"content": "ホット",
+			"type": "placeholder"
+		},
+		{
+			"id": "search",
+			"content": "検索",
+			"type": "value"
+		},
+		{
+			"id": "about",
+			"content": "運営会社",
+			"type": "a"
+		},
+		{
+			"id": "privacy",
+			"content": "プライバシー",
+			"type": "a"
+		},
+		{
+			"id": "trademark",
+			"content": "商標",
+			"type": "a"
+		},
+		{
+			"id": "usearticle",
+			"content": "利用規約",
+			"type": "a"
+		},
+		{
+			"id": "reglogo",
+			"content": "&regMacrohard2024 支持して",
+			"type": "p"
+		},
+		{
+			"id": "",
+			"content": ""
+		}
+	]
+}

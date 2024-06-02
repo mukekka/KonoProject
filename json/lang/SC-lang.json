@@ -1,27 +1,142 @@
 {
-	"header": [
+	"lang": [
 		{
-			"title": "INFINITY"
+			"id": "logoContent",
+			"content": "INFINITY"
 		},
 		{
-			"nav": [
-				{
-					"SP": [
-						{
-							"nav-title": "高通"
-						},
-						{
-							"proj": "骁龙8Gen1"
-						},
-						{
-							"proj": "骁龙8Gen2"
-						},
-						{
-							"proj": "骁龙8Gen3"
-						}
-					]
-				}
-			]
+			"id": "navTitle1",
+			"content": "高通"
+		},
+		{
+			"id": "navTitle1Opt1",
+			"content": "骁龙8Gen1"
+		},
+		{
+			"id": "navTitle1Opt2",
+			"content": "骁龙8Gen2"
+		},
+		{
+			"id": "navTitle1Opt3",
+			"content": "骁龙8Gen3"
+		},
+		{
+			"id": "navTitle2",
+			"content": "联发科"
+		},
+		{
+			"id": "navTitle2Opt1",
+			"content": "天玑9000"
+		},
+		{
+			"id": "navTitle2Opt2",
+			"content": "天玑9200"
+		},
+		{
+			"id": "navTitle2Opt3",
+			"content": "天玑9300"
+		},
+		{
+			"id": "navTitle3",
+			"content": "海思"
+		},
+		{
+			"id": "navTitle3Opt1",
+			"content": "麒麟9000"
+		},
+		{
+			"id": "navTitle3Opt2",
+			"content": "麒麟9900"
+		},
+		{
+			"id": "navTitle3Opt3",
+			"content": "麒麟9900S"
+		},
+		{
+			"id": "navTitle4",
+			"content": "苹果"
+		},
+		{
+			"id": "navTitle4Opt1",
+			"content": "A15"
+		},
+		{
+			"id": "navTitle4Opt2",
+			"content": "A16"
+		},
+		{
+			"id": "navTitle4Opt3",
+			"content": "A17Pro"
+		},
+		{
+			"id": "navTitle5",
+			"content": "苹果M"
+		},
+		{
+			"id": "navTitle5Opt1",
+			"content": "&nbsp;M1&nbsp;&nbsp;"
+		},
+		{
+			"id": "navTitle5Opt2",
+			"content": "&nbsp;M2&nbsp;&nbsp;"
+		},
+		{
+			"id": "navTitle5Opt3",
+			"content": "&nbsp;M3&nbsp;&nbsp;"
+		},
+		{
+			"id": "offlineuser",
+			"content": "离线用户"
+		},
+		{
+			"id": "signin",
+			"content": "&nbsp;&nbsp;登录&nbsp;&nbsp;"
+		},
+		{
+			"id": "setup",
+			"content": "&nbsp;&nbsp;设置&nbsp;&nbsp;"
+		},
+		{
+			"id": "logoff",
+			"content": "&nbsp;&nbsp;登出&nbsp;&nbsp;"
+		},
+		{
+			"id": "okanekudasai",
+			"content": "&nbsp;&nbsp;投喂&nbsp;&nbsp;"
+		},
+		{
+			"id": "hotsearch",
+			"content": "热搜",
+			"type": "placeholder"
+		},
+		{
+			"id": "search",
+			"content": "搜索",
+			"type": "value"
+		},
+		{
+			"id": "about",
+			"content": "关于我们"
+		},
+		{
+			"id": "privacy",
+			"content": "隐私"
+		},
+		{
+			"id": "trademark",
+			"content": "商标"
+		},
+		{
+			"id": "usearticle",
+			"content": "使用条款"
+		},
+		{
+			"id": "reglogo",
+			"content": "&regMacrohard2024基情提供"
+		},
+		{
+			"id": "",
+			"content": ""
 		}
 	]
 }
