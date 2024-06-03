@@ -211,7 +211,6 @@
                 $link = new mysqli('localhost', 'root', '123456', 'users');//连接到数据库
                 if ($link->connect_error){con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
                 else con('连接成功');//连接成功
-
                 $UserName = urldecode($_COOKIE['user']);
                 $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
                 echo "<script>
@@ -237,8 +236,17 @@
                     "UserRePass"=>$_POST['repasswordinput'],
                     "UserHash"=>""
                 );
-                //$upload = mysqli_query($link,"update users set UserName = '$UserInfoUpload[UserName]',Sex = '$UserInfoUpload[UserSex]',Birthday = '$UserInfoUpload[UserBirthday]',Resume = '$UserInfoUpload[UserResume]',Email = '$UserInfoUpload[UserEmail]' where users.UserID = $UserInfo[UserID];");
-                $upload = mysqli_query($link,"update users set Email = '$UserInfoUpload[UserEmail]' where users.UserID = '$UserInfo[UserID]';");
+				if ($UserInfoUpload[UserName]=='') $UserInfoUpload[UserName]=urldecode($_COOKIE['user']);
+				if ($UserInfoUpload[UserSex]=='') $UserInfoUpload[UserSex]=$UserInfo[Sex];
+				if ($UserInfoUpload[UserEmail]=='') $UserInfoUpload[UserEmail]=$UserInfo[Email];
+                $upload = mysqli_query($link,"update users
+													set UserName,Sex,Birthday,Resume,Email
+													value '$UserInfoUpload[UserName]',
+														  '$UserInfoUpload[UserSex]',
+														  '$UserInfoUpload[UserBirthday]',
+														  '$UserInfoUpload[UserResume]',
+														  '$UserInfoUpload[UserEmail]'
+													where users.UserID = $UserInfo[UserID];");
 
                 if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码为空
                     if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
@@ -257,7 +265,8 @@
                 }else{
                     con('无密码');
                 }
-            }mysqli_close($link);
+            }
+			mysqli_close($link);
             ?>
         </div>
     </div>

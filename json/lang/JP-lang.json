@@ -96,11 +96,6 @@
 			"type": "a"
 		},
 		{
-			"id": "setup",
-			"content": "セット",
-			"type": "a"
-		},
-		{
 			"id": "logoff",
 			"content": "ログアウト",
 			"type": "a"

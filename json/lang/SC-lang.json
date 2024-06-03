@@ -96,11 +96,6 @@
 			"type": "a"
 		},
 		{
-			"id": "setup",
-			"content": "  设置  ",
-			"type": "a"
-		},
-		{
 			"id": "logoff",
 			"content": "  登出  ",
 			"type": "a"

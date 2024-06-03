@@ -1,19 +1,9 @@
 var langSelect,value;
 var langArr = ['SC','TC','EN','JP']
-var UserID = "";
-var signin = "";
-var givemoney = "";
-
 function indexlangset(lang){
     var jsonurl = 'json/lang/'+lang+'-lang.json';
     $.getJSON(jsonurl,function (data){
         for (var i = 0; i < Object.keys(data['lang']).length; i++) {
-            if (data['lang'][i]['id']=='UserID'){
-                UserID=data['lang'][i]['content'].toString();
-                continue;
-            }else if(data['lang'][i]['id']==''){
-            
-            }
             switch (data['lang'][i]['type']){
                 case 'placeholder':
                     document.getElementById(data['lang'][i]['id']).placeholder = data['lang'][i]['content'].toString();
@@ -28,7 +18,7 @@ function indexlangset(lang){
                     console.log(data['lang'][i]['content'])
                     break;
                 case 'a':
-                    console.log(typeof(data['lang'][i]['content']))
+                    console.log(data['lang'][i]['content'])
                     document.getElementById(data['lang'][i]['id']).innerText = data['lang'][i]['content'].toString();
                     break;
             }
@@ -63,7 +53,6 @@ var langCookie = getCookie('lang');
 switch (langCookie){
     case langCookie != langArr:
         setCookie('lang','SC','365','/')
-        console.log('a')
         break;
     case 'SC':
         selectElement.value = 'SC';
