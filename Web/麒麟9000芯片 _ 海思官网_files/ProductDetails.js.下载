@@ -1,0 +1,127 @@
+﻿$(function() {
+
+    var win = $(window)
+    var win_w = win.width()
+    var w835 = 835
+
+
+    // 视频播放
+    $(document).on('click', '.product-detail-con2 .con .pic ', function(e) {
+        var devideo = $(this).find('video')[0];
+        if (devideo.paused) {
+            devideo.play()
+            $(this).find('.play-icon').hide()
+        } else {
+            $(this).find('.play-icon').show()
+            devideo.pause()
+        }
+        return false;
+    })
+
+
+    var swiper = new Swiper(".mySwiper-detail", {
+        slidesPerView: 1,
+        spaceBetween: 2,
+        pagination: {
+            el: ".swiper-pagination1",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next1",
+            prevEl: ".swiper-button-prev1",
+        },
+        keyboard: true,
+        observer: true,
+        observeParents: true,
+        breakpoints: {
+            850: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+                // grid: {
+                //     rows: 2,
+                // },
+            },
+        },
+        on: {
+            slideChange: function() {
+                var i = this.activeIndex;
+                $('.vdcon video').eq(i).addClass('vd-show').siblings().removeClass('vd-show');
+            }
+        },
+
+    });
+
+
+    // var maxH = 0;
+    // $(".case-con li").each(function() {
+    //     var itemH = $(this).height();
+    //     if (itemH > maxH) {
+    //         maxH = itemH;
+    //     }
+    // });
+    // $('.case-con li').height(maxH);
+
+
+    for (var i = 0; i < $('.mySwiper-detail li').length; i++) {
+        if (i > 2) {
+            $('.mySwiper-detail').addClass('on')
+        } else {
+            $('.mySwiper-detail').removeClass('on')
+
+        }
+        if (win_w < w835 && i > 0) {
+            $('.mySwiper-detail').addClass('on-mob');
+            $('.mySwiper-detail').removeClass('on')
+
+        }
+        if (win_w < w835 && i == 1) {
+            $('.mySwiper-detail .swiper-wrapper').css('justify-content', 'start')
+        }
+    }
+
+
+    var swiper = new Swiper(".mySwiper-chip", {
+        slidesPerView: 2,
+        spaceBetween: 18,
+        pagination: {
+            el: ".swiper-pagination2",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next2",
+            prevEl: ".swiper-button-prev2",
+        },
+        keyboard: true,
+        observer: true,
+        observeParents: true,
+        breakpoints: {
+            850: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+        on: {
+            slideChange: function() {
+                var i = this.activeIndex;
+                $('.vdcon video').eq(i).addClass('vd-show').siblings().removeClass('vd-show');
+            }
+        }
+    });
+
+    for (var i = 0; i < $('.mySwiper-chip li').length; i++) {
+        if (i > 2) {
+            $('.mySwiper-chip').addClass('on')
+        } else {
+            $('.mySwiper-chip').removeClass('on')
+
+        }
+
+        if (win_w < w835 && i > 1) {
+            $('.product-detail-con4 .con').addClass('on-mob');
+            $('.mySwiper-chip').removeClass('on')
+        }
+        if (win_w < w835 && i == 1) {
+            $('.product-detail-con4 .tvchip-list').css('justify-content', 'start')
+        }
+    }
+})

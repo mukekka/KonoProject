@@ -8,6 +8,7 @@
     <script src="/script/jquery-3.2.1.min.js"></script>
     <script src="/script/howler.min.js"></script>
     <script src="/script/funclib.js"></script>
+	<script src="/script/lang.js" type="text/javascript" rel="script"></script>
     <link href="/style/popup.css" rel="stylesheet" type="text/css"><!--弹窗-->
     <link href="/style/Index/global.css" rel="stylesheet" type="text/css"><!-- 全局设置 -->
     <link href="/style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
@@ -65,23 +66,13 @@
                         </div>
                     </div>
                 </li>
-                <li class="header-site-nav-proj">
-                    <div class="dropdown">
-                        <a href="#" id="navTitle5">苹果M</a>
-                        <div class="dropdown-content" style="left: 2px;">
-                            <p><a href="#" id="navTitle5Opt1">&nbsp;M1&nbsp;&nbsp;</a></p>
-                            <p><a href="#" id="navTitle5Opt2">&nbsp;M2&nbsp;&nbsp;</a></p>
-                            <p><a href="#" id="navTitle5Opt3">&nbsp;M3&nbsp;&nbsp;</a></p>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </div>
         <div id="login">
             <ul class="header-site-nav">
                 <li class="header-site-nav-proj">
                     <div class="dropdown">
-                        <a id="UserID" href="#" style="padding-right: 10px" id="offlineuser">离线用户</a>
+                        <a id="UserID" href="#" style="padding-right: 10px">离线用户</a>
                         <div class="dropdown-content" style="right: -10px">
                             <p><a href="/Login.php" id="signin">&nbsp;&nbsp;登录&nbsp;&nbsp;</a></p>
                             <p><a href="/Userset.php" id="setup">&nbsp;&nbsp;设置&nbsp;&nbsp;</a></p>
@@ -134,8 +125,18 @@
     <div id="subject">
         <div id="main">
             <div id="page-main">
-                <h1>HUAWEI MATE60PRO</h1>
-                <img src="/image/mate60p.jpg" height="630px">
+	            <div style="height: 100%;width: 40%;display: inline-block;margin-right: 50px;text-align: left;color: #4F4F4F">
+		            <img src="image/mediatek-logo.svg" style="margin-left: 25%">
+		            <p style="font-size: 27px">联发科技推动消费者喜爱的品牌前进</p>
+		            <br>
+		            <p>联发科技为全球知名品牌的产品提供动力，贴近你我的日常生活 — 从智能手机、电视、语音助手到 Chromebook，以及健身器材和家用 Wi-Fi 路由器，联发科技无所不在，让你无论在家、工作、旅行，观看流媒体影片或是玩游戏，我们的芯片和技术都能满足你每天充满挑战性的各种需求。</p>
+		            <br>
+		            <p>联发科技是多媒体、AI 人工智能、运算、无线通信等多项技术领域的专家，不仅有优异性能，更具备高能效，每颗芯片都蕴含我们的核心技术，赋能你使用的各种产品。</p>
+		            <br>
+	            </div>
+	            <div style="display: inline-block;margin-top: 40px">
+		            <img src="image/a980i-oggiy.jpg" style="height: 350px;width: 400px">
+	            </div>
             </div>
             <div id="page-side">
                 <ul>
@@ -162,7 +163,6 @@
                     <li><a href="#AD7">7.火影回档佐助</a></li>
                     <li><a href="#AD8">8.广告位招租</a></li>
                     <li><a href="#AD9">9.广告位招租</a></li>
-                    <li><a href="#AD10">10.广告位招租</a></li>
                 </ul>
             </div>
         </div>
@@ -181,7 +181,6 @@
                 <option value="JP">日本語</option>
             </select>
         </div>
-        <script src="/script/lang.js" type="text/javascript" rel="script"></script>
         <div id="linkwe">
             <a href="About-SC.html" id="about">关于我们</a>
             <a onclick="showPopup('popup','privacy')" id="privacy">隐私</a>

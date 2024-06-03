@@ -7,7 +7,7 @@
 		},
 		{
 			"id": "navTitle1",
-			"content": "Qualcomm(クアルコム)",
+			"content": "クアルコム",
 			"type": "a"
 		},
 		{
@@ -27,7 +27,7 @@
 		},
 		{
 			"id": "navTitle2",
-			"content": "MediaTek (メディアテック)",
+			"content": "メディアテック",
 			"type": "a"
 		},
 		{
@@ -47,7 +47,7 @@
 		},
 		{
 			"id": "navTitle3",
-			"content": "HiSilicon(ハイシリコン)",
+			"content": "ハイシリコン",
 			"type": "a"
 		},
 		{
@@ -67,7 +67,7 @@
 		},
 		{
 			"id": "navTitle4",
-			"content": "Apple(アップル)",
+			"content": "アップル",
 			"type": "a"
 		},
 		{
@@ -86,48 +86,28 @@
 			"type": "a"
 		},
 		{
-			"id": "navTitle5",
-			"content": "Apple M",
-			"type": "a"
-		},
-		{
-			"id": "navTitle5Opt1",
-			"content": "&nbsp;M1&nbsp;&nbsp;",
-			"type": "a"
-		},
-		{
-			"id": "navTitle5Opt2",
-			"content": "&nbsp;M2&nbsp;&nbsp;",
-			"type": "a"
-		},
-		{
-			"id": "navTitle5Opt3",
-			"content": "&nbsp;M3&nbsp;&nbsp;",
-			"type": "a"
-		},
-		{
-			"id": "offlineuser",
+			"id": "UserID",
 			"content": "オフライン ユーザー",
 			"type": "a"
 		},
 		{
 			"id": "signin",
-			"content": "&nbsp;&nbsp;ログイン&nbsp;&nbsp;",
+			"content": "ログイン",
 			"type": "a"
 		},
 		{
 			"id": "setup",
-			"content": "&nbsp;&nbsp;セット&nbsp;&nbsp;",
+			"content": "セット",
 			"type": "a"
 		},
 		{
 			"id": "logoff",
-			"content": "&nbsp;&nbsp;ログアウト&nbsp;&nbsp;",
+			"content": "ログアウト",
 			"type": "a"
 		},
 		{
 			"id": "okanekudasai",
-			"content": "&nbsp;&nbsp;お金ください&nbsp;&nbsp;",
+			"content": "お金ください",
 			"type": "a"
 		},
 		{

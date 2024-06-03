@@ -1,0 +1,90 @@
+/**
+ * The extend helper offers a way to easily extend classes.
+ *
+ * See this gist: https://gist.github.com/KunalT6569/37504111b68002db1cc424a7fd8a994f#file-es5-inheritance-js
+ *
+ * @param child
+ * @param parent
+ * @private
+ */
+function __extends(child, parent) {
+    function fn() {
+        this.constructor = child; // this can be omitted
+    }
+
+    fn.prototype = parent.prototype;
+
+    child.prototype = new fn();
+}
+
+
+/**
+ * Simple debounce util
+ *
+ * @param fn
+ * @param delay
+ * @returns {unknown}
+ * @private
+ */
+function __debounce(fn, delay) {
+    var timerId;
+    return function () {
+        if (timerId) {
+            clearTimeout(timerId);
+        }
+        timerId = setTimeout(function () {
+            fn(arguments);
+            timerId = null;
+        }.bind(this), delay);
+    }.bind(this);
+};
+
+/**
+ * Returns the depth of an element in the DOM
+ *
+ * @param {Element} element
+ * @return {number}
+ */
+function __getComponentDepth(element) {
+    var depth = 0;
+    var el = element;
+    while (el.parentElement) {
+        ++depth;
+        el = el.parentElement;
+    }
+    return depth;
+}
+
+/**
+ * Helper function to create unique instances of the components visible on the current page.
+ *
+ */
+function __initiateComponents() {
+    var componentElements = document.body.querySelectorAll('[data-component]');
+    var components = [];
+
+    // Create instances for all components on the page, this way all of them are unique and can be triggered individually.
+    Array.from(componentElements).forEach(function (element) {
+        components.push({
+            depth: __getComponentDepth(element),
+            element: element,
+            constructor: window.components[element.dataset.component]
+        });
+    });
+
+    // Sort component list by deepest element first, this will make sure that child components are constructed before any
+    // parents, allowing the parents to directly reference them.
+    components.concat().sort(function (a, b) {
+        return b.depth - a.depth;
+    }).forEach(function (component) {
+        try {
+            // Store the instance on the component so we can retrieve it later on.
+            component.element.instance = new component.constructor(component.element);
+        } catch (error) {
+            // Note: Maybe we want to hide the entire component if it fails to initiate?
+            console.error('Unable to initiate component', error);
+        }
+    });
+
+    return components;
+}

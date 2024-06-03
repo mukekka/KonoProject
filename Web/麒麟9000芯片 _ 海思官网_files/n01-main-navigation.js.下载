@@ -1,0 +1,325 @@
+window.components = window.components || {};
+
+window.components['n01-main-navigation'] = (function() {
+
+    // The transition controller manages the page transitions and is unique to the component.
+    var N01MainNavigationTransitionController = (function(TransitionController) {
+        __extends(ComponentTransitionController, TransitionController);
+
+        function ComponentTransitionController(parent, options) {
+            TransitionController.call(this, parent, options);
+        }
+
+        return ComponentTransitionController;
+    })(TransitionController);
+
+
+    /**
+     * Each component extends the AbstractComponent that holds some helper methods, for more information on animations
+     * you could take a look at the documentation.
+     *
+     * - https://github.com/larsvanbraam/transition-controller
+     * - http://greensock.com/
+     */
+    return (function(AbstractComponent) {
+        __extends(N01MainNavigation, AbstractComponent);
+
+        function N01MainNavigation(element) {
+            AbstractComponent.call(this, element);
+        }
+
+        N01MainNavigation.prototype.handleMenuButtonClick = function() {
+            if (this.isActive) {
+                var tl = new TimelineMax({
+                    onComplete: function() {
+                        this.element.classList.remove('has-overlay');
+                        this.menuButton.classList.remove(this.activeClass);
+                        this.menuItemWrapper.classList.remove(this.activeClass);
+                        bodyScrollLock.clearAllBodyScrollLocks();
+                        TweenMax.set(this.menuItem, {
+                            delay: 0.3,
+                            clearProps: 'all'
+                        });
+                    }.bind(this)
+                });
+                tl.staggerTo(this.menuTrigger, 0.6, {
+                    y: -7,
+                    autoAlpha: 0,
+                    ease: Expo.easeOut,
+                }, -0.05);
+            } else {
+                this.element.classList.add('has-overlay');
+                this.menuItemWrapper.classList.add(this.activeClass);
+                this.menuButton.classList.add(this.activeClass);
+
+                try {
+                    TweenMax.staggerFromTo(this.menuTrigger, 0.8, {
+                        y: 7,
+                        autoAlpha: 0,
+                    }, {
+                        y: 0,
+                        autoAlpha: 1,
+                        clearProps: 'all',
+                        ease: Expo.easeOut,
+                    }, 0.07);
+
+                    var cards = this.menuItem[0].querySelectorAll('.js-card-wrapper .card');
+                    if (cards.length) {
+                        this.showCards(cards);
+                    }
+
+                    var activeItem = this.getElement('.js-menu-item.is-active');
+                    if (!activeItem) {
+                        this.menuItem[0].classList.add(this.activeClass);
+                    }
+
+                    this.menuItem.forEach(function(menuItem, index) {
+                        if (menuItem.classList.contains(this.activeClass)) {
+                            TweenMax.set(this.dropdownContent[index], {
+                                overflow: 'hidden'
+                            });
+                            bodyScrollLock.disableBodyScroll(this.dropdownContent[index]);
+                        }
+                    }.bind(this));
+                } catch (e) {
+
+                }
+            }
+            this.isActive = !this.isActive;
+        };
+
+        N01MainNavigation.prototype.showCards = function(cards) {
+            TweenMax.staggerFrom(cards, 0.7, {
+                autoAlpha: 0,
+                y: 50,
+                cycle: {
+                    delay: function(i) {
+                        if (window.matchMedia('(max-width: 1279px)').matches) {
+                            return 0;
+                        }
+                        return (Math.abs(Math.floor(cards.length / 2) - i) * 0.25) + 0.1;
+
+                    }
+                },
+                ease: Expo.easeOut,
+                clearProps: 'all'
+            }, 0.07);
+        };
+
+        N01MainNavigation.prototype.showSubMenuItem = function(item) {
+            TweenMax.set(item, {
+                height: 'auto',
+            });
+            TweenMax.from(item, 0.6, {
+                height: 0,
+                ease: Expo.easeOut,
+            });
+        };
+
+        N01MainNavigation.prototype.hideSubMenuItem = function(item) {
+            TweenMax.to(item, 0.6, {
+                height: 0,
+                ease: Expo.easeOut,
+                clearProps: 'all'
+            });
+        };
+
+        N01MainNavigation.prototype.handleResize = function() {
+            this.isActive = false;
+            this.menuItem.forEach(function(subMenuContent) {
+                subMenuContent.classList.remove(this.activeClass);
+            }.bind(this));
+            this.subMenuContent.forEach(function(subMenuContent) {
+                subMenuContent.classList.remove(this.activeClass);
+                TweenMax.set(subMenuContent.children[1], {
+                    clearProps: 'all'
+                });
+            }.bind(this));
+            TweenMax.set(this.menuTrigger, {
+                clearProps: 'all'
+            });
+            this.element.classList.remove('has-overlay');
+            this.menuButton.classList.remove(this.activeClass);
+            this.menuItemWrapper.classList.remove(this.activeClass);
+            bodyScrollLock.clearAllBodyScrollLocks();
+        };
+
+        N01MainNavigation.prototype.handleSubMenuButtonClick = function(clickedItemIndex) {
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+
+                this.subMenuContent.forEach(function(subMenuContent, index) {
+                    if (index === clickedItemIndex) {
+                        if (subMenuContent.classList.contains(this.activeClass)) {
+                            subMenuContent.classList.remove(this.activeClass);
+                            this.hideSubMenuItem(subMenuContent.children[1]);
+                        } else {
+                            subMenuContent.classList.add(this.activeClass);
+                            this.showSubMenuItem(subMenuContent.children[1]);
+                        }
+                    } else if (subMenuContent.classList.contains(this.activeClass)) {
+                        subMenuContent.classList.remove(this.activeClass);
+                        this.hideSubMenuItem(subMenuContent.children[1]);
+                    }
+                }.bind(this));
+            }
+
+            if (/MSIE|Trident/i.test(navigator.userAgent)) {
+                var btn = this.subMenuTrigger[clickedItemIndex];
+                var anchor = btn.children[0];
+                if (anchor.tagName === "A") {
+                    location = anchor.href;
+                }
+            }
+        };
+
+        N01MainNavigation.prototype.handleCategoryButtonClick = function(clickedItemIndex) {
+            bodyScrollLock.clearAllBodyScrollLocks();
+            if (this.searchPanel.classList.contains(this.activeClass)) {
+                this.searchPanel.classList.remove(this.activeClass);
+            }
+            this.menuItem.forEach(function(menuItem, index) {
+                if (index === clickedItemIndex && !menuItem.classList.contains(this.activeClass)) {
+                    bodyScrollLock.disableBodyScroll(this.dropdownContent[index]);
+                    menuItem.classList.add(this.activeClass);
+                    var cards = menuItem.querySelectorAll('.js-card-wrapper .card');
+                    if (cards.length) {
+                        this.showCards(cards);
+                    }
+                } else if (menuItem.classList.contains(this.activeClass)) {
+                    // timeout prevents page from flashing on category change
+                    setTimeout(function() {
+                        menuItem.classList.remove(this.activeClass);
+                    }.bind(this), 200);
+                }
+            }.bind(this));
+        };
+
+        // 20240105
+        $(document).on("click", function(e) {
+            if ($(e.target).closest('.n01-main-navigation').length > 0) return;
+            $(".js-menu-item").removeClass('is-active');
+            $('body').removeClass('header-mask');
+            $("body").css("overflow", "");
+        });
+
+        $(".js-trigger").on("click", function() {
+            if ($(this).parent().hasClass('is-active')) {
+                $('body').removeClass('header-mask');
+            } else {
+                $('body').addClass('header-mask');
+            }
+        });
+        $(".js-close").on("click", function() {
+            $('body').removeClass('header-mask');
+        });
+
+        //   20231229 开始
+        $(".hamburger-toggler").on("click", function() {
+            if ($(this).hasClass('is-active')) {
+                $('body').removeClass('header-mask');
+            } else {
+                $('body').addClass('header-mask');
+                $(".hamburger-toggler").addClass('is-active');
+            }
+        });
+        //   20231229 结束
+
+        N01MainNavigation.prototype.handleCategoryButtonFocus = function(index) {
+            this.menuItem[index].setAttribute("aria-expanded", true);
+        };
+
+        N01MainNavigation.prototype.checkIE = function() {
+            var isIE10 = false;
+            /*@cc_on
+                if (/^10/.test(@_jscript_version)) {
+                    isIE10 = true;
+                }
+            @*/
+
+            if (isIE10) {
+                this.menuItem.forEach(function(menuItem) {
+                    var cards = Array.from(menuItem.querySelectorAll('.js-card-wrapper'));
+                    if (cards.length === 4) {
+                        cards.forEach(function(card) {
+                            card.classList.add('ie-fixable-size');
+                        });
+                    }
+                }.bind(this));
+            }
+        };
+
+        N01MainNavigation.prototype.handleCategoryButtonBlur = function(index) {
+            this.menuItem[index].setAttribute("aria-expanded", false);
+        };
+
+        N01MainNavigation.prototype.openSearchPanel = function() {
+            bodyScrollLock.clearAllBodyScrollLocks();
+            bodyScrollLock.disableBodyScroll(this.searchPanel);
+            this.menuItem.forEach(function(menuItem, index) {
+                if (menuItem.classList.contains(this.activeClass)) {
+                    menuItem.classList.remove(this.activeClass);
+                }
+            });
+            this.searchPanel.classList.add(this.activeClass);
+            components['se01-search'].prototype.updateHistory('popup-search');
+        };
+
+        // The component has been initialised, create the transition controller
+        N01MainNavigation.prototype.init = function() {
+            this.menuButton = this.getElement('.js-menu-toggler');
+            this.menuItemWrapper = this.getElement('.js-menu-items');
+            this.menuItem = this.getElements('.js-menu-item');
+            this.dropdownContent = this.getElements('.js-dropdown-content');
+            this.menuTrigger = this.getElements('.js-trigger');
+            this.subMenuTrigger = this.getElements('.js-sub-menu-trigger');
+            this.subMenuContent = this.getElements('.js-sub-menu-content');
+            this.closeButton = this.getElements('.js-close');
+            this.searchTrigger = this.getElement('.js-search-trigger');
+            this.searchPanel = document.body.querySelector('.js-search-panel');
+            this.activeClass = 'is-active';
+            this.transitionController = new N01MainNavigationTransitionController(this, {
+                name: this.componentId,
+            });
+
+            this.checkIE();
+
+            if (this.menuItemWrapper && this.menuButton) {
+                this.menuButton.addEventListener('click', this.handleMenuButtonClick.bind(this));
+            }
+
+            if (this.menuItem && this.menuTrigger) {
+                this.menuTrigger.forEach(function(menuTrigger, index) {
+                    menuTrigger.addEventListener('click', this.handleCategoryButtonClick.bind(this, index));
+                    menuTrigger.addEventListener('focus', this.handleCategoryButtonFocus.bind(this, index));
+                    menuTrigger.addEventListener('blur', this.handleCategoryButtonBlur.bind(this, index));
+                }.bind(this));
+            }
+
+            if (this.closeButton) {
+                this.closeButton.forEach(function(closeButton, index) {
+                    closeButton.addEventListener('click', this.handleCategoryButtonClick.bind(this, index));
+                }.bind(this));
+            }
+
+            if (this.subMenuTrigger && this.subMenuContent) {
+                this.subMenuTrigger.forEach(function(subMenuTrigger, index) {
+                    subMenuTrigger.addEventListener('click', this.handleSubMenuButtonClick.bind(this, index));
+                }.bind(this));
+            }
+
+            if (window.matchMedia('(max-width: 1023px)').matches && this.menuItem.length) {
+                this.menuItem[0].classList.add(this.activeClass);
+            }
+
+            if (this.searchTrigger) {
+                this.searchTrigger.addEventListener('click', this.openSearchPanel.bind(this));
+            }
+
+            window.addEventListener('resize', __debounce(function() {
+                this.handleResize();
+            }.bind(this)), 100);
+        };
+
+        return N01MainNavigation;
+    })(AbstractComponent);
+})();

@@ -2,107 +2,113 @@
 	"lang": [
 		{
 			"id": "logoContent",
-			"content": "INFINITY"
+			"content": "INFINITY",
+			"type": "p"
 		},
 		{
 			"id": "navTitle1",
-			"content": "高通"
+			"content": "高通",
+			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt1",
-			"content": "骁龙8Gen1"
+			"content": "骁龙8Gen1",
+			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt2",
-			"content": "骁龙8Gen2"
+			"content": "骁龙8Gen2",
+			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt3",
-			"content": "骁龙8Gen3"
+			"content": "骁龙8Gen3",
+			"type": "a"
 		},
 		{
 			"id": "navTitle2",
-			"content": "联发科"
+			"content": "联发科",
+			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt1",
-			"content": "天玑9000"
+			"content": "天玑9000",
+			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt2",
-			"content": "天玑9200"
+			"content": "天玑9200",
+			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt3",
-			"content": "天玑9300"
+			"content": "天玑9300",
+			"type": "a"
 		},
 		{
 			"id": "navTitle3",
-			"content": "海思"
+			"content": "海思",
+			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt1",
-			"content": "麒麟9000"
+			"content": "麒麟9000",
+			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt2",
-			"content": "麒麟9900"
+			"content": "麒麟9900",
+			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt3",
-			"content": "麒麟9900S"
+			"content": "麒麟9900S",
+			"type": "a"
 		},
 		{
 			"id": "navTitle4",
-			"content": "苹果"
+			"content": "苹果",
+			"type": "a"
 		},
 		{
 			"id": "navTitle4Opt1",
-			"content": "A15"
+			"content": "A15",
+			"type": "a"
 		},
 		{
 			"id": "navTitle4Opt2",
-			"content": "A16"
+			"content": "A16",
+			"type": "a"
 		},
 		{
 			"id": "navTitle4Opt3",
-			"content": "A17Pro"
+			"content": "A17Pro",
+			"type": "a"
 		},
 		{
-			"id": "navTitle5",
-			"content": "苹果M"
-		},
-		{
-			"id": "navTitle5Opt1",
-			"content": "&nbsp;M1&nbsp;&nbsp;"
-		},
-		{
-			"id": "navTitle5Opt2",
-			"content": "&nbsp;M2&nbsp;&nbsp;"
-		},
-		{
-			"id": "navTitle5Opt3",
-			"content": "&nbsp;M3&nbsp;&nbsp;"
-		},
-		{
-			"id": "offlineuser",
-			"content": "离线用户"
+			"id": "UserID",
+			"content": "离线用户",
+			"type": "a"
 		},
 		{
 			"id": "signin",
-			"content": "&nbsp;&nbsp;登录&nbsp;&nbsp;"
+			"content": "  登录  ",
+			"type": "a"
 		},
 		{
 			"id": "setup",
-			"content": "&nbsp;&nbsp;设置&nbsp;&nbsp;"
+			"content": "  设置  ",
+			"type": "a"
 		},
 		{
 			"id": "logoff",
-			"content": "&nbsp;&nbsp;登出&nbsp;&nbsp;"
+			"content": "  登出  ",
+			"type": "a"
 		},
 		{
 			"id": "okanekudasai",
-			"content": "&nbsp;&nbsp;投喂&nbsp;&nbsp;"
+			"content": "  投喂  ",
+			"type": "a"
 		},
 		{
 			"id": "hotsearch",
@@ -116,23 +122,28 @@
 		},
 		{
 			"id": "about",
-			"content": "关于我们"
+			"content": "关于我们",
+			"type": "a"
 		},
 		{
 			"id": "privacy",
-			"content": "隐私"
+			"content": "隐私",
+			"type": "a"
 		},
 		{
 			"id": "trademark",
-			"content": "商标"
+			"content": "商标",
+			"type": "a"
 		},
 		{
 			"id": "usearticle",
-			"content": "使用条款"
+			"content": "使用条款",
+			"type": "a"
 		},
 		{
 			"id": "reglogo",
-			"content": "&regMacrohard2024基情提供"
+			"content": "&regMacrohard2024基情提供",
+			"type": "p"
 		},
 		{
 			"id": "",

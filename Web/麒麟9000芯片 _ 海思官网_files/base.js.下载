@@ -1,0 +1,283 @@
+﻿$(function() {
+
+    var win = $(window)
+    var win_w = win.width()
+    var w835 = 835
+
+    // 20240119 导航
+    $('.nav-language').click(function(e) {
+        e.stopPropagation();
+        $('.language-list').show();
+
+    })
+    $('body').click(function() {
+        $('.language-list').hide();
+    })
+
+
+
+
+    if (win_w > 835) {
+        $('.header-con-bg,.close-button').click(function() {
+            $('.navgation-con li').removeClass('active');
+            $('body').removeClass('no-scroll');
+            $('.navgation-down-con').hide();
+        })
+
+        $(document).on('click', '.header-con .navgation-con li', function(e) {
+            var i = $(this).index();
+            $('body').addClass('no-scroll');
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.navgation-down-con').show();
+            $('.navgation-item-con').hide();
+            $('.navgation-item-con').eq(i).show();
+            $('.search-panel').removeClass('is-active');
+            return false;
+        })
+
+
+        $(document).on('mouseenter', '.navgation-item-list .line-1', function(e) {
+            $(this).css('border-color', '#C7000B')
+            $(this).find('a').css('color', '#C7000B')
+        })
+        $(document).on('mouseleave', '.navgation-item-list .line-1', function(e) {
+            $(this).css('border-color', '#DFE1E6')
+            $(this).find('a').css('color', '#000')
+        })
+
+
+
+
+        $(document).on('mouseenter', '.more-con a.list', function(e) {
+            $('.navgation-item-list a.list').removeClass('active');
+            $('.more').hide();
+            $(this).addClass('active').parent('.item').next('.more').show();
+        })
+        $(document).on('mouseleave', '.navgation-item-list .more ', function(e) {
+            $(this).hide().prev('.item').find('a.list').removeClass('active');
+        })
+
+        // $(document).on('mouseenter', '.more-con', function(e) {
+        //     $('.navgation-item-list a.list').removeClass('active');
+        //     $('.more').hide();
+        //     $(this).find('a.list').addClass('active').parent('.item').next('.more').show();
+        // })
+        // $(document).on('mouseleave', '.more-con ', function(e) {
+        //     $(this).find('a.list').removeClass('active').next('.more').hide();
+        // })
+
+    } else {
+
+        $('.hamburger-toggler').click(function() {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('.navgation-con').hide();
+                $('.nav-language-con').css('display', 'none');
+                $('.mob-nav-back-con').hide().removeClass('back1 back2');
+                $('.navgation-down-con,.navgation-item-con,.mob-nav').hide();
+                $('.navgation-item-list').show();
+                $('.navgation-item-list  .line-1 a').addClass('stopdefault').removeClass('active');
+                $('body').removeClass('no-scroll');
+
+            } else {
+                $('body').addClass('no-scroll');
+                $(this).addClass('active');
+                $('.navgation-con').show();
+                $('.nav-language-con').css('display', 'flex');
+
+            }
+
+        })
+
+        $(document).on('click', '.header-con .navgation-con li', function(e) {
+            var i = $(this).index();
+            $('body').addClass('no-scroll');
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.navgation-con').hide();
+            $('.mob-nav-back-con').show().addClass('back1');
+            $('.navgation-down-con').show();
+            $('.navgation-item-con').hide();
+            $('.navgation-item-con').eq(i).show();
+        })
+
+
+        $(document).on('click', '.mob-nav-back-con.back1', function(e) {
+            var i = $(this).index();
+            $('.navgation-con').show();
+            $('.mob-nav-back-con').hide().removeClass('back1');
+            $('.navgation-down-con').hide();
+            $('.navgation-item-con').hide();
+        })
+
+        $('.navgation-item-list  .line-1 a').addClass('stopdefault');
+        $(document).on('click', 'a.stopdefault', function(e) {
+            e.preventDefault()
+            var _this = $(this);
+            $(this).parent('.line-1').removeClass('arrow-icon');
+            $('.navgation-item h3').hide();
+            setTimeout(function() {
+                _this.removeClass('stopdefault');
+            })
+        })
+
+        for (let i = 0; i < $('.navgation-con li').length; i++) {
+
+            $('.navgation-item' + i + ' ' + '.navgation-item-list').each(function() {
+                $(this).click(function() {
+                    $(this).show().siblings('.navgation-item-list').hide();
+                    $(this).find('.mob-nav').show();
+                    $('.navgation-item-list  .line-1 a').addClass('active');
+                    $('.mob-nav-back-con').show().removeClass('back1').addClass('back2');
+                })
+            })
+
+            $(document).on('click', '.mob-nav-back-con.back2', function(e) {
+                var i = $(this).index();
+                $('.navgation-item' + i + ' ' + '.navgation-item-list').show();
+                $('.navgation-item-list').show();
+                $('.mob-nav').hide();
+                $('.navgation-item-list  .line-1 a').addClass('stopdefault');
+                $('.mob-nav-back-con').show().removeClass('back2').addClass('back1');
+                $('.navgation-item-list  .line-1 a').removeClass('active');
+                $('.navgation-item-list a.list').removeClass('active');
+                $('.more').hide();
+                $('.navgation-item-list  .line-1').addClass('arrow-icon');
+                $('.navgation-item h3').show();
+            })
+        }
+
+        $(document).on('click', '.js-search-panel-close', function(e) {
+            e.stopPropagation();
+            $('body').removeClass('no-scroll');
+            $('.navgation-down-con,.nav-language-con,.navgation-con').hide();
+            $('.navgation-con').hide();
+            $('.hamburger-toggler').removeClass('active');
+            $('.mob-nav-back-con').hide().removeClass('back1 back2');
+        })
+
+        // 页脚
+        $('a.nav_s').addClass('stop');
+        $(document).on('click', 'a.stop', function(e) {
+            e.preventDefault()
+            var _this = $(this);
+            setTimeout(function() {
+                _this.removeClass('stop');
+            })
+
+
+        })
+        $(document).on('click', 'a.nav_s', function(e) {
+            var _this = $(this),
+                i = _this.index();
+            if (_this.hasClass('active')) {
+                $('a.nav_s').removeClass('active')
+                _this.removeClass('active').next('.mob-footer-nav').hide();
+            } else {
+                $('a.nav_s').removeClass('active').addClass('stop');
+                $('.mob-footer-nav').hide();
+                _this.addClass('active').removeClass('stop').next('.mob-footer-nav').show();
+            }
+        })
+
+        $(document).on('click', 'a.list', function(e) {
+            e.preventDefault();
+
+            if ($(this).hasClass('active')) {
+                // $(this).removeClass('active').next('.more').hide();
+                $(this).removeClass('active').parent('.item').next('.more').hide();
+
+            } else {
+                $('.navgation-item-list a.list').removeClass('active');
+                $('.more').hide();
+                // $(this).addClass('active').next('.more').show();
+                $(this).addClass('active').parent('.item').next('.more').show();
+
+            }
+
+        })
+
+
+    }
+
+    $(document).on('click', '.search-toggler', function() {
+        $('.search-panel').addClass('is-active');
+        $('body').addClass('no-scroll');
+        $('.header-con .navgation-con li').removeClass('active');
+        $('.navgation-down-con').hide();
+    })
+
+    $(document).on('click', '.js-search-panel-close', function(e) {
+        e.stopPropagation();
+        $('body').removeClass('no-scroll');
+        $('.navgation-down-con').hide();
+        $('.hamburger-toggler').removeClass('active');
+    })
+
+    $(document).on('click', '.contact-item', function(e) {
+        e.stopPropagation();
+        $(this).find('.footer-wechat-hover').show();
+    })
+
+    $(document).on('click', function() {
+        $('.footer-wechat-hover').hide();
+    })
+
+
+    // 浮窗--------------------------------------------------------------------
+    if (win_w < w835) {
+        $(document).on('click', ' .floating-window .item.down ', function(e) {
+            $('.pop-floating-bg').show();
+            // return false;
+        })
+        $(document).on('click', ' .pop-floating-bg', function(e) {
+            $(this).hide();
+            return false;
+        })
+    }
+
+    // 产品展开效果--------------------------------------------------------------
+    $(".z_pp li").hover(function() {
+        $(this).addClass('active').siblings().removeClass('active');
+        z_pp_hover();
+    })
+    if (win_w > w835) {
+        function z_pp_hover() {
+            var z_pp_wtd = $(".z_pp").width(),
+                z_pp_active = $(".z_pp li img").width(),
+                res = z_pp_wtd - z_pp_active;
+            for (let i = 0; i < $('.z_pp li').length; i++) {
+                let wtd = res / i;
+                $(".z_pp li.active").css('width', z_pp_active).siblings().css('width', wtd);
+            }
+        }
+        z_pp_hover();
+    }
+
+    // 视频播放------------------------------------------------------------------
+    $(document).on('click', '.video-con', function(e) {
+        var devideo = $(this).find('video')[0];
+        // $('video').trigger('pause');
+        if (devideo.paused) {
+            devideo.play()
+            $(this).find('.play-icon').hide()
+        } else {
+            $(this).find('.play-icon').show()
+            devideo.pause()
+        }
+        return false;
+    })
+
+    // tab
+    $(document).on('click', '.tab-list li', function() {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab-item').eq(index).show().siblings().hide();
+        $('video').trigger('pause');
+        // setTimeout(function() {
+        //     maxheight()
+
+        // }, 3000)
+    })
+
+
+})

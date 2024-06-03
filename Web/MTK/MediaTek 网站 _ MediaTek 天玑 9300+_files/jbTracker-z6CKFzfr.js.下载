@@ -1,0 +1,2 @@
+var n=n||[];(function(){if(!window.apScriptInserted){n.push(["clientToken","P%2bsIjEMd6oQ%3d"]);var t=document,e=t.createElement("script"),r=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.defer=!0,e.src="https://prod.benchmarkemail.com/tracker.bundle.js",r.parentNode.insertBefore(e,r),window.apScriptInserted=!0}})();
+//# sourceMappingURL=jbTracker-z6CKFzfr.js.map

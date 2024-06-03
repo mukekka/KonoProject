@@ -188,7 +188,6 @@
             </table>
             <div id="button">
                 <input type="submit" id="submit" name="submit" value="保存">
-                <input type="button" id="reset" value="重置默认">
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
             </div>
         </form>

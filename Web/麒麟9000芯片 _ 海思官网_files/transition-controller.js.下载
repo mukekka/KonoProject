@@ -1,0 +1,42 @@
+/**
+ * The transition controller manages all the transitions for the component, it uses GSAP to create timelines that can
+ * populated with all sorts of transitions, for more information check out the following urls:
+ *
+ * - https://github.com/larsvanbraam/transition-controller
+ * - http://greensock.com/
+ */
+window.TransitionController = (function (AbstractTransitionController) {
+	__extends(TransitionController, AbstractTransitionController);
+
+	function TransitionController(parent, options) {
+		AbstractTransitionController.call(this, parent, options);
+	}
+
+	TransitionController.prototype.getComponent = function (selector) {
+		var instance = null;
+
+		// If the selector is a string we assume it's the componentId
+		if (typeof selector === 'string') {
+			instance = this.parentController.getElement(selector).instance;
+		}
+
+		// TODO add support for other getters
+		if (!instance) throw new Error('The requested component [' + selector + '] does not exist');
+
+		return instance;
+	};
+
+	TransitionController.prototype.setupTransitionInTimeline = function (timeline, parent, id) {
+		// Setup the transition in timeline, this should be overwritten in the parent class.
+	};
+
+	TransitionController.prototype.setupTransitionOutTimeline = function (timeline, parent, id) {
+		// Setup the transition out timeline, this should be overwritten in the parent class.
+	};
+
+	TransitionController.prototype.setupLoopingAnimationTimeline = function (timeline, parent, id) {
+		// Setup the looping timeline, this should be overwritten in the parent class.
+	};
+
+	return TransitionController;
+})(transitionController.AbstractTransitionController);
