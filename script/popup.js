@@ -11,7 +11,7 @@ function showPopup(id, article) {
             var lableid = data[name][i]['id'];
             if ((lable == 'div') && (lableid != '')) {
                 back = div;
-                div.innerHTML += '<' + lable + ' id="' + lableid + '">';
+                div.innerHTML += '<' + lable + ' id="' + lableid + '" class="scrollbar">';
                 div = document.getElementById(lableid);
             } else if (lable == '/div') {
                 div = back;

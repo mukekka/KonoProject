@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn" id="htmllang">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
     <title>INFINITY</title>
@@ -14,8 +14,9 @@
     <link href="/style/Index/header.css" rel="stylesheet" type="text/css"><!-- 导航栏 -->
     <link href="/style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
     <link href="/style/Index/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
+	<link href="/style/scrollbar.css" rel="stylesheet" type="text/css"><!--滑动条-->
 </head>
-<body>
+<body class="scrollbar">
     <div class="header">
         <div id="logo">
             <a href="Index.html">
@@ -90,9 +91,7 @@
     <div id="subject">
         <div id="main">
             <div id="page-main">
-				<iframe src="page/mediatek-main.html" width="100%" height="100%" style="border: none;display: block;margin: auto">
-				
-				</iframe>
+				<iframe src="page/mediatek-main.html" width="100%" height="100%" style="border: none;display: block;margin: auto"></iframe>
             </div>
             <div id="page-side">
                 <ul>
@@ -120,9 +119,7 @@
         </div>
     </div>
     <div id="pop">
-	    <div id="popup" class="popup">
-		   
-	    </div>
+	    <div id="popup" class="scrollbar"></div>
     </div>
     <div id="footer">
         <div id="lang">

@@ -28,6 +28,7 @@
     float: right;
     margin: 45px 5px auto 10px;
     box-shadow: 0 1px 5px grey;
+    border-radius: 5px;
 }
 /*--------------------------------------------------*/
 #AD{

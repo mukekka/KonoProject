@@ -1,25 +1,20 @@
 var langSelect,value;
 function indexlangset(lang){
     var jsonurl = 'json/lang/'+lang+'-lang.json';
-    console.log(jsonurl)
     $.getJSON(jsonurl,function (data){
         for (var i = 0; i < Object.keys(data['lang']).length; i++) {
             if ((data['lang'][i]['id']=='UserID')&&(getCookie('user')!='')) continue;
             switch (data['lang'][i]['type']){
                 case 'placeholder':
                     document.getElementById(data['lang'][i]['id']).placeholder = data['lang'][i]['content'].toString();
-                    console.log(data['lang'][i]['content'])
                     break;
                 case 'value':
                     document.getElementById(data['lang'][i]['id']).value = data['lang'][i]['content'].toString();
-                    console.log(data['lang'][i]['content'])
                     break;
                 case 'p':
                     document.getElementById(data['lang'][i]['id']).innerHTML = data['lang'][i]['content'].toString();
-                    console.log(data['lang'][i]['content'])
                     break;
                 case 'a':
-                    console.log(data['lang'][i]['content'])
                     document.getElementById(data['lang'][i]['id']).innerText = data['lang'][i]['content'].toString();
                     break;
             }
