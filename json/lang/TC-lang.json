@@ -7,67 +7,67 @@
 		},
 		{
 			"id": "navTitle1",
-			"content": "クアルコム",
+			"content": "高通",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt1",
-			"content": "Snapdragon 8 Gen 1",
+			"content": "驍龍8Gen1",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt2",
-			"content": "Snapdragon 8 Gen 2",
+			"content": "驍龍8Gen2",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt3",
-			"content": "Snapdragon 8 Gen 3",
+			"content": "驍龍8Gen3",
 			"type": "a"
 		},
 		{
 			"id": "navTitle2",
-			"content": "メディアテック",
+			"content": "聯發科",
 			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt1",
-			"content": "Dimensity 9000",
+			"content": "天璣9000",
 			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt2",
-			"content": "Dimensity 9200",
+			"content": "天璣9200",
 			"type": "a"
 		},
 		{
 			"id": "navTitle2Opt3",
-			"content": "Dimensity 9300",
+			"content": "天璣9300",
 			"type": "a"
 		},
 		{
 			"id": "navTitle3",
-			"content": "ハイシリコン",
+			"content": "海思",
 			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt1",
-			"content": "Kirin 9000",
+			"content": "麒麟9000",
 			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt2",
-			"content": "Kirin 9900",
+			"content": "麒麟9900",
 			"type": "a"
 		},
 		{
 			"id": "navTitle3Opt3",
-			"content": "Kirin 9900S",
+			"content": "麒麟9900S",
 			"type": "a"
 		},
 		{
 			"id": "navTitle4",
-			"content": "アップル",
+			"content": "蘋果",
 			"type": "a"
 		},
 		{
@@ -87,27 +87,27 @@
 		},
 		{
 			"id": "UserID",
-			"content": "オフライン ユーザー",
+			"content": "脫機用戶",
 			"type": "a"
 		},
 		{
 			"id": "hotsearch",
-			"content": "ホット",
+			"content": "大家都在搜",
 			"type": "placeholder"
 		},
 		{
 			"id": "search",
-			"content": "検索",
+			"content": "搜尋",
 			"type": "value"
 		},
 		{
 			"id": "about",
-			"content": "運営会社",
+			"content": "關於我們",
 			"type": "a"
 		},
 		{
 			"id": "privacy",
-			"content": "プライバシー",
+			"content": "隱私",
 			"type": "a"
 		},
 		{
@@ -117,12 +117,12 @@
 		},
 		{
 			"id": "usearticle",
-			"content": "利用規約",
+			"content": "使用條款",
 			"type": "a"
 		},
 		{
 			"id": "reglogo",
-			"content": "&regMacrohard2024 支持して",
+			"content": "&regMacrohard2024基情提供",
 			"type": "p"
 		},
 		{

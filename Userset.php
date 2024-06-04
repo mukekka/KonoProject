@@ -87,53 +87,53 @@
         <form action="#" method="post">
             <table>
                 <tr>
-                    <td>用户名:</td>
+                    <td id="UserName-td">用户名:</td>
                     <td><input type="text" name="name" id="name" class="inputtext" title="最大长度为32字。更新此项需要密码" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
                     <script>
-                        document.getElementById('name').placeholder = decodeURIComponent(getCookie('user')).toString();
+                        document.getElementById('name').value = decodeURIComponent(getCookie('user')).toString();
                     </script>
                 </tr><!--用户名-->
                 <tr>
-                    <td>性别:</td>
+                    <td id="UserSex-td">性别:</td>
                     <td>
                         <select style="outline: none;appearance: none;width: 168px" class="inputtext" id="sex" name="sex">
-                            <option>无</option>
-                            <option>男</option>
-                            <option>女</option>
-                            <option>武装直升机</option>
-                            <option>沃尔玛购物袋</option>
-                            <option>秀吉</option>
+                            <option id="UserSex-op1" value="无">无</option>
+                            <option id="UserSex-op2" value="男">男</option>
+                            <option id="UserSex-op3" value="女">女</option>
+                            <option id="UserSex-op4" value="武装直升机">武装直升机</option>
+                            <option id="UserSex-op5" value="沃尔玛购物袋">沃尔玛购物袋</option>
+                            <option id="UserSex-op6" value="秀吉">秀吉</option>
                         </select>
                     </td>
                 </tr><!--性别-->
                 <tr>
-                    <td>生日:</td>
+                    <td id="UserBirthday-td">生日:</td>
                     <td>
                         <input type="date" name="birthday" id="birthday" class="inputtext">
                     </td>
                 </tr><!--生日-->
                 <tr>
-                    <td>邮箱:</td>
+                    <td id="UserEmail-td">邮箱:</td>
                     <td>
                         <input maxlength="254" type="email" name="email" class="inputtext" id="email" title="最大长度为254字" placeholder="aminoac.6324@sxc.com">
                     </td>
                 </tr><!--邮箱-->
                 <tr>
-                    <td>
-                        个人简介:<br>
-                        <label style="font-size: 12px;color: #4F4F4F" id="resumelen"></label>
+                    <td id="UserResume-td">
+                        个人简介:
                     </td>
                     <td>
                         <textarea onkeyup="onkey()" maxlength="128" id="resume" name="myresume" style="width:400px;height:60px;font-family: 宋体;font-size: 12px;resize: none" class="inputtext" title="最大长度为128字"></textarea>
+                        <label style="font-size: 12px;color: #4F4F4F" id="resumelen"></label>
                     </td>
                     <script>
                         function onkey(){
-                            document.getElementById('resumelen').innerText = '(共'+(document.getElementById('resume').value.toString().length)+'字)'.toString();
+                            document.getElementById('resumelen').innerText = '('+(document.getElementById('resume').value.toString().length)+')'.toString();
                         }
                     </script>
                 </tr><!--简介-->
                 <tr>
-                    <td>
+                    <td id="UserPass-td">
                         用户密码:
                     </td>
                     <td>
@@ -167,15 +167,15 @@
                     </td>
                 </tr><!--用户密码-->
                 <tr style="font-size: 12px;color: #4F4F4F">
-                    <td>用户ID:</td>
+                    <td id="UserID-td">用户ID:</td>
                     <td><h id="id"></h></td>
                 </tr>
                 <tr style="font-size: 12px;color: #4F4F4F">
-                    <td>创建时间:</td>
+                    <td id="UserMakeTime-td">创建时间:</td>
                     <td><h id="maketime"></h></td>
                 </tr>
                 <tr style="font-size: 12px;color: #4F4F4F">
-                    <td>账号状态:</td>
+                    <td id="UserState-td">账号状态:</td>
                     <td><h id="state"></h></td>
                 </tr>
                 <tr style="font-size: 12px;color: #4F4F4F" >
@@ -186,9 +186,58 @@
                 </tr>
                 <!--用户信息-->
             </table>
+            <script>
+                var jsonurl = 'json/UserInfo/'+getCookie('lang')+'-UserInfo.json';
+                $.getJSON(jsonurl,function (data){
+                    console.log(data);
+                    for (var i = 0; i < Object.keys(data['lang']).length; i++) {
+                        var lable = data['lang'][i]['type'];
+                        var content = data['lang'][i]['content'];
+                        var lableid = data['lang'][i]['id'];
+                        switch (lable){
+                            case 'title':
+                                document.documentElement.lang = content;
+                                break;
+                            case 'lang':
+                                document.title = content;
+                                break;
+                            case 'innHTML':
+                                document.getElementById(lableid).innerHTML = content;
+                                break;
+                            case 'placeholder':
+                                document.getElementById(lableid).placeholder = content;
+                                break;
+                            case 'value':
+                                document.getElementById(lableid).value = content;
+                                break;
+                            case 'value'
+                        }
+                    }
+                });
+            </script>
             <div id="button">
                 <input type="submit" id="submit" name="submit" value="保存">
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
+                <span id="loginbut"><a href="Login.php"><input type="button" id="signin" value="登录"></a></span>
+                <span><a><input type="button" id="logoff" value="登出" onclick="setCookie('user','','365','/');setCookie('hash','','365','/');location.reload();"></a></span>
+                <span><a href="Money.html"><input type="button" id="okanekudasai" value="投喂"></a></span>
+                <script>
+                        if(getCookie('user')!=''){
+                            document.getElementById('loginbut').style = "display:none;";
+                        }else if(getCookie('user')==null) {
+                            setCookie('user','','365','/');
+                            setCookie('hash','','365','/');
+                        }
+                        var user=getCookie('user');
+                        if(user!=''){
+                            var username=decodeURIComponent(getCookie('user'));
+                            document.getElementById('UserID').innerText = ' '+username+' '.toString();
+                        }else if(user==null){
+                            setCookie('user','','365','/')
+                        }else if(user==''){
+                            document.getElementById('UserID').innerText='离线用户';
+                        }
+                    </script>
             </div>
         </form>
         <div style="display: none">
@@ -203,6 +252,20 @@
                 function getHash($ID,$Pass){
                     if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Name+Pass=Hash+salt=UserHash
                 }
+                function getInfo($sqllink,$UserName){
+                    $UserInfo = mysqli_fetch_array(mysqli_query($sqllink,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
+                    echo "<script>
+                        document.getElementById('id').innerHTML='$UserInfo[UserID]';
+                        document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
+                        document.getElementById('state').innerHTML='$UserInfo[STATE]';
+                        document.getElementById('tag').innerHTML='$UserInfo[TAG]';
+                        document.getElementById('email').value = '$UserInfo[Email]'.toString();
+                        document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
+                        document.getElementById('birthday').value = '$UserInfo[Birthday]';
+                        document.getElementById('sex').value = '$UserInfo[Sex]'
+                    </script>";
+                    return $UserInfo;
+                }
                 if($_COOKIE['user']==""){
                     alt('未登录。请先登录');
                     $url="Login.php";
@@ -212,17 +275,8 @@
                 if ($link->connect_error){con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
                 else con('连接成功');//连接成功
                 $UserName = urldecode($_COOKIE['user']);
-                $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
-                echo "<script>
-                        document.getElementById('id').innerHTML='$UserInfo[UserID]';
-                        document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
-                        document.getElementById('state').innerHTML='$UserInfo[STATE]';
-                        document.getElementById('tag').innerHTML='$UserInfo[TAG]';
-                        document.getElementById('email').placeholder = '$UserInfo[Email]'.toString();
-                        document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
-                        document.getElementById('birthday').value = '$UserInfo[Birthday]';
-                        document.getElementById('sex').value = '$UserInfo[Sex]'
-                    </script>";
+
+                $UserInfo = getInfo($link,$UserName);
 
                 if (isset($_POST["submit"])) {
                 $UserInfoUpload = array(
@@ -236,17 +290,8 @@
                     "UserRePass"=>$_POST['repasswordinput'],
                     "UserHash"=>""
                 );
-				if ($UserInfoUpload[UserName]=='') $UserInfoUpload[UserName]=urldecode($_COOKIE['user']);
-				if ($UserInfoUpload[UserSex]=='') $UserInfoUpload[UserSex]=$UserInfo[Sex];
-				if ($UserInfoUpload[UserEmail]=='') $UserInfoUpload[UserEmail]=$UserInfo[Email];
-                $upload = mysqli_query($link,"update users
-													set UserName,Sex,Birthday,Resume,Email
-													value '$UserInfoUpload[UserName]',
-														  '$UserInfoUpload[UserSex]',
-														  '$UserInfoUpload[UserBirthday]',
-														  '$UserInfoUpload[UserResume]',
-														  '$UserInfoUpload[UserEmail]'
-													where users.UserID = $UserInfo[UserID];");
+                $upload = mysqli_query($link,"update users set UserName = '$UserInfoUpload[UserName]',Sex = '$UserInfoUpload[UserSex]',Birthday = '$UserInfoUpload[UserBirthday]',Resume = '$UserInfoUpload[UserResume]',Email = '$UserInfoUpload[UserEmail]' where users.UserID = $UserInfo[UserID];");
+                echo "<script>setCookie('user','$UserInfoUpload[UserName]','365','/')</script>";
 
                 if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码为空
                     if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
@@ -265,6 +310,7 @@
                 }else{
                     con('无密码');
                 }
+                echo "<meta http-equiv='refresh' content ='0;url="."'>";
             }
 			mysqli_close($link);
             ?>

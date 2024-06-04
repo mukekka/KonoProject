@@ -7,27 +7,27 @@
 		},
 		{
 			"id": "navTitle1",
-			"content": "クアルコム",
+			"content": "Qualcomm",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt1",
-			"content": "Snapdragon 8 Gen 1",
+			"content": "Snadragon 8Gen1",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt2",
-			"content": "Snapdragon 8 Gen 2",
+			"content": "Snadragon 8Gen2",
 			"type": "a"
 		},
 		{
 			"id": "navTitle1Opt3",
-			"content": "Snapdragon 8 Gen 3",
+			"content": "Snadragon 8Gen3",
 			"type": "a"
 		},
 		{
 			"id": "navTitle2",
-			"content": "メディアテック",
+			"content": "Mediatek",
 			"type": "a"
 		},
 		{
@@ -47,7 +47,7 @@
 		},
 		{
 			"id": "navTitle3",
-			"content": "ハイシリコン",
+			"content": "Hisilicon",
 			"type": "a"
 		},
 		{
@@ -67,7 +67,7 @@
 		},
 		{
 			"id": "navTitle4",
-			"content": "アップル",
+			"content": "Apple",
 			"type": "a"
 		},
 		{
@@ -87,42 +87,42 @@
 		},
 		{
 			"id": "UserID",
-			"content": "オフライン ユーザー",
+			"content": "Offline User",
 			"type": "a"
 		},
 		{
 			"id": "hotsearch",
-			"content": "ホット",
+			"content": "HOT",
 			"type": "placeholder"
 		},
 		{
 			"id": "search",
-			"content": "検索",
+			"content": "Search",
 			"type": "value"
 		},
 		{
 			"id": "about",
-			"content": "運営会社",
+			"content": "About",
 			"type": "a"
 		},
 		{
 			"id": "privacy",
-			"content": "プライバシー",
+			"content": "Privacy",
 			"type": "a"
 		},
 		{
 			"id": "trademark",
-			"content": "商標",
+			"content": "Trademark",
 			"type": "a"
 		},
 		{
 			"id": "usearticle",
-			"content": "利用規約",
+			"content": "Usearticle",
 			"type": "a"
 		},
 		{
 			"id": "reglogo",
-			"content": "&regMacrohard2024 支持して",
+			"content": "&regMacrohard2024 Make",
 			"type": "p"
 		},
 		{

@@ -1,9 +1,11 @@
 var langSelect,value;
-var langArr = ['SC','TC','EN','JP']
+var langArr = ['SC','TC','EN','JP'];
 function indexlangset(lang){
     var jsonurl = 'json/lang/'+lang+'-lang.json';
+    console.log(jsonurl)
     $.getJSON(jsonurl,function (data){
         for (var i = 0; i < Object.keys(data['lang']).length; i++) {
+            if ((data['lang'][i]['id']=='UserID')&&(getCookie('user')!='')) continue;
             switch (data['lang'][i]['type']){
                 case 'placeholder':
                     document.getElementById(data['lang'][i]['id']).placeholder = data['lang'][i]['content'].toString();
@@ -31,19 +33,19 @@ function setLang(){
     switch (value) {                                            //设置语言
         case 'SC':
             setCookie('lang','SC',365,"/");
-            indexlangset(value);
+            indexlangset('SC');
             break;
         case 'TC':
             setCookie('lang','TC',365,"/");
-            indexlangset(value);
+            indexlangset('TC');
             break;
         case 'EN':
             setCookie('lang','EN',365,"/");
-            indexlangset(value);
+            indexlangset('EN');
             break;
         case 'JP':
             setCookie('lang','JP',365,"/");
-            indexlangset(value);
+            indexlangset("JP");
             break;
     }
 }
@@ -51,7 +53,7 @@ function setLang(){
 var selectElement = document.getElementById('langSelect');
 var langCookie = getCookie('lang');
 switch (langCookie){
-    case langCookie != langArr:
+    case langCookie == '':
         setCookie('lang','SC','365','/')
         break;
     case 'SC':
@@ -62,10 +64,12 @@ switch (langCookie){
     case 'TC':
         selectElement.value = 'TC';
         document.documentElement.lang='zh-tw';
+        indexlangset('TC');
         break;
     case 'EN':
         selectElement.value = 'EN';
         document.documentElement.lang='en';
+        indexlangset('EN');
         break;
     case 'JP':
         selectElement.value = 'JP';

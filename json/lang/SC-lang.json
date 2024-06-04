@@ -91,21 +91,6 @@
 			"type": "a"
 		},
 		{
-			"id": "signin",
-			"content": "  登录  ",
-			"type": "a"
-		},
-		{
-			"id": "logoff",
-			"content": "  登出  ",
-			"type": "a"
-		},
-		{
-			"id": "okanekudasai",
-			"content": "  投喂  ",
-			"type": "a"
-		},
-		{
 			"id": "hotsearch",
 			"content": "热搜",
 			"type": "placeholder"

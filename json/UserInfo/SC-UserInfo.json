@@ -1,0 +1,127 @@
+{
+    "lang": [
+        {
+            "content": "zh-cn",
+            "type": "lang"
+        },
+        {
+            "content": "用户信息",
+            "type": "title"
+        },
+        {
+            "id": "UserName-td",
+            "content": "用户名:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-td",
+            "content": "性别:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op1",
+            "content": "无",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op2",
+            "content": "男",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op3",
+            "content": "女",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op4",
+            "content": "武装直升机",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op5",
+            "content": "沃尔玛购物袋",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op6",
+            "content": "秀吉",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserBirthday-td",
+            "content": "生日:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserEmail-td",
+            "content": "邮箱:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserResume-td",
+            "content": "个人简介:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserPass-td",
+            "content": "用户密码:",
+            "type": "innHTML"
+        },
+        {
+            "id": "oldpasswordinput",
+            "content": "请输入旧密码",
+            "type": "placeholder"
+        },
+        {
+            "id": "passwordinput",
+            "content": "请输入新密码",
+            "type": "placeholder"
+        },
+        {
+            "id": "repasswordinput",
+            "content": "请再次输入新密码",
+            "type": "placeholder"
+        },
+        {
+            "id": "UserID-td",
+            "content": "用户ID:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserMakeTime-td",
+            "content": "创建时间:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserState-td",
+            "content": "账号状态:",
+            "type": "innHTML"
+        },
+        {
+            "id": "submit",
+            "content": "保存",
+            "type": "value"
+        },
+        {
+            "id": "back",
+            "content": "退出",
+            "type": "value"
+        },
+        {
+            "id": "signin",
+            "content": "登录",
+            "type": "value"
+        },
+        {
+            "id": "logoff",
+            "content": "登出",
+            "type": "value"
+        },
+        {
+            "id": "okanekudasai",
+            "content": "投喂",
+            "type": "value"
+        }
+    ]
+}

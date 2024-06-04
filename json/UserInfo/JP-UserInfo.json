@@ -1,0 +1,127 @@
+{
+    "lang": [
+        {
+            "content": "zh-cn",
+            "type": "lang"
+        },
+        {
+            "content": "用户信息",
+            "type": "title"
+        },
+        {
+            "id": "UserName-td",
+            "content": "ユーザー名前:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-td",
+            "content": "性別:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op1",
+            "content": "なし",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op2",
+            "content": "男",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op3",
+            "content": "女",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op4",
+            "content": "武裝直升機",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op5",
+            "content": "沃爾瑪塑膠袋",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op6",
+            "content": "秀吉",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserBirthday-td",
+            "content": "誕生日:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserEmail-td",
+            "content": "メール:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserResume-td",
+            "content": "プロフィール:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserPass-td",
+            "content": "ユーザーパス:",
+            "type": "innHTML"
+        },
+        {
+            "id": "oldpasswordinput",
+            "content": "元のパスワード",
+            "type": "placeholder"
+        },
+        {
+            "id": "passwordinput",
+            "content": "新しいパス",
+            "type": "placeholder"
+        },
+        {
+            "id": "repasswordinput",
+            "content": "新しいパスをも一度",
+            "type": "placeholder"
+        },
+        {
+            "id": "UserID-td",
+            "content": "ユーザーID:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserMakeTime-td",
+            "content": "作成時間:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserState-td",
+            "content": "アカウントステータス:",
+            "type": "innHTML"
+        },
+        {
+            "id": "submit",
+            "content": "セーヴ",
+            "type": "value"
+        },
+        {
+            "id": "back",
+            "content": "終了",
+            "type": "value"
+        },
+        {
+            "id": "signin",
+            "content": "ログイン",
+            "type": "value"
+        },
+        {
+            "id": "logoff",
+            "content": "ログアウト",
+            "type": "value"
+        },
+        {
+            "id": "okanekudasai",
+            "content": "お金ください",
+            "type": "value"
+        }
+    ]
+}
