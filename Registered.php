@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>注册</title>
-        <link rel="icon" href="image/Logo32.ico" type="image/x-icon" sizes="32x32">
-        <link rel="icon" href="image/Logo16.ico" type="image/x-icon" sizes="16x16">
+        <link rel="icon" href="image/ico/Logo32.ico" type="image/x-icon" sizes="32x32">
+        <link rel="icon" href="image/ico/Logo16.ico" type="image/x-icon" sizes="16x16">
         <script src="script/funclib.js"></script>
         <link href="style/Login/login.css" type="text/css" rel="stylesheet">
         <link href="style/Login/wave.css" type="text/css" rel="stylesheet">

@@ -1,4 +1,5 @@
 function showPopup(id, article) {
+    document.getElementById(id).innerHTML = '';
     document.getElementById(id).style.display = 'block';
     var jsonurl = 'json/article/' + getCookie('lang') + '-article.json';
     var div = document.getElementById(id);

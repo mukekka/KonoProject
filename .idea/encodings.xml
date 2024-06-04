@@ -7,10 +7,10 @@
     <file url="file://$PROJECT_DIR$/json/UserInfo/SC-UserInfo.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/UserInfo/TC-UserInfo.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/article/SC-article.json" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/json/lang/en.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/json/lang/jp.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/json/lang/sc.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/json/lang/tc.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/index-lang/en.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/index-lang/jp.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/index-lang/sc.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/index-lang/tc.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/UserInfoSubmit.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/link-db.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/userset.php" charset="UTF-8" />
