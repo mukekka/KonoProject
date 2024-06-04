@@ -9,6 +9,11 @@
             "type": "title"
         },
         {
+            "id": "logosub",
+            "content": "用户信息",
+            "type": "innHTML"
+        },
+        {
             "id": "UserName-td",
             "content": "用户名:",
             "type": "innHTML"
@@ -96,6 +101,36 @@
         {
             "id": "UserState-td",
             "content": "账号状态:",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-1",
+            "content": "成员",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-2",
+            "content": "会员",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-3",
+            "content": "站长",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-1",
+            "content": "注销",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-2",
+            "content": "封禁",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-3",
+            "content": "正常",
             "type": "innHTML"
         },
         {

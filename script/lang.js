@@ -1,5 +1,4 @@
 var langSelect,value;
-var langArr = ['SC','TC','EN','JP'];
 function indexlangset(lang){
     var jsonurl = 'json/lang/'+lang+'-lang.json';
     console.log(jsonurl)
@@ -53,9 +52,6 @@ function setLang(){
 var selectElement = document.getElementById('langSelect');
 var langCookie = getCookie('lang');
 switch (langCookie){
-    case langCookie == '':
-        setCookie('lang','SC','365','/')
-        break;
     case 'SC':
         selectElement.value = 'SC';
         document.documentElement.lang='zh-cn';
@@ -76,4 +72,19 @@ switch (langCookie){
         document.documentElement.lang='ja';
         indexlangset('JP');
         break;
+    case langCookie == '':
+        switch (navigator.language){
+            case 'zh-CN':
+                setCookie('lang','SC','365','/')
+                break;
+            case 'zh-TW':
+                setCookie('lang','TC','365','/')
+                break;
+            case 'en':
+                setCookie('lang','EN','365','/')
+                break;
+            case 'ja':
+                setCookie('lang','JP','365','/')
+                break;
+        }
 }

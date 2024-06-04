@@ -1,0 +1,162 @@
+{
+    "lang": [
+        {
+            "content": "en",
+            "type": "lang"
+        },
+        {
+            "content": "UserInformation",
+            "type": "title"
+        },
+        {
+            "id": "logosub",
+            "content": "UserInformation",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserName-td",
+            "content": "UserName:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-td",
+            "content": "Sex:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op1",
+            "content": "Nothing",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op2",
+            "content": "Man",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op3",
+            "content": "Woman",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op4",
+            "content": "Gunship",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op5",
+            "content": "Walmart shopping bags",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserSex-op6",
+            "content": "Hideyoshi",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserBirthday-td",
+            "content": "Birthday:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserEmail-td",
+            "content": "Email:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserResume-td",
+            "content": "Biography:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserPass-td",
+            "content": "Password:",
+            "type": "innHTML"
+        },
+        {
+            "id": "oldpasswordinput",
+            "content": "OldPassword",
+            "type": "placeholder"
+        },
+        {
+            "id": "passwordinput",
+            "content": "Input new pass please.",
+            "type": "placeholder"
+        },
+        {
+            "id": "repasswordinput",
+            "content": "Input new pass again please.",
+            "type": "placeholder"
+        },
+        {
+            "id": "UserID-td",
+            "content": "UserID:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserMakeTime-td",
+            "content": "MakeTime:",
+            "type": "innHTML"
+        },
+        {
+            "id": "UserState-td",
+            "content": "Account status:",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-1",
+            "content": "Member",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-2",
+            "content": "VIP",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-3",
+            "content": "Master",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-1",
+            "content": "Unregister",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-2",
+            "content": "Banned",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-3",
+            "content": "Normal",
+            "type": "innHTML"
+        },
+        {
+            "id": "submit",
+            "content": "Save",
+            "type": "value"
+        },
+        {
+            "id": "back",
+            "content": "Back",
+            "type": "value"
+        },
+        {
+            "id": "signin",
+            "content": "Login",
+            "type": "value"
+        },
+        {
+            "id": "logoff",
+            "content": "Log Off",
+            "type": "value"
+        },
+        {
+            "id": "okanekudasai",
+            "content": "Feeding😸",
+            "type": "value"
+        }
+    ]
+}

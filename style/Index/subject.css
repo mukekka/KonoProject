@@ -1,5 +1,5 @@
 #subject{
-    height: 800px;
+    height: 600px;
     margin: 0;
     position: relative;
     display: block;
@@ -12,7 +12,8 @@
     float: left;
 }
 #page-main{
-    width: 88%;
+    padding-left: 1%;
+    width: 85%;
     height: 90%;
     text-align: center;
     float: left;

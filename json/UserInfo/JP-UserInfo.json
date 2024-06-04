@@ -1,12 +1,17 @@
 {
     "lang": [
         {
-            "content": "zh-cn",
+            "content": "ja",
             "type": "lang"
         },
         {
-            "content": "用户信息",
+            "content": "ユーザーインフォメーション",
             "type": "title"
+        },
+        {
+            "id": "logosub",
+            "content": "ユーザーインフォメーション",
+            "type": "innHTML"
         },
         {
             "id": "UserName-td",
@@ -96,6 +101,37 @@
         {
             "id": "UserState-td",
             "content": "アカウントステータス:",
+            "type": "innHTML"
+        },
+    
+        {
+            "id": "tag-1",
+            "content": "成員",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-2",
+            "content": "会員",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-3",
+            "content": "管理員",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-1",
+            "content": "取り消し",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-2",
+            "content": "禁止",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-3",
+            "content": "正常",
             "type": "innHTML"
         },
         {

@@ -5,7 +5,6 @@ function showPopup(id, article) {
     var name = article.toString();
     var back = "";
     $.getJSON(jsonurl,function (data){
-        console.log(data);
         for (var i = 0; i < Object.keys(data[name]).length; i++) {
             var lable = data[name][i]['type'];
             var content = data[name][i]['content'];

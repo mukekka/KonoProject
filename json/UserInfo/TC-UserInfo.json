@@ -1,12 +1,17 @@
 {
     "lang": [
         {
-            "content": "zh-cn",
+            "content": "zh-tw",
             "type": "lang"
         },
         {
-            "content": "用户信息",
+            "content": "用户資訊",
             "type": "title"
+        },
+        {
+            "id": "logosub",
+            "content": "用户資訊",
+            "type": "innHTML"
         },
         {
             "id": "UserName-td",
@@ -96,6 +101,36 @@
         {
             "id": "UserState-td",
             "content": "賬戶狀態:",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-1",
+            "content": "成員",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-2",
+            "content": "會員",
+            "type": "innHTML"
+        },
+        {
+            "id": "tag-3",
+            "content": "站長",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-1",
+            "content": "注銷",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-2",
+            "content": "封禁",
+            "type": "innHTML"
+        },
+        {
+            "id": "state-3",
+            "content": "正常",
             "type": "innHTML"
         },
         {

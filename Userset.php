@@ -74,14 +74,13 @@
     </style>
 </head>
 <body>
-    <script src="script/funclib.js"></script>
     <div class="header">
             <div id="logo" style="margin-left: 40%;">
                 <a href="Index.html">
                     <p style="font-family: TL">INFINITY</p>
                 </a>
             </div>
-            <h>用户信息</h>
+            <h id="logosub">用户信息</h>
         </div>
     <div id="subject">
         <form action="#" method="post">
@@ -176,10 +175,22 @@
                 </tr>
                 <tr style="font-size: 12px;color: #4F4F4F">
                     <td id="UserState-td">账号状态:</td>
-                    <td><h id="state"></h></td>
+                    <td>
+	                    <select name="state" id="state" disabled="disabled" style="outline: none;appearance: none;color: black;border: none">
+		                    <option id="state-1" value="注销">注销</option>
+		                    <option id="state-2" value="封禁">封禁</option>
+		                    <option id="state-3" value="正常">正常</option>
+	                    </select>
+                    </td>
                 </tr>
                 <tr style="font-size: 12px;color: #4F4F4F" >
-                    <td><h id="tag"></td>
+                    <td>
+	                    <select name="tag" id="tag" disabled="disabled" style="outline: none;appearance: none;color: black;border: none">
+		                    <option id="tag-1" value="成员">成员</option>
+		                    <option id="tag-2" value="会员">会员</option>
+		                    <option id="tag-3" value="站长">站长</option>
+	                    </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><h id="sql"></td>
@@ -189,16 +200,15 @@
             <script>
                 var jsonurl = 'json/UserInfo/'+getCookie('lang')+'-UserInfo.json';
                 $.getJSON(jsonurl,function (data){
-                    console.log(data);
                     for (var i = 0; i < Object.keys(data['lang']).length; i++) {
                         var lable = data['lang'][i]['type'];
                         var content = data['lang'][i]['content'];
                         var lableid = data['lang'][i]['id'];
                         switch (lable){
-                            case 'title':
+                            case 'lang':
                                 document.documentElement.lang = content;
                                 break;
-                            case 'lang':
+                            case 'title':
                                 document.title = content;
                                 break;
                             case 'innHTML':
@@ -210,7 +220,6 @@
                             case 'value':
                                 document.getElementById(lableid).value = content;
                                 break;
-                            case 'value'
                         }
                     }
                 });
@@ -221,23 +230,10 @@
                 <span id="loginbut"><a href="Login.php"><input type="button" id="signin" value="登录"></a></span>
                 <span><a><input type="button" id="logoff" value="登出" onclick="setCookie('user','','365','/');setCookie('hash','','365','/');location.reload();"></a></span>
                 <span><a href="Money.html"><input type="button" id="okanekudasai" value="投喂"></a></span>
-                <script>
-                        if(getCookie('user')!=''){
-                            document.getElementById('loginbut').style = "display:none;";
-                        }else if(getCookie('user')==null) {
-                            setCookie('user','','365','/');
-                            setCookie('hash','','365','/');
-                        }
-                        var user=getCookie('user');
-                        if(user!=''){
-                            var username=decodeURIComponent(getCookie('user'));
-                            document.getElementById('UserID').innerText = ' '+username+' '.toString();
-                        }else if(user==null){
-                            setCookie('user','','365','/')
-                        }else if(user==''){
-                            document.getElementById('UserID').innerText='离线用户';
-                        }
-                    </script>
+	            <script>
+		            if(getCookie('user')=='') document.getElementById('loginbut').style.display = 'revert';
+		            else document.getElementById('loginbut').style.display = 'none';
+	            </script>
             </div>
         </form>
         <div style="display: none">
@@ -257,8 +253,8 @@
                     echo "<script>
                         document.getElementById('id').innerHTML='$UserInfo[UserID]';
                         document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
-                        document.getElementById('state').innerHTML='$UserInfo[STATE]';
-                        document.getElementById('tag').innerHTML='$UserInfo[TAG]';
+                        document.getElementById('state').value='$UserInfo[STATE]';
+                        document.getElementById('tag').value='$UserInfo[TAG]';
                         document.getElementById('email').value = '$UserInfo[Email]'.toString();
                         document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
                         document.getElementById('birthday').value = '$UserInfo[Birthday]';
