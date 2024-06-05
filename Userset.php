@@ -95,7 +95,7 @@
                 <tr>
                     <td id="UserSex-td">性别:</td>
                     <td>
-                        <select style="outline: none;appearance: none;width: 168px" class="inputtext" id="sex" name="sex">
+                        <select style="outline: none;appearance: none;" class="inputtext" id="sex" name="sex">
                             <option id="UserSex-op1" value="无">无</option>
                             <option id="UserSex-op2" value="男">男</option>
                             <option id="UserSex-op3" value="女">女</option>
@@ -114,16 +114,15 @@
                 <tr>
                     <td id="UserEmail-td">邮箱:</td>
                     <td>
-                        <input maxlength="254" type="email" name="email" class="inputtext" id="email" title="最大长度为254字" placeholder="aminoac.6324@sxc.com">
+                        <input maxlength="64" type="email" name="email" class="inputtext" id="email" title="最大长度为64字" placeholder="aminoac.6324@sxc.com">
                     </td>
                 </tr><!--邮箱-->
                 <tr>
                     <td id="UserResume-td">
                         个人简介:
                     </td>
-                    <td>
+                    <td rowspan="2">
                         <textarea onkeyup="onkey()" maxlength="128" id="resume" name="myresume" style="width:400px;height:60px;font-family: 宋体;font-size: 12px;resize: none" class="inputtext" title="最大长度为128字"></textarea>
-                        <label style="font-size: 12px;color: #4F4F4F" id="resumelen"></label>
                     </td>
                     <script>
                         function onkey(){
@@ -131,6 +130,12 @@
                         }
                     </script>
                 </tr><!--简介-->
+	            <tr>
+		            <td>
+			            <label style="font-size: 12px;color: #4F4F4F" id="resumelen">(0)</label>
+		            </td>
+		            <td></td>
+	            </tr>
                 <tr>
                     <td id="UserPass-td">
                         用户密码:
@@ -141,18 +146,18 @@
                 </tr>
                 <tr>
                     <td>
-                        <input style="font-size: 12px;color: #4F4F4F" id="DISPWIN" type="checkbox" onclick="displayPassword()">
-                        <label style="font-size: 12px;color: #4F4F4F" id="DISPWLA">隐藏密码</label>
+                        <input style="font-size: 12px;color: #4F4F4F" id="DISPWIN" type="checkbox" onclick="displayPassword()"><br>
+                        <label style="font-size: 12px;color: #4F4F4F" id="DISPWLA">(っωrc)</label>
                         <script>
                             function displayPassword(){
                                 var flag = document.querySelector('#DISPWIN');
                                 if(flag.checked){
-                                    document.getElementById('DISPWLA').innerHTML = '显示密码'.toString();
+                                    document.getElementById('DISPWLA').innerHTML = 'c(⊙▽⊙)っ'.toString();
                                     document.getElementById("passwordinput").type="text";
                                     document.getElementById("repasswordinput").type="text";
                                     document.getElementById("oldpasswordinput").type="text";
                                 }else{
-                                    document.getElementById('DISPWLA').innerHTML = '隐藏密码'.toString();
+                                    document.getElementById('DISPWLA').innerHTML = '(っωc)'.toString();
                                     document.getElementById("passwordinput").type="password";
                                     document.getElementById("repasswordinput").type="password";
                                     document.getElementById("oldpasswordinput").type="password";
@@ -258,7 +263,8 @@
                         document.getElementById('email').value = '$UserInfo[Email]'.toString();
                         document.getElementById('resume').innerText = '$UserInfo[Resume]'.toString();
                         document.getElementById('birthday').value = '$UserInfo[Birthday]';
-                        document.getElementById('sex').value = '$UserInfo[Sex]'
+                        document.getElementById('sex').value = '$UserInfo[Sex]';
+						document.getElementById('resumelen').innerText = '('+(document.getElementById('resume').value.toString().length)+')'.toString()
                     </script>";
                     return $UserInfo;
                 }
@@ -283,8 +289,7 @@
                     "UserResume"=>$_POST['myresume'],
                     "UserOldPass"=>$_POST['oldpasswordinput'],
                     "UserPass"=>$_POST['passwordinput'],
-                    "UserRePass"=>$_POST['repasswordinput'],
-                    "UserHash"=>""
+                    "UserRePass"=>$_POST['repasswordinput']
                 );
                 $upload = mysqli_query($link,"update users set UserName = '$UserInfoUpload[UserName]',Sex = '$UserInfoUpload[UserSex]',Birthday = '$UserInfoUpload[UserBirthday]',Resume = '$UserInfoUpload[UserResume]',Email = '$UserInfoUpload[UserEmail]' where users.UserID = $UserInfo[UserID];");
                 echo "<script>setCookie('user','$UserInfoUpload[UserName]','365','/')</script>";
@@ -294,14 +299,23 @@
                         if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码不符合规范
                             if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
                                 con('新密码不能与旧密码相同');
+								exit();
+                            }else if(strcmp(getHash($UserInfo[UserID],$UserInfoUpload[UserOldPass]),mysqli_fetch_array(mysqli_query($link,"select Hash from users where users.userID = $UserInfo[UserID];"))[0])==0){
+								con('密码正确');
+								$newhash = getHash($UserInfo[UserID],$UserInfoUpload[UserPass]);
+								mysqli_query($link,"update users set Hash = '$newhash' where users.UserID = $UserInfo[UserID]");
+								echo "<script>setCookie('hash','$newhash','365','/');</script>";
                             }else{//密码不正确
                                 con('原密码不正确');
+								exit();
                             }
                         }else{
                             con('密码不符合规范!');
+							exit();
                         }
                     }else{
                         con('密码不相等!');
+						exit();
                     }
                 }else{
                     con('无密码');
