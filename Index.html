@@ -94,48 +94,26 @@
 				<iframe src="page/mediatek-main.html" width="100%" height="100%" style="border: none;display: block;margin: auto"></iframe>
             </div>
             <div id="page-side">
-	            <h style="text-align: center">聊天区</h>
-	            <div id="page-side1" class="scrollbar">
-		            <ul>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-			            <li><a href="#">热点</a></li>
-		            </ul>
-	            </div>
-	            <div id="page-side2">
-		            <hr>
-		            <p>123</p>
-	            </div>
-            </div>
-            <div id="AD" style="display: none">
-                <ul>
-                    <li><a href="#AD0" id="AD0">《佺诗三千首》</a></li>
-                    <li><a href="#AD1">1.家乐福盛大开业</a></li>
-                    <li><a href="#AD2">2.法师控制强，冰霜秒全场</a></li>
-                    <li><a href="#AD3">3.轻松玩节奏爽<br>一人攻沙虐全场</a></li>
-                    <li><a href="#AD4">4.博爱男科割一送一</a></li>
-                    <li><a href="#AD5">5.网易春风</a></li>
-                    <li><a href="#AD6">6.专治早泄</a></li>
-                    <li><a href="#AD7">7.火影回档佐助</a></li>
-                    <li><a href="#AD8">8.广告位招租</a></li>
-                    <li><a href="#AD9">9.广告位招租</a></li>
-                </ul>
+                <h style="text-align: center">聊天区</h><hr>
+                <iframe class="scrollbar" src="page/commit.php" width="100%" height="100%"></iframe>
+                <div id="page-commit">
+                    <form method="post" action="page/commit.php">
+                        <textarea onkeyup="onkey()" id="commit-text" class="scrollbar" maxlength="100" title="MAX:100" disabled>请先登录</textarea>
+                        <input id="commit-but" type="button" value="发布" disabled>
+                        <label id="commit-len">(0)</label>
+                    </form>
+                    <script>
+                        if(getCookie('user')!=''){
+                            document.getElementById('commit-but').disabled=false;
+                            document.getElementById('commit-but').style.background = '#39C5BB';
+                            document.getElementById('commit-text').innerHTML = '制作中';
+                            document.getElementById('commit-text').disabled=false;
+                        }
+                        function onkey(){
+                            document.getElementById('commit-len').innerText = '('+(document.getElementById('commit-text').value.toString().length)+')'.toString();
+                        }
+                    </script>
+                </div>
             </div>
         </div>
     </div>

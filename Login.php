@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="logo">
-        <p>INFINITY</p>
+        <a href="Index.html"><p>INFINITY</p></a>
     </div>
     <form action="#" method="POST">
     <div id="subject">

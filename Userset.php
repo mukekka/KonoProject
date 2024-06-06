@@ -87,7 +87,7 @@
             <table>
                 <tr>
                     <td id="UserName-td">用户名:</td>
-                    <td><input type="text" name="name" id="name" class="inputtext" title="最大长度为32字。更新此项需要密码" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
+                    <td><input type="text" name="name" id="name" class="inputtext" title="MAX:32" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
                     <script>
                         document.getElementById('name').value = decodeURIComponent(getCookie('user')).toString();
                     </script>
@@ -114,7 +114,7 @@
                 <tr>
                     <td id="UserEmail-td">邮箱:</td>
                     <td>
-                        <input maxlength="64" type="email" name="email" class="inputtext" id="email" title="最大长度为64字" placeholder="aminoac.6324@sxc.com">
+                        <input maxlength="64" type="email" name="email" class="inputtext" id="email" title="MAX:64" placeholder="aminoac.6324@sxc.com">
                     </td>
                 </tr><!--邮箱-->
                 <tr>
@@ -122,7 +122,7 @@
                         个人简介:
                     </td>
                     <td rowspan="2">
-                        <textarea onkeyup="onkey()" maxlength="128" id="resume" name="myresume" style="width:400px;height:60px;font-family: 宋体;font-size: 12px;resize: none" class="inputtext" title="最大长度为128字"></textarea>
+                        <textarea onkeyup="onkey()" maxlength="128" id="resume" name="myresume" style="width:400px;height:60px;font-family: 宋体;font-size: 12px;resize: none" class="inputtext" title="MAX:128"></textarea>
                     </td>
                     <script>
                         function onkey(){
@@ -134,20 +134,19 @@
 		            <td>
 			            <label style="font-size: 12px;color: #4F4F4F" id="resumelen">(0)</label>
 		            </td>
-		            <td></td>
 	            </tr>
                 <tr>
                     <td id="UserPass-td">
                         用户密码:
                     </td>
                     <td>
-                        <input id="oldpasswordinput" name="oldpasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请输入旧密码"><br>
+                        <input id="oldpasswordinput" name="oldpasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="MAX:16,MIN:4" placeholder="请输入旧密码"><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <input style="font-size: 12px;color: #4F4F4F" id="DISPWIN" type="checkbox" onclick="displayPassword()"><br>
-                        <label style="font-size: 12px;color: #4F4F4F" id="DISPWLA">(っωrc)</label>
+                        <label style="font-size: 12px;color: #4F4F4F" id="DISPWLA">(っωc)</label>
                         <script>
                             function displayPassword(){
                                 var flag = document.querySelector('#DISPWIN');
@@ -157,7 +156,7 @@
                                     document.getElementById("repasswordinput").type="text";
                                     document.getElementById("oldpasswordinput").type="text";
                                 }else{
-                                    document.getElementById('DISPWLA').innerHTML = '(っωc)'.toString();
+                                    document.getElementById('DISPWLA').innerHTML = "(っωc)".toString();
                                     document.getElementById("passwordinput").type="password";
                                     document.getElementById("repasswordinput").type="password";
                                     document.getElementById("oldpasswordinput").type="password";
@@ -166,8 +165,8 @@
                         </script>
                     </td>
                     <td>
-                        <input id="passwordinput" name="passwordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请输入新密码"><br>
-                        <input id="repasswordinput" name="repasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="密码最小长度为4，最大长度为16" placeholder="请再次输入新密码" style="padding-top: 1px">
+                        <input id="passwordinput" name="passwordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="MAX:16,MIN:4" placeholder="请输入新密码"><br>
+                        <input id="repasswordinput" name="repasswordinput" type="password" maxlength="16" minlength="4" class="inputtext" title="MAX:16,MIN:4" placeholder="请再次输入新密码" style="padding-top: 1px">
                     </td>
                 </tr><!--用户密码-->
                 <tr style="font-size: 12px;color: #4F4F4F">

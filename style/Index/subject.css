@@ -1,5 +1,5 @@
 #subject{
-    height: 600px;
+    height: 800px;
     margin: 0;
     position: relative;
     display: block;
@@ -13,7 +13,7 @@
 }
 #page-main{
     padding-left: 1%;
-    width: 85%;
+    width: 80%;
     height: 90%;
     text-align: center;
     float: left;
@@ -22,7 +22,7 @@
     border-radius: 5px;
 }
 #page-side{
-    width: 12%;
+    width: 17%;
     height: 90%;
     text-align: center;
     float: right;
@@ -30,30 +30,43 @@
     box-shadow: 0 1px 5px grey;
     border-radius: 5px;
 }
-#page-side1{
-    margin-top: 2px;
-    width: 100%;
-    height: 75%;
-    overflow-y: scroll;
+#page-side hr{
+    margin-left: 2%;
+    margin-right: 2%;
 }
-#page-side2{
-    width: 96%;
-    height: 19%;
+#page-side iframe{
+    width: 100%;
+    height: 80%;
+    border: none;
+}
+#page-commit{
+    width: 93%;
+    height: 17%;
     margin-left: 2%;
 }
-#page-side2 hr{
-    filter: blur(0.5px);
+#page-commit textarea{
+    width: 100%;
+    height: 70px;
+    resize: none;
+    outline: none;
+    border-radius: 3px;
+    border: #a8a8a8 solid 1px;
+    transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
+    transition: color 0.3s cubic-bezier(.645,.045,.355,1);
 }
-/*--------------------------------------------------*/
-#AD{
-    border: 1px solid darkgray;
-    font-size: 50%;
-    width: 10%;
-    height: 40%;
-    margin-top: 10px;
-    text-align: left;
+#page-commit textarea:hover{
+    border:gray solid 1px;
+}
+#page-commit label{
     float: right;
+    color: gray;
 }
-#AD0{
-    color: red;
+#page-commit input{
+    float: right;
+    border: none;
+    background-color: #4C4C4C;
+    border-radius: 5px;
+    color: #FFFFFF;
+    height: 25px;
+    width: 30%;
 }
