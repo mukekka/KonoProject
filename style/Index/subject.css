@@ -30,6 +30,13 @@
     box-shadow: 0 1px 5px grey;
     border-radius: 5px;
 }
+#flushed{
+    background: #00000000 url("../../image/ico/flushed.svg") no-repeat;
+    background-size:cover;
+    height: 15px;
+    width: 15px;
+    border: none;
+}
 #page-side hr{
     margin-left: 2%;
     margin-right: 2%;

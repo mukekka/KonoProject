@@ -23,14 +23,15 @@ body{
 td{
     border: 1px solid #00000000;
 }
+p{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin: 0 auto;
+}
 .Head{
     height: 100%;
     width: 100%;
     -webkit-user-drag: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 .Commit-Head{
     height: 25%;

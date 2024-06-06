@@ -18,14 +18,14 @@
     <div id="page-side1" class="scrollbar">
 	    <?php
 		    for($i=1;$i<=$commitRowLen;$i++){
-			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT Commit.Num,users.UserName as UserName,users.Head as Head,users.TAG as Tag,commit.Commit as Commit,commit.Time as Time FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
+			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,users.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
 			    if ($commitItem[0]=='') continue;
 			    echo "<table>
                         <tr>
                             <td class='Commit-Head' rowspan='2'>
-	                            <image class='Head' src='../head/$commitItem[2].jpg'>
+	                            <image class='Head' src='../head/$commitItem[2].jpg' title='用户ID:$commitItem[10]\n简介:$commitItem[7]\n邮箱:$commitItem[9]\n性别:$commitItem[6]\n生日:$commitItem[12]\n账号状态:$commitItem[8]\n入驻时间:$commitItem[11]'>
                             </td>
-	                        <td class='Commit-UserName' colspan='3'><marquee>$commitItem[1]</marquee></td>
+	                        <td class='Commit-UserName' colspan='3'><p>$commitItem[1]</p></td>
                         </tr>
 	                    <tr>
 	                        <td class='Commit-Floor'>$commitItem[0]</td>
