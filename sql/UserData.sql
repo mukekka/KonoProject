@@ -28,7 +28,7 @@ CREATE TABLE `commit` (
   `Commit` varchar(105) NOT NULL COMMENT '评论内容',
   `Time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
   PRIMARY KEY (`Num`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `commit` (
 
 LOCK TABLES `commit` WRITE;
 /*!40000 ALTER TABLE `commit` DISABLE KEYS */;
-INSERT INTO `commit` VALUES (1,1,'HelloWorld','2024-06-06 08:52:27'),(2,1,'HelloWorld2','2024-06-06 08:52:44');
+INSERT INTO `commit` VALUES (1,1,'HelloWorld','2024-06-06 08:52:27'),(2,1,'HelloWorld2','2024-06-06 08:52:44'),(3,2,'还行','2024-06-06 13:49:55'),(4,3,'これはいくらですか？','2024-06-06 14:07:53');
 /*!40000 ALTER TABLE `commit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +71,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Koizumi','2024-05-09 10:06:39','男','是站长呢.','koizumi.369c@outlook.com','1969-12-31',1,'bc53fa07a53cedcb198f162bc6865dbc1daeb07f2dfbcc98c5dd707aec52535a','站长','正常'),(2,'璟','2024-05-09 10:06:39','沃尔玛购物袋','这人是条懒狗，什么都没有说。','1413661607@qq.com','1997-01-01',0,'cc2e192918dab70af92bbd1946a5a93c6859db90acf0a70e7db713f0b20adb34','会员','正常'),(3,'博麗霊夢','2024-05-15 20:47:24','女','博麗神社のみこ',NULL,NULL,0,'1b36adeba408f074e83638aeea33d4a227c9121505ca6c8d2dae572d5fd60fc2','成员','正常'),(4,'123456','2024-06-04 22:12:13','男','这人是条懒狗，什么都没有说。','11111@123','1999-01-01',0,'01af77be85b3cb5f3a40ae3a08e71243a50480ae4aaeca01a6592b5805021c08','成员','正常');
+INSERT INTO `users` VALUES (1,'Koizumi','2024-05-09 10:06:39','男','是站长呢.','koizumi.369c@outlook.com','1969-12-31',1,'bc53fa07a53cedcb198f162bc6865dbc1daeb07f2dfbcc98c5dd707aec52535a','站长','正常'),(2,'璟','2024-05-09 10:06:39','沃尔玛购物袋','这人是条懒狗，什么都没有说。','1413661607@qq.com','1997-01-01',0,'cc2e192918dab70af92bbd1946a5a93c6859db90acf0a70e7db713f0b20adb34','会员','正常'),(3,'博麗霊夢','2024-05-15 20:47:24','女','博麗神社のみこ',NULL,NULL,3,'1b36adeba408f074e83638aeea33d4a227c9121505ca6c8d2dae572d5fd60fc2','成员','正常'),(4,'123456','2024-06-04 22:12:13','男','这人是条懒狗，什么都没有说。','11111@123','1999-01-01',0,'01af77be85b3cb5f3a40ae3a08e71243a50480ae4aaeca01a6592b5805021c08','成员','正常');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -84,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-06 11:16:00
+-- Dump completed on 2024-06-06 14:11:26

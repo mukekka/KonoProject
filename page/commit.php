@@ -11,37 +11,34 @@
         {
             echo "<script>console.log('$conlog');</script>";
         }
-
         $link = mysqli_connect('localhost','root','123456','users');
         $commitRow = mysqli_query($link,"select count(Num) from commit");
         $commitRowLen =  mysqli_fetch_array($commitRow)[0];//消息行数
-        for($i=1;$i<=$commitRowLen;$i++){
-            mysqli_fetch_array(mysqli_query($link,"select UserID,Commit,Time from commit order by Num limit $i"));
-        }
     ?>
     <div id="page-side1" class="scrollbar">
-        <table>
-            <tr>
-                <td class="Commit-Head" rowspan="2">
-	                <image class="Head" src="../head/1.jpg">
-                </td>
-	            <td class="Commit-UserName" colspan="2"><marquee>Koizumi</marquee></td>
-            </tr>
-	        <tr>
-		        <td class="Commit-Tag">
-			        <select disabled="disabled" id="Commit-select">
-				        <option value="成员">成员</option>
-				        <option value="会员">会员</option>
-				        <option value="站长">站长</option>
-			        </select>
-		        </td>
-		        <td class="Commit-Time">2024/12/12</td>
-	        </tr>
-	        <tr>
-		        <td class="Commit-Content" colspan="3">好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好好</td>
-	        </tr>
-        </table>
-	    <hr>
+	    <?php
+		    for($i=1;$i<=$commitRowLen;$i++){
+			    $commitItem =  mysqli_fetch_array(mysqli_query($link,"select Num,UserID,Commit,Time from commit where Num = $i"));
+				$commitItemInfo = mysqli_fetch_array(mysqli_query($link,"select UserName,Head,Tag from users where UserID = $commitItem[UserID]"));
+//			    if ($commitItem['Num']=='') continue;
+			    echo "<table>
+                        <tr>
+                            <td class='Commit-Head' rowspan='2'>
+	                            <image class='Head' src='../head/$commitItemInfo[Head].jpg'>
+                            </td>
+	                        <td class='Commit-UserName' colspan='2'><marquee>$commitItemInfo[UserName]</marquee></td>
+                        </tr>
+	                    <tr>
+		                    <td class='Commit-Tag'>$commitItemInfo[Tag]</td>
+		                    <td class='Commit-Time'>$commitItem[Time]</td>
+	                    </tr>
+	                    <tr>
+		                    <td class='Commit-Content' colspan='3'>$commitItem[Commit]</td>
+	                    </tr>
+                    </table>
+	                <hr>";
+		    }
+	    ?>
     </div>
 </body>
 </html>
