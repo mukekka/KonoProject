@@ -21,11 +21,16 @@ body{
     filter: blur(0.5px);
 }
 td{
-    /*border: 1px solid black;*/
+    border: 1px solid #00000000;
 }
 .Head{
     height: 100%;
     width: 100%;
+    -webkit-user-drag: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 .Commit-Head{
     height: 25%;
@@ -34,6 +39,10 @@ td{
 }
 .Commit-UserName{
 
+}
+.Commit-Floor{
+    font-size: 10px;
+    color: #423e3e;
 }
 .Commit-Content{
     font-size: 10%;

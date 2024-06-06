@@ -101,6 +101,26 @@
 			"type": "value"
 		},
 		{
+			"id": "chat",
+			"content": "聊天区",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "请先登录",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "网络一线牵，珍惜这段缘:)",
+			"type": "placeholder"
+		},
+		{
+			"id": "commit-but",
+			"content": "发布",
+			"type": "value"
+		},
+		{
 			"id": "about",
 			"content": "关于我们",
 			"type": "a"

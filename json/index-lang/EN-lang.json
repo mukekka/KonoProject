@@ -101,6 +101,26 @@
 			"type": "value"
 		},
 		{
+			"id": "chat",
+			"content": "Chat area",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "Sign in please",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "Words can build bridges or burn them down.",
+			"type": "placeholder"
+		},
+		{
+			"id": "commit-but",
+			"content": "Publish",
+			"type": "value"
+		},
+		{
 			"id": "about",
 			"content": "About",
 			"type": "a"

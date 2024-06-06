@@ -101,6 +101,26 @@
 			"type": "value"
 		},
 		{
+			"id": "chat",
+			"content": "聊天區",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "請先登入",
+			"type": "p"
+		},
+		{
+			"id": "commit-text",
+			"content": "善語結良緣,惡語傷人心",
+			"type": "placeholder"
+		},
+		{
+			"id": "commit-but",
+			"content": "發佈",
+			"type": "value"
+		},
+		{
 			"id": "about",
 			"content": "關於我們",
 			"type": "a"

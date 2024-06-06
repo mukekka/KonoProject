@@ -4,6 +4,7 @@ function indexlangset(lang){
     $.getJSON(jsonurl,function (data){
         for (var i = 0; i < Object.keys(data['lang']).length; i++) {
             if ((data['lang'][i]['id']=='UserID')&&(getCookie('user')!='')) continue;
+            if ((data['lang'][i]['id']=='commit-text')&&(getCookie('user')!='')) continue;
             switch (data['lang'][i]['type']){
                 case 'placeholder':
                     document.getElementById(data['lang'][i]['id']).placeholder = data['lang'][i]['content'].toString();

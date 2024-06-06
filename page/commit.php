@@ -18,22 +18,22 @@
     <div id="page-side1" class="scrollbar">
 	    <?php
 		    for($i=1;$i<=$commitRowLen;$i++){
-			    $commitItem =  mysqli_fetch_array(mysqli_query($link,"select Num,UserID,Commit,Time from commit where Num = $i"));
-				$commitItemInfo = mysqli_fetch_array(mysqli_query($link,"select UserName,Head,Tag from users where UserID = $commitItem[UserID]"));
-//			    if ($commitItem['Num']=='') continue;
+			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT Commit.Num,users.UserName as UserName,users.Head as Head,users.TAG as Tag,commit.Commit as Commit,commit.Time as Time FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
+			    if ($commitItem[0]=='') continue;
 			    echo "<table>
                         <tr>
                             <td class='Commit-Head' rowspan='2'>
-	                            <image class='Head' src='../head/$commitItemInfo[Head].jpg'>
+	                            <image class='Head' src='../head/$commitItem[2].jpg'>
                             </td>
-	                        <td class='Commit-UserName' colspan='2'><marquee>$commitItemInfo[UserName]</marquee></td>
+	                        <td class='Commit-UserName' colspan='3'><marquee>$commitItem[1]</marquee></td>
                         </tr>
 	                    <tr>
-		                    <td class='Commit-Tag'>$commitItemInfo[Tag]</td>
-		                    <td class='Commit-Time'>$commitItem[Time]</td>
+	                        <td class='Commit-Floor'>$commitItem[0]</td>
+		                    <td class='Commit-Tag'>$commitItem[3]</td>
+		                    <td class='Commit-Time'>$commitItem[5]</td>
 	                    </tr>
 	                    <tr>
-		                    <td class='Commit-Content' colspan='3'>$commitItem[Commit]</td>
+		                    <td class='Commit-Content' colspan='3'>$commitItem[4]</td>
 	                    </tr>
                     </table>
 	                <hr>";
