@@ -7,6 +7,7 @@ JS库:Jquery3.2.1,Jquery3.6.0
 音频处理:Howler.js  
 字体:思源黑体,Tachyon Light  
 Wave效果:https://www.bilibili.com/video/BV1mp4y1d7bU  
+投喂铃仙:https://gitee.com/touhousupport/reisen ，https://www.bilibili.com/video/BV1f541177yY  
 音效:QQ  
 英语,日语翻译:BingTranslator  
 # 资料来源:  

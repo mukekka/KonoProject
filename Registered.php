@@ -69,7 +69,7 @@
             echo "<script>alert('$altinfo');</script>";
         }
 //        数据库连接
-        $link = new mysqli('localhost','root','123456','users');//连接到数据库
+        $link = new mysqli('localhost','user','123456','users');//连接到数据库
         if($link->connect_error){
             alt('错误,无法连接到数据库');
             exit();

@@ -75,7 +75,7 @@
             $username = $_POST["UserName"];
             $password = $_POST["Password"];
 
-            $link = new mysqli('localhost','root','123456','users');//连接到数据库
+            $link = new mysqli('localhost','user','123456','users');//连接到数据库
             if($link->connect_error)con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
             else con('连接成功');//连接成功
 

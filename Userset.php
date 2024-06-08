@@ -28,8 +28,8 @@
 		            <td>
 			            <img id="head" src="head/0.jpg" style="height: 15%;width: 15%;-webkit-user-drag: none;">
 			            <form action="./php/headload.php" method="post" enctype="multipart/form-data">
-				            <input type="file" name="upload_file">
-				            <input type="submit" value="上传">
+				            <input id="loadUpImage" type="file" name="upload_file">
+				            <input id="loadUpImageSubmit" type="submit">
 			            </form>
 		            </td>
 	            </tr>
@@ -145,9 +145,6 @@
 	                    </select>
                     </td>
                 </tr>
-                <tr>
-                    <td><h id="sql"></td>
-                </tr>
                 <!--用户信息-->
             </table>
             <script>
@@ -177,7 +174,7 @@
                     }
                 });
             </script>
-            <div id="button">
+            <div id="button" class="button">
                 <input type="submit" id="submit" name="submit" value="保存">
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
                 <span id="loginbut"><a href="Login.php"><input type="button" id="signin" value="登录"></a></span>
@@ -222,7 +219,7 @@
                     $url="Login.php";
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }
-                $link = new mysqli('localhost', 'root', '123456', 'users');//连接到数据库
+                $link = new mysqli('localhost', 'user', '123456', 'users');//连接到数据库
                 if ($link->connect_error){con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
                 else con('连接成功');//连接成功
                 $UserName = urldecode($_COOKIE['user']);

@@ -11,7 +11,7 @@
         {
             echo "<script>console.log('$conlog');</script>";
         }
-        $link = mysqli_connect('localhost','root','123456','users');
+        $link = mysqli_connect('localhost','user','123456','users');
         $commitRow = mysqli_query($link,"select max(Num) from commit");
         $commitRowLen =  mysqli_fetch_array($commitRow)[0];//消息行数
     ?>

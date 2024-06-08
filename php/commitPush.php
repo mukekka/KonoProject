@@ -4,7 +4,7 @@
 		echo "<script>console.log('$conlog');</script>";
 	}
 	if(isset($_POST['submit'])){
-		$link=mysqli_connect('localhost','root','123456','users');
+		$link=mysqli_connect('localhost','user','123456','users');
 		$commitText=$_POST['commit-text'];
 		$UserName = urldecode($_COOKIE['user']);
 		if($commitText==''){

@@ -11,7 +11,7 @@
 			break;
 		default:
 			echo "不支持的文件格式,仅支持jpg、png";
-			exit();
+			header('location:../Userset.php');
 	}
 	$tempDir = "../tmp/";//网站临时文件夹
 	if (move_uploaded_file($_FILES['upload_file']["tmp_name"], $tempDir.$targetFile)) {//从本地上传到网站文件夹
@@ -19,7 +19,7 @@
 	} else {
 		echo "上传文件失败.";
 	}
-	$link = new mysqli('localhost', 'root', '123456', 'users');
+	$link = new mysqli('localhost', 'user', '123456', 'users');
 	$UserName = urldecode($_COOKIE['user']);
 	$ID=mysqli_fetch_array(mysqli_query($link,"select UserID from users where UserName='$UserName'"))[0];
 	switch ($tojpg){
