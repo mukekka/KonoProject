@@ -41,12 +41,5 @@
 		    }
 	    ?>
     </div>
-	<script>
-		function deleteCommit(name){
-			<?php
-//				mysqli_query($link,"DELETE FROM commit WHERE commit.Num = ");
-			?>
-		}
-	</script>
 </body>
 </html>

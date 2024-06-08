@@ -22,12 +22,18 @@
             <h id="logosub">用户信息</h>
         </div>
     <div id="subject">
-        <form action="#" method="post">
             <table>
 	            <tr>
 		            <td id="UserHead-td">头像:</td>
-		            <td><img id="head" src="head/0.jpg" style="height: 15%;width: 15%;-webkit-user-drag: none;"></td>
+		            <td>
+			            <img id="head" src="head/0.jpg" style="height: 15%;width: 15%;-webkit-user-drag: none;">
+			            <form action="./php/headload.php" method="post" enctype="multipart/form-data">
+				            <input type="file" name="upload_file">
+				            <input type="submit" value="上传">
+			            </form>
+		            </td>
 	            </tr>
+	            <form action="#" method="post">
                 <tr>
                     <td id="UserName-td">用户名:</td>
                     <td><input type="text" name="name" id="name" class="inputtext" title="MAX:32" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
