@@ -2,11 +2,11 @@
 	"use": [
 		{
 			"type": "h1",
-			"content": "<center>使用条款</center>"
+			"content": "<center>Terms of Use</center>"
 		},
 		{
 			"type": "p",
-			"content": "欢迎访问我们的网站并使用我们提供的服务。在使用本网站之前，请仔细阅读以下使用条款。通过访问本网站并使用我们的服务，即表示您同意遵守以下条款和条件："
+			"content": "Welcome to our website and use the services we offer. Please read the following terms of use carefully before using this website. By accessing this website and using our services, you agree to be bound by the following terms and conditions:"
 		},
 		{
 			"id": "popuptext",
@@ -15,59 +15,59 @@
 		},
 		{
 			"type": "h3",
-			"content": "1. 服务使用"
+			"content": "1. Use of Services"
 		},
 		{
 			"type": "p",
-			"content": "您同意仅出于合法目的使用我们的服务，并遵守所有适用的法律法规。您不得利用我们的服务进行任何非法活动或侵犯他人权利的行为。"
+			"content": "You agree to use our Services only for lawful purposes and to comply with all applicable laws and regulations. You may not use our Services to engage in any illegal activity or act that violates the rights of others."
 		},
 		{
 			"type": "h3",
-			"content": "2. 账户注册"
+			"content": "2. Account Registration"
 		},
 		{
 			"type": "p",
-			"content": "在某些情况下，您可能需要注册一个账户以使用我们的特定服务。您需对您的账户信息的准确性和保密性负责，并承诺不将账户信息透露给任何第三方。"
+			"content": "In some cases, you may be required to register for an account to use certain of our services. You are responsible for the accuracy and confidentiality of your account information and undertake not to disclose your account information to any third party."
 		},
 		{
 			"type": "h3",
-			"content": "3. 知识产权"
+			"content": "3. intellectual property"
 		},
 		{
 			"type": "p",
-			"content": "本网站及其内容（包括但不限于文字、图片、标识、软件等）受到知识产权法律的保护。未经授权，您不得复制、修改、传播或以任何方式利用这些内容。"
+			"content": "This website and its contents (including but not limited to text, pictures, logos, software, etc.) are protected by intellectual property laws. You may not copy, modify, transmit or exploit the content in any way without authorization."
 		},
 		{
 			"type": "h3",
-			"content": "4. 免责条款"
+			"content": "4. Disclaimer of Warranties"
 		},
 		{
 			"type": "p",
-			"content": "我们尽最大努力确保网站上提供的信息准确和完整。然而，我们不对信息的准确性、适用性或完整性作任何明示或暗示的保证。您需自行承担使用本网站信息的风险。"
+			"content": "We do our best to ensure that the information provided on the website is accurate and complete. However, we make no warranties, express or implied, as to the accuracy, suitability or completeness of the information. Your use of the information on this website is at your own risk."
 		},
 		{
 			"type": "h3",
-			"content": "5. 隐私保护"
+			"content": "5. Privacy Protection"
 		},
 		{
 			"type": "p",
-			"content": "我们尊重并保护用户隐私。我们将根据我们的隐私政策收集、使用和保护您的个人信息。请在使用本网站之前仔细阅读我们的隐私政策。"
+			"content": "We respect and protect the privacy of our users. We will collect, use and protect your personal information in accordance with our Privacy Policy. Please read our Privacy Policy carefully before using this website."
 		},
 		{
 			"type": "h3",
-			"content": "6. 第三方链接"
+			"content": "6. Third-Party Links"
 		},
 		{
 			"type": "p",
-			"content": "本网站可能包含指向第三方网站的链接。这些链接仅为方便起见，我们对这些网站的内容和隐私政策不承担责任。访问这些链接将由您自行承担风险。"
+			"content": "This website may contain links to third-party websites. These links are provided for convenience only and we are not responsible for the content and privacy policies of these websites. Access to these links is at your own risk."
 		},
 		{
 			"type": "h3",
-			"content": "7. 条款修改"
+			"content": "7. Modification of Terms"
 		},
 		{
 			"type": "p",
-			"content": "我们保留随时更改或更新使用条款的权利。更新后的条款将在本网站上公布。您继续使用本网站将被视为接受修改后的条款。"
+			"content": "We reserve the right to change or update the Terms of Use at any time. The updated terms will be posted on this website. Your continued use of the Site will be deemed acceptance of the modified Terms."
 		},
 		{
 			"type": "/div",
@@ -75,17 +75,17 @@
 		},
 		{
 			"type": "h3",
-			"content": "如果您有任何关于使用条款的疑问或意见，请通过我们的联系方式与我们联系。感谢您遵守我们的使用条款！"
+			"content": "If you have any questions or comments about the Terms of Use, please contact us using our contact details. Thank you for complying with our Terms of Use!"
 		}
 	],
 	"privacy": [
 		{
 			"type": "h1",
-			"content": "<center>隐私政策</center>"
+			"content": "<center>Privacy Policy</center>"
 		},
 		{
 			"type": "p",
-			"content": "感谢您访问我们的网站并查看我们的隐私政策。我们非常重视您的隐私，并致力于保护您个人信息的安全。请在使用我们的网站之前，仔细阅读以下隐私政策内容，以了解我们收集、使用和保护您的个人信息的方式。"
+			"content": "Thank you for visiting our website and reviewing our Privacy Policy. We take your privacy very seriously and are committed to keeping your personal information secure. Please read the following Privacy Policy carefully before using our website to understand how we collect, use and protect your personal information."
 		},
 		{
 			"id": "popuptext",
@@ -94,83 +94,83 @@
 		},
 		{
 			"type": "h3",
-			"content": "1. 信息收集"
+			"content": "1. Information Collection"
 		},
 		{
 			"type": "p",
-			"content": "当您访问我们的网站时，我们可能会收集您的个人信息，包括但不限于您的姓名、电子邮件地址、联系方式等。我们也可能自动收集有关您访问和使用网站的信息，如IP地址、浏览器类型、访问时间等。"
+			"content": "When you visit our website, we may collect your personal information, including but not limited to your name, email address, contact details, etc. We may also automatically collect information about your access to and use of the website, such as IP address, browser type, access times, etc."
 		},
 		{
 			"type": "h3",
-			"content": "2. 信息使用"
+			"content": "2. Use of Information"
 		},
 		{
 			"type": "p",
-			"content": "我们收集的个人信息将用于以下用途："
+			"content": "The personal information we collect will be used for the following purposes:"
 		},
 		{
 			"type": "p",
-			"content": "- 提供您请求的服务和信息；"
+			"content": "- to provide the services and information you have requested;"
 		},
 		{
 			"type": "p",
-			"content": "- 改善网站的内容和功能；"
+			"content": "- to improve the content and functionality of the website;"
 		},
 		{
 			"type": "p",
-			"content": "- 向您发送与网站相关的通知和更新；"
+			"content": "- to send you notices and updates related to the Site;"
 		},
 		{
 			"type": "p",
-			"content": "- 分析网站流量和用户行为。"
+			"content": "- analyze website traffic and user behavior."
 		},
 		{
 			"type": "h3",
-			"content": "3. 信息保护"
+			"content": "3. Information Protection"
 		},
 		{
 			"type": "p",
-			"content": "我们承诺采取合理的安全措施来保护您的个人信息，防止未经授权的访问、使用或泄露。我们将尽最大努力确保您的信息安全。"
+			"content": "We are committed to taking reasonable security measures to protect your personal information from unauthorized access, use or disclosure. We will do our best to keep your information secure."
 		},
 		{
 			"type": "h3",
-			"content": "4. 信息分享"
+			"content": "4. Information Sharing"
 		},
 		{
 			"type": "p",
-			"content": "除非获得您的同意或法律要求，我们不会向任何第三方披露您的个人信息。在某些情况下，我们可能会与合作伙伴共享必要的信息，以便为您提供更好的服务。"
+			"content": "We will not disclose your personal information to any third party unless we have your consent or are required by law. In some cases, we may share information necessary with our partners in order to provide you with a better service."
 		},
 		{
 			"type": "h3",
-			"content": "5. Cookie和跟踪技术"
+			"content": "5. Cookie"
 		},
 		{
 			"type": "p",
-			"content": "我们可能会在您的计算机上放置Cookie或类似技术，以便识别您的浏览器和偏好。这些信息将帮助我们改善网站的用户体验和功能。"
+			"content": "We may place cookies or similar technologies on your computer in order to recognize your browser and preferences. This information will help us improve the user experience and functionality of our website."
 		},
 		{
 			"type": "h3",
-			"content": "6. 第三方链接"
+			"content": "6. Third-Party Links"
 		},
 		{
 			"type": "p",
-			"content": "我们的网站可能包含指向第三方网站的链接。请注意，我们对这些网站的隐私政策和做法不负责。我们建议您在访问这些链接时，查看其隐私政策。"
+			"content": "Our website may contain links to third-party websites. Please be aware that we are not responsible for the privacy policies and practices of these websites. We encourage you to review their privacy policies when you visit these links."
 		},
 		{
 			"type": "h3",
-			"content": "7. 未成年人隐私"
+			"content": "7. Minors' Privacy"
 		},
 		{
 			"type": "p",
-			"content": "我们的网站不面向未满18岁的未成年人。如果您是未成年人，请在监护人的陪同下使用我们的网站。"
+			"content": "Our website is not directed to minors under the age of 18. If you are a minor, please be accompanied by a guardian to use our website."
 		},
 		{
 			"type": "h3",
-			"content": "8. 隐私政策更新"
+			"content": "8. Privacy Policy Updates"
 		},
 		{
 			"type": "p",
-			"content": "我们保留随时更改或更新隐私政策的权利。我们将在网站上发布更新后的政策，建议您定期查看以获取最新信息。"
+			"content": "We reserve the right to change or update the Privacy Policy at any time. We will post the updated policy on our website and we encourage you to check back regularly for the latest information."
 		},
 		{
 			"type": "/div",
@@ -178,17 +178,17 @@
 		},
 		{
 			"type": "h3",
-			"content": "如果您有任何关于隐私政策的问题或疑虑，欢迎通过我们的联系方式与我们联系。感谢您对我们隐私政策的关注和支持！"
+			"content": "If you have any questions or concerns about the Privacy Policy, please feel free to contact us through our contact details. Thank you for your interest and support of our Privacy Policy!"
 		}
 	],
 	"trademark": [
 		{
 			"type": "h1",
-			"content": "<center>商标政策<center>"
+			"content": "<center>Trademark<center>"
 		},
 		{
 			"type": "p",
-			"content": "我们非常重视知识产权保护，包括商标权。以下是我们的商标政策，旨在明确我们对商标的立场和相关事宜。<br>"
+			"content": "We take the protection of intellectual property rights, including trademark rights, very seriously. The following is our Trademark Policy to clarify our position on trademarks and related matters.<br>"
 		},
 		{
 			"id": "popuptext",
@@ -197,51 +197,51 @@
 		},
 		{
 			"type": "h3",
-			"content": "1. 商标所有权"
+			"content": "1. Trademark Ownership"
 		},
 		{
 			"type": "p",
-			"content": "我们在本网站上使用的所有商标和标识（以下简称“商标”）均为我们公司或关联公司的财产。这些商标受到知识产权法律的保护。"
+			"content": "All trademarks and logos (hereinafter referred to as \"Trademarks\") used by us on this website are the property of our company or our affiliates. These trademarks are protected by intellectual property laws."
 		},
 		{
 			"type": "h3",
-			"content": "2. 商标使用"
+			"content": "2. Use of Trademarks"
 		},
 		{
 			"type": "p",
-			"content": "未经我们事先书面许可，任何人不得以任何方式使用、复制或修改我们的商标。包括但不限于商标的商业使用、广告宣传、域名注册等。"
+			"content": "No one may use, copy or modify our trademarks in any way without our prior written permission. This includes, but is not limited to, commercial use of trademarks, advertising, domain name registration, etc."
 		},
 		{
 			"type": "h3",
-			"content": "3. 使用授权"
+			"content": "3. License to Use"
 		},
 		{
 			"type": "p",
-			"content": "如果您希望使用我们的商标，请提前与我们联系，并取得我们的明确书面授权。未经授权使用我们的商标可能会构成侵权行为，我们将保留追究法律责任的权利。"
+			"content": "If you wish to use our trademarks, please contact us in advance and obtain our express written authorization. Unauthorized use of our trademarks may constitute infringement and we reserve the right to pursue legal liability."
 		},
 		{
 			"type": "h3",
-			"content": "4. 商标保护"
+			"content": "4. Trademark Protection"
 		},
 		{
 			"type": "p",
-			"content": "我们将积极维护我们的商标权益，包括但不限于监控侵权行为、采取法律行动等。如果您发现有任何未经授权使用我们商标的行为，请立即通知我们。"
+			"content": "We will actively defend our trademark rights, including but not limited to monitoring infringements, taking legal action, etc. If you become aware of any unauthorized use of our trademarks, please notify us immediately."
 		},
 		{
 			"type": "h3",
-			"content": "5. 第三方商标"
+			"content": "5. Third-Party Trademarks"
 		},
 		{
 			"type": "p",
-			"content": "本网站上可能出现其他公司的商标。这些商标仅用于识别目的，并不意味着我们与这些公司有任何关联。对于第三方商标的使用，请直接与相应公司联系。"
+			"content": "Trademarks of other companies may appear on this website. These trademarks are used for identification purposes only and do not imply that we are in any way affiliated with these companies. For the use of third-party trademarks, please contact the respective company directly."
 		},
 		{
 			"type": "h3",
-			"content": "6. 商标政策更新"
+			"content": "6. Trademark Policy Update"
 		},
 		{
 			"type": "p",
-			"content": "我们保留随时更改或更新商标政策的权利。更新后的政策将在网站上公布。您可以定期查看以获取最新信息。"
+			"content": "We reserve the right to change or update our trademark policy at any time. The updated policy will be posted on the website. You can check back regularly for the latest information."
 		},
 		{
 			"type": "/div",
@@ -249,7 +249,7 @@
 		},
 		{
 			"type": "h3",
-			"content": "如果您有任何关于商标政策的疑问或意见，请通过我们的联系方式与我们联系。感谢您遵守我们的商标政策！"
+			"content": "If you have any questions or comments about the Trademark Policy, please contact us using our contact details. Thank you for complying with our trademark policy!"
 		}
 	],
 	"other": [

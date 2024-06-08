@@ -12,6 +12,6 @@
 		}else {
 			$commitLoad=mysqli_query($link,"insert into commit (UserID,Commit) values ((select UserID from users where UserName = '$UserName'),'$commitText')");
 		}
-		echo "<script>history.back(-1);</script>";
+		header('location:../Index.html');
 	}
 ?>

@@ -8,70 +8,9 @@
     <link href="style/Index/global.css" rel="stylesheet" type="text/css">
     <link href="style/Index/header.css" rel="stylesheet" type="text/css">
     <link href="style/Index/subject.css" rel="stylesheet" type="text/css">
+	<link href="style/User/user.css" rel="stylesheet" type="text/css">
     <script src="script/jquery-3.2.1.min.js"></script>
     <script src="script/funclib.js"></script>
-    <style>
-        *{
-            font-family: SS;
-        }
-        .header h{
-            display: block;
-            margin-top: 10px;
-        }
-        td:first-child{
-            text-align: right;
-            padding-right: 10px;
-            margin-top: 0px;
-        }
-        #subject{
-            border-radius: 5px;
-            margin:25px auto;
-            padding: 20px;
-            top: 35px;
-            height: auto;
-            width: 550px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.14);
-        }
-        #subject div{
-            margin: 10px auto auto 5px;
-        }
-        .inputtext{
-            border-radius: 3px;
-            padding: 2px;
-            border: #a8a8a8 solid 1px;
-            outline: none;
-            transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
-            transition: color 0.3s cubic-bezier(.645,.045,.355,1);
-        }
-        .inputtext:hover{
-            border:gray solid 1px;
-        }
-        .inputtext:focus{
-            border: #39C5BB solid 1px;
-            color: #39C5BB;
-        }
-        #button{
-            padding-bottom: 0;
-        }
-        #button input{
-            border-radius: 5px;
-            background-color: #39C5BB;
-            font-family: SS;
-            font-size: 15px;
-            color: white;
-            width: 100px;
-            height: 25px;
-            border: none;
-        }
-        @keyframes bordercolor {
-            from{
-                border: #4F4F4F solid 1px;
-            }
-            to{
-                border: #66CCFF solid 1px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -85,6 +24,10 @@
     <div id="subject">
         <form action="#" method="post">
             <table>
+	            <tr>
+		            <td id="UserHead-td">头像:</td>
+		            <td><img id="head" src="head/0.jpg" style="height: 15%;width: 15%;-webkit-user-drag: none;"></td>
+	            </tr>
                 <tr>
                     <td id="UserName-td">用户名:</td>
                     <td><input type="text" name="name" id="name" class="inputtext" title="MAX:32" maxlength="32" oninput="this.value=this.value.replace(!/\ |\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/)"></td>
@@ -255,6 +198,7 @@
                 function getInfo($sqllink,$UserName){
                     $UserInfo = mysqli_fetch_array(mysqli_query($sqllink,"select UserID,UserName,MakeTime,Sex,Resume,Email,Birthday,Head,TAG,STATE from users where UserName like '$UserName';"));
                     echo "<script>
+						document.getElementById('head').src = 'head/$UserInfo[Head].jpg'
                         document.getElementById('id').innerHTML='$UserInfo[UserID]';
                         document.getElementById('maketime').innerHTML='$UserInfo[MakeTime]';
                         document.getElementById('state').value='$UserInfo[STATE]';

@@ -1,16 +1,60 @@
-@font-face {
-    font-family: SS;
-    src: url('../../font/SourceHanSansSC-Bold-2.otf');
-}
-@font-face {
-    font-family: TL;
-    src: url('../../font/Tachyon Light.ttf');
-}
-/*--------------------------------------------------*/
 *{
-    margin: 0;
-    padding: 0;
-}
-body{
     font-family: SS;
+}
+.header h{
+    display: block;
+    margin-top: 10px;
+}
+td:first-child{
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 0px;
+}
+#subject{
+    border-radius: 5px;
+    margin:25px auto;
+    padding: 20px;
+    top: 35px;
+    height: auto;
+    width: 550px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.14);
+}
+#subject div{
+    margin: 10px auto auto 5px;
+}
+.inputtext{
+    border-radius: 3px;
+    padding: 2px;
+    border: #a8a8a8 solid 1px;
+    outline: none;
+    transition: border-color 0.3s cubic-bezier(.645,.045,.355,1);
+    transition: color 0.3s cubic-bezier(.645,.045,.355,1);
+}
+.inputtext:hover{
+    border:gray solid 1px;
+}
+.inputtext:focus{
+    border: #39C5BB solid 1px;
+    color: #39C5BB;
+}
+#button{
+    padding-bottom: 0;
+}
+#button input{
+    border-radius: 5px;
+    background-color: #39C5BB;
+    font-family: SS;
+    font-size: 15px;
+    color: white;
+    width: 100px;
+    height: 25px;
+    border: none;
+}
+@keyframes bordercolor {
+    from{
+        border: #4F4F4F solid 1px;
+    }
+    to{
+        border: #66CCFF solid 1px;
+    }
 }

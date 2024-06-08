@@ -28,6 +28,12 @@ p{
     text-overflow:ellipsis;
     margin: 0 auto;
 }
+.delete{
+    border: none;
+    background-color: #00000000;
+    color: grey;
+    font-size: 10px;
+}
 .Head{
     height: 100%;
     width: 100%;
@@ -36,13 +42,12 @@ p{
 .Commit-Head{
     height: 25%;
     width: 25%;
-
 }
 .Commit-UserName{
-
+    height: 5%;
 }
 .Commit-Floor{
-    font-size: 10px;
+    font-size: 1%;
     color: #423e3e;
 }
 .Commit-Content{
@@ -53,7 +58,7 @@ p{
     border-radius: 3px;
 }
 .Commit-Time{
-    font-size: 10px;
+    font-size: 9px;
     color: gray;
     float: left;
 }
