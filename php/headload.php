@@ -40,8 +40,9 @@
 			break;
 	}
 	$targetDir = "../head/"; //指定文件夹的路径
-	rename($tempDir.$ID.'.jpg',$targetDir.$ID.'.jpg');
-	mysqli_query($link,"update users set Head = UserID where UserName='$UserName'");
+	$headHash = hash('sha256',$ID);
+	rename($tempDir.$ID.'.jpg',$targetDir.$headHash.'.jpg');
+	mysqli_query($link,"update users set Head = '$headHash' where UserName='$UserName'");
 	mysqli_close($link);
 	header('location:../Userset.php');
 ?>
