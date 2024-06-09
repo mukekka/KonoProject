@@ -252,6 +252,97 @@
 			"content": "商標ポリシーについてご質問やご意見がございましたら、当社の連絡先までご連絡ください。 商標ポリシーを遵守していただきありがとうございます。"
 		}
 	],
+	"about": [
+		{
+			"type": "h1",
+			"content": "<center>我々について</center>"
+		},
+		{
+			"id": "popuptext",
+			"type": "div",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "分業"
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;Koizumi:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--ホーム・ページ"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--フロントエンド開発"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--バックエンド構築"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--ユーザシステム"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--データベース構築"
+		},
+		{
+			"type": "p",
+			"content": "連絡先:koizumi.369c@outlook.com"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;璟:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--二次ページ"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--データの検索"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "プロジェクトインフォメーション"
+		},
+		{
+			"type": "h3",
+			"content": "プロジェクトウェアハウス =><a href=\"https://github.com/mukekka/KonoProject\">Github</a>"
+		},
+		{
+			"type": "h3",
+			"content": "詳細は、Github README.md"
+		},
+		{
+			"type": "hr",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "右側のプライバシーポリシー、商標ポリシー、使用規約は参考にしてください。条項の内容はCharGPT 3.5によって提供される。"
+		},
+		{
+			"type": "h3",
+			"content": "このサイトの商標 Marcohard は Microsoft　を参照しました"
+		},
+		{
+			"type": "/div",
+			"content": ""
+		}
+	],
 	"other": [
 		{
 			"type": "button",

@@ -252,6 +252,97 @@
 			"content": "如果您有任何關於商標政策的疑慮或意見，請通過我們的聯絡方式與我們聯絡。感謝您遵循我們的商標政策！"
 		}
 	],
+	"about": [
+		{
+			"type": "h1",
+			"content": "<center>關於我們</center>"
+		},
+		{
+			"id": "popuptext",
+			"type": "div",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "分工"
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;Koizumi:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--首頁"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--前端搭建"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--後台管理"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--用戶系統"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--資料庫搭建"
+		},
+		{
+			"type": "p",
+			"content": "聯絡方式:koizumi.369c@outlook.com"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;璟:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--二級頁面"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--資料查找"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "項目資訊"
+		},
+		{
+			"type": "h3",
+			"content": "項目倉庫 =><a href=\"https://github.com/mukekka/KonoProject\">Github</a><=這個可點擊"
+		},
+		{
+			"type": "h3",
+			"content": "詳細資訊參見Github README.md"
+		},
+		{
+			"type": "hr",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "右邊的隱私政策、商標政策、使用條款僅供參考。條款内容由CharGPT3.5提供。"
+		},
+		{
+			"type": "h3",
+			"content": "本網站商標 Marcohard 參考 Microsoft"
+		},
+		{
+			"type": "/div",
+			"content": ""
+		}
+	],
 	"other": [
 		{
 			"type": "button",

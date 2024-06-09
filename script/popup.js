@@ -16,7 +16,9 @@ function showPopup(id, article) {
                 div = document.getElementById(lableid);
             } else if (lable == '/div') {
                 div = back;
-            } else {
+            } else if ((lable == 'br')||(lable == 'hr')) {
+                div.innerHTML += '<' + lable + '>';
+            }else {
                 div.innerHTML += '<' + lable + '>' + content + '</' + lable + '>';
             }
         }

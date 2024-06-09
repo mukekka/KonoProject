@@ -252,6 +252,97 @@
 			"content": "If you have any questions or comments about the Trademark Policy, please contact us using our contact details. Thank you for complying with our trademark policy!"
 		}
 	],
+	"about": [
+		{
+			"type": "h1",
+			"content": "<center>About</center>"
+		},
+		{
+			"id": "popuptext",
+			"type": "div",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "Divide the work"
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;Koizumi:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Homepage"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Front end development"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Backend management"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--User System"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Database construction"
+		},
+		{
+			"type": "p",
+			"content": "Contact way:koizumi.369c@outlook.com"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;璟:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Secondary page"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--Resources"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "Project Information"
+		},
+		{
+			"type": "h3",
+			"content": "Project Repositories =><a href=\"https://github.com/mukekka/KonoProject\">Github</a>"
+		},
+		{
+			"type": "h3",
+			"content": "For detailed information, please refer to project Github README.md"
+		},
+		{
+			"type": "hr",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "Privacy policy, trademark policy, and terms of use are for reference only. The terms are provided by CharGPT3.5."
+		},
+		{
+			"type": "h3",
+			"content": "The trademark 'Marcohard' on this website refers to 'Microsoft'"
+		},
+		{
+			"type": "/div",
+			"content": ""
+		}
+	],
 	"other": [
 		{
 			"type": "button",

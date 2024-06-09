@@ -252,6 +252,97 @@
 			"content": "如果您有任何关于商标政策的疑问或意见，请通过我们的联系方式与我们联系。感谢您遵守我们的商标政策！"
 		}
 	],
+	"about": [
+		{
+			"type": "h1",
+			"content": "<center>关于我们</center>"
+		},
+		{
+			"id": "popuptext",
+			"type": "div",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "分工负责"
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;Koizumi:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--主页"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--前端搭建"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--后端管理"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--用户系统"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--数据库搭建"
+		},
+		{
+			"type": "p",
+			"content": "联系方式:koizumi.369c@outlook.com"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "&nbsp;&nbsp;&nbsp;璟:"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--二级界面"
+		},
+		{
+			"type": "p",
+			"content": "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--资料查找"
+		},
+		{
+			"type": "br",
+			"content": ""
+		},
+		{
+			"type": "h2",
+			"content": "项目信息"
+		},
+		{
+			"type": "h3",
+			"content": "项目仓库 =><a href=\"https://github.com/mukekka/KonoProject\">Github</a><=这个可以点。Github中国大陆不稳定，有可能打开缓慢或无法打开"
+		},
+		{
+			"type": "h3",
+			"content": "详细信息参见项目Github README.md"
+		},
+		{
+			"type": "hr",
+			"content": ""
+		},
+		{
+			"type": "h3",
+			"content": "右边的那三个(隐私政策、商标政策、使用条款)仅供参考。条款内容由CharGPT3.5提供。"
+		},
+		{
+			"type": "h3",
+			"content": "本网站商标 Marcohard 参考 Microsoft"
+		},
+		{
+			"type": "/div",
+			"content": ""
+		}
+	],
 	"other": [
 		{
 			"type": "button",
