@@ -18,13 +18,22 @@
 	    else con('连接成功');
         $commitRow = mysqli_query($link,"select max(Num) from commit");
         $commitRowLen =  mysqli_fetch_array($commitRow)[0];//消息行数
+	    $memesjson = json_decode(file_get_contents('../json/memes.json'),true)['memes'];
     ?>
     <div id="page-side1" class="scrollbar">
 	    <?php
 		    for($i=$commitRowLen;$i>=1;$i--){
 			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,users.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
-				$commitContent = $commitItem[4];
-			    if ($commitItem[4]=='') continue;
+			    $commitContent = $commitItem[4];
+//				for ($i = 0;$i < count($memesjson);$i++){
+					if (in_array($commitContent,$memesjson)) echo '12';
+//				}
+//			    if (preg_match("/(?:\[)(.*)(?:\])/i",$commitContent)){
+//			        for ($i = 0;$i < count($memesjson['memes']);$i++) {
+//						if (preg_match($memesjson['memes'][$i]['value'],$commitContent)) $commitContent = str_replace($memesjson['memes'][$i]['value'],"<img class='Commit-Meme' src='../../memes/".$memesjson['memes'][$i]['image']."'>",$commitContent);
+//			        }
+//			    }
+			    if ($commitContent=='') continue;
 			    echo "<table>
                         <tr>
                             <td class='Commit-Head' rowspan='2'>
@@ -39,7 +48,7 @@
 				if($commitItem[1]==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$commitItem[0]}'><input class='delete' type='submit' value='删除'></form></td>";
 				echo "</tr>
 	                    <tr>
-		                    <td class='Commit-Content' colspan='4'>$commitItem[4]</td>
+		                    <td class='Commit-Content' colspan='4'>$commitContent</td>
 	                    </tr>
                     </table>
 	                <hr>";
