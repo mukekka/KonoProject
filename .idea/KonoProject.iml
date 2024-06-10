@@ -10,6 +10,8 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/phpMyAdmin4.8.5" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/codeStyles" />
+      <excludeFolder url="file://$MODULE_DIR$/SecondaryInterface" />
+      <excludeFolder url="file://$MODULE_DIR$/SecondaryInterface/Kirin/Kirin 990/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

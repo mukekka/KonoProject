@@ -47,6 +47,7 @@
     border: none;
 }
 #page-commit{
+    position: relative;
     width: 93%;
     height: 17%;
     margin-left: 2%;
@@ -76,4 +77,29 @@
     color: #FFFFFF;
     height: 25px;
     width: 30%;
+}
+#memes{
+    margin-left: 1%;
+    float: right;
+    border: none;
+    background-color: #39C5BB;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 140%;
+}
+#memesTable{
+    width: 50%;
+    /*position: absolute;*/
+    z-index: 999;
+}
+#memesTable table{
+    border: grey solid 1px;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+#memesTable table tr td{
+    border: grey solid 1px;
+    transform: scale(20%);
+}
+#memesTable table tr td img{
 }

@@ -3,10 +3,12 @@
 	{
 		echo "<script>console.log('$conlog');</script>";
 	}
+	function alt($altinfo){
+		echo "<script>alert($altinfo);</script>";
+	}
 	if(isset($_POST['submit'])){
 		$link=mysqli_connect('localhost','user','123456','users');
 		if ($link->connect_error){alt('服务器连接失败');exit();}
-		else con('连接成功');
 		$commitText=$_POST['commit-text'];
 		$UserName = urldecode($_COOKIE['user']);
 		if($commitText==''){

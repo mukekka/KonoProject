@@ -10,6 +10,7 @@ Wave效果:https://www.bilibili.com/video/BV1mp4y1d7bU
 投喂铃仙:https://gitee.com/touhousupport/reisen ，https://www.bilibili.com/video/BV1f541177yY  
 音效:QQ  
 英语,日语翻译:BingTranslator  
+表情包:百度贴吧
 # 资料来源:  
 苹果官网-https://apple.com  
 高通官网-https://www.qualcomm.cn/  

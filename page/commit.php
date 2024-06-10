@@ -7,10 +7,12 @@
 </head>
 <body class="scrollbar">
     <?php
-        function con($conlog)
-        {
+        function con($conlog){
             echo "<script>console.log('$conlog');</script>";
         }
+	    function alt($altinfo){
+		    echo "<script>alert($altinfo);</script>";
+	    }
         $link = mysqli_connect('localhost','user','123456','users');
 	    if ($link->connect_error){alt('服务器连接失败');exit();}
 	    else con('连接成功');
@@ -21,6 +23,7 @@
 	    <?php
 		    for($i=$commitRowLen;$i>=1;$i--){
 			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,users.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
+				$commitContent = $commitItem[4];
 			    if ($commitItem[4]=='') continue;
 			    echo "<table>
                         <tr>

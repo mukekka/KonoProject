@@ -29,9 +29,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle1">高通</a>
                         <div class="dropdown-content" style="left: -10px;">
-                            <p><a href="#" id="navTitle1Opt1">骁龙8Gen1</a></p>
-                            <p><a href="#" id="navTitle1Opt2">骁龙8Gen2</a></p>
-                            <p><a href="#" id="navTitle1Opt3">骁龙8Gen3</a></p>
+                            <p><a href="SecondaryInterface/Snapdragon/8Gen1/Snap8Gen1.html" id="navTitle1Opt1">骁龙8Gen1</a></p>
+                            <p><a href="SecondaryInterface/Snapdragon/8Gen2/Snap8Gen2.html" id="navTitle1Opt2">骁龙8Gen2</a></p>
+                            <p><a href="SecondaryInterface/Snapdragon/8Gen3/Snap8Gen3.html" id="navTitle1Opt3">骁龙8Gen3</a></p>
                         </div>
                     </div>
                 </li>
@@ -39,9 +39,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle2">联发科</a>
                         <div class="dropdown-content" style="left: -10px;">
-                            <p><a href="#" id="navTitle2Opt1">天玑9000</a></p>
-                            <p><a href="#" id="navTitle2Opt2">天玑9200</a></p>
-                            <p><a href="#" id="navTitle2Opt3">天玑9300</a></p>
+                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209000/MTK9000.html" id="navTitle2Opt1">天玑9000</a></p>
+                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209200/MTK9200.html" id="navTitle2Opt2">天玑9200</a></p>
+                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209300/MTK9300.html" id="navTitle2Opt3">天玑9300</a></p>
                         </div>
                     </div>
                 </li>
@@ -49,9 +49,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle3">海思</a>
                         <div class="dropdown-content" style="left: -15px;">
-                            <p><a href="#" id="navTitle3Opt1">麒麟9000</a></p>
-                            <p><a href="#" id="navTitle3Opt2">麒麟9900</a></p>
-                            <p><a href="#" id="navTitle3Opt3">麒麟9900S</a></p>
+                            <p><a href="SecondaryInterface/Kirin/Kirin%20990/Kirin%20990.html" id="navTitle3Opt1">麒麟9000</a></p>
+                            <p><a href="SecondaryInterface/Kirin/Kirin%209000/Kirin%209000.html" id="navTitle3Opt2">麒麟9900</a></p>
+                            <p><a href="SecondaryInterface/Kirin/Kirin%209000S/Kirin%209000S.html" id="navTitle3Opt3">麒麟9900S</a></p>
                         </div>
                     </div>
                 </li>
@@ -59,9 +59,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle4">苹果</a>
                         <div class="dropdown-content" style="left: -15px;">
-                            <p><a href="#" id="navTitle4Opt1">A15</a></p>
-                            <p><a href="#" id="navTitle4Opt2">A16</a></p>
-                            <p><a href="#" id="navTitle4Opt3">A17Pro</a></p>
+                            <p><a href="SecondaryInterface/Apple/A15/A15.html" id="navTitle4Opt1">A15</a></p>
+                            <p><a href="SecondaryInterface/Apple/A16/A16.html" id="navTitle4Opt2">A16</a></p>
+                            <p><a href="SecondaryInterface/Apple/A17Pro/A17Pro.html" id="navTitle4Opt3">A17Pro</a></p>
                         </div>
                     </div>
                 </li>
@@ -101,6 +101,7 @@
                 <div id="page-commit">
                     <form method="post" action="php/commitPush.php">
                         <textarea onkeyup="onkey()" id="commit-text" name="commit-text" class="scrollbar" maxlength="200" title="MAX:200" disabled placeholder="网络一线牵，珍惜这段缘:)">请先登录</textarea>
+	                    <button id="memes" style="display: none">☻</button>
                         <input id="commit-but" type="submit" name="submit" value="发布" disabled onclick="document.getElementById('commit-text').innerHTML=''">
                         <label id="commit-len">(0)</label>
                     </form>
@@ -116,6 +117,27 @@
                         }
                     </script>
                 </div>
+	            <div id="memesTable" style="display: none">
+		            <script src="script/memes.js"></script>
+		            <table cellpadding="0">
+			            <tr>
+				            <td><input type="image" onclick="InputMeme()" src="memes/b_0001.png"></td>
+				            <td><img src="memes/b_0002.png" alt=""></td>
+				            <td><img src="memes/b_0003.png" alt=""></td>
+				            <td><img src="memes/b_0004.png" alt=""></td>
+				            <td><img src="memes/b_0005.png" alt=""></td>
+				            <td><img src="memes/b_0006.png" alt=""></td>
+			            </tr>
+			            <tr>
+				            <td><img src="memes/b_0007.png" alt=""></td>
+				            <td><img src="memes/b_0008.png" alt=""></td>
+				            <td><img src="memes/b_0009.png" alt=""></td>
+				            <td><img src="memes/b_0010.png" alt=""></td>
+				            <td><img src="memes/b_0011.png" alt=""></td>
+				            <td><img src="memes/b_0012.png" alt=""></td>
+			            </tr>
+		            </table>
+	            </div>
             </div>
         </div>
     </div>

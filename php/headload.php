@@ -1,4 +1,11 @@
 <?php
+	function alt($altinfo){
+		echo "<script>alert($altinfo);</script>";
+	}
+	function con($conlog)
+	{
+		echo "<script>console.log('$conlog');</script>";
+	}
 	echo $_FILES['upload_file']['name'];
 	switch ($_FILES['upload_file']['type']){
 		case 'image/jpeg':
@@ -10,7 +17,7 @@
 			$tojpg = 'png';
 			break;
 		default:
-			echo "不支持的文件格式,仅支持jpg、png";
+			alt("不支持的文件格式,仅支持jpg、png");
 			header('location:../Userset.php');
 	}
 	$tempDir = "../tmp/";//网站临时文件夹

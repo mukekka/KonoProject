@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>测试代码</title>
+<body>
+<div id="app" style="width:1024px;height:500px">
+	<div contenteditable="true" id="outputDLg" rows="3" cols="20"
+	     style="width:100%;height:60%;background-color:#DBD9D8;overflow: auto;
+                border-style:dotted;border-width:1px;border-color:8FBC8F;align:top"></div>
+	<input id="inputDLg" onkeypress="OnInputEnter()"
+	       style="width:100%;height:30%;border-style:dotted;border-width:1px;border-color:8FBC8F"/>
+	<button id="sendBtn" onclick="OnSendBtn()" style="height:5%">发送</button>
+	<script>
+		function OnSendBtn() {
+			EditShow("我", inputDLg.value);
+			EditShowImage("我");
+		}
+		
+		function EditShow(title, content) {
+			var element = document.getElementById("outputDLg");
+			element.innerHTML += "<div>" + title + " : " + content + "</div> <br>";
+			element.scrollTop = element.scrollHeight;
+		}
+		
+		function EditShowImage(sender) {
+			var element = document.getElementById("outputDLg");
+			element.innerHTML += sender + " : " + "<img src=\"memes\\b_0001.png\" style=\"transform: scale(50%);display:inline;\"><br>";
+			element.scrollTop = element.scrollHeight;
+		}
+	
+	</script>
+	<div id="memesTable">
+		<table>
+			<tr>
+				<td><img src="memes/b_0001.png" alt=""></td>
+				<td><img src="memes/b_0002.png" alt=""></td>
+				<td><img src="memes/b_0003.png" alt=""></td>
+				<td><img src="memes/b_0004.png" alt=""></td>
+				<td><img src="memes/b_0005.png" alt=""></td>
+				<td><img src="memes/b_0006.png" alt=""></td>
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+
+</head>
+</html>
