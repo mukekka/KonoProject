@@ -20,6 +20,8 @@
 		echo "上传文件失败.";
 	}
 	$link = new mysqli('localhost', 'user', '123456', 'users');
+	if ($link->connect_error){alt('服务器连接失败');exit();}
+	else con('连接成功');
 	$UserName = urldecode($_COOKIE['user']);
 	$ID=mysqli_fetch_array(mysqli_query($link,"select UserID from users where UserName='$UserName'"))[0];
 	switch ($tojpg){

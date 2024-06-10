@@ -70,10 +70,7 @@
         }
 //        数据库连接
         $link = new mysqli('localhost','user','123456','users');//连接到数据库
-        if($link->connect_error){
-            alt('错误,无法连接到数据库');
-            exit();
-        }//连接失败
+        if($link->connect_error){alt('错误,无法连接到数据库');exit();}//连接失败
         else con('连接成功');//连接成功
 
         $getNewID = mysqli_fetch_array(mysqli_query($link,'select max(UserID)+1 from users'))[0];//获取新ID

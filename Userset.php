@@ -220,7 +220,7 @@
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }
                 $link = new mysqli('localhost', 'user', '123456', 'users');//连接到数据库
-                if ($link->connect_error){con('连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
+                if ($link->connect_error){alt('服务器连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
                 else con('连接成功');//连接成功
                 $UserName = urldecode($_COOKIE['user']);
 
@@ -244,27 +244,27 @@
                     if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
                         if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码不符合规范
                             if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
-                                con('新密码不能与旧密码相同');
+                                alt('新密码不能与旧密码相同');
 								exit();
                             }else if(strcmp(getHash($UserInfo[UserID],$UserInfoUpload[UserOldPass]),mysqli_fetch_array(mysqli_query($link,"select Hash from users where users.userID = $UserInfo[UserID];"))[0])==0){
-								con('密码正确');
+								alt('密码正确');
 								$newhash = getHash($UserInfo[UserID],$UserInfoUpload[UserPass]);
 								mysqli_query($link,"update users set Hash = '$newhash' where users.UserID = $UserInfo[UserID]");
 								echo "<script>setCookie('hash','$newhash','365','/');</script>";
                             }else{//密码不正确
-                                con('原密码不正确');
+                                alt('原密码不正确');
 								exit();
                             }
                         }else{
-                            con('密码不符合规范!');
+                            alt('密码不符合规范!');
 							exit();
                         }
                     }else{
-                        con('密码不相等!');
+                        alt('密码不相等!');
 						exit();
                     }
                 }else{
-                    con('无密码');
+                    alt('无密码');
                 }
                 echo "<meta http-equiv='refresh' content ='0;url="."'>";
             }
