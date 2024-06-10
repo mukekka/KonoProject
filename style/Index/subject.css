@@ -88,9 +88,11 @@
     font-size: 140%;
 }
 #memesTable{
+    top: 0;
     width: 50%;
     /*position: absolute;*/
-    z-index: 999;
+    z-index: 1000;
+    transform: scale(40%);
 }
 #memesTable table{
     border: grey solid 1px;
@@ -99,7 +101,6 @@
 }
 #memesTable table tr td{
     border: grey solid 1px;
-    transform: scale(20%);
 }
 #memesTable table tr td img{
 }
