@@ -13,7 +13,7 @@
 }
 #page-main{
     padding-left: 1%;
-    width: 80%;
+    width: 79%;
     height: 90%;
     text-align: center;
     float: left;
@@ -85,21 +85,28 @@
     background-color: #39C5BB;
     border-radius: 5px;
     color: #FFFFFF;
-    font-size: 140%;
+    font-size: 110%;
 }
 #memesTable{
-    border: gray solid 1px;
+    background-color: #FFFFFF;
+    border: #39C5BB solid 2px;
+    border-radius: 5px;
     /*display: block;*/
     margin: auto 100px auto auto;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    top: 0;
+    top: 250px;
     height: 600px;
-    width: 600px;
+    width: 670px;
+    right: 0px;
     position: absolute;
     z-index: 1000;
     transform: scale(50%);
     display: none;
+}
+#memesTable-tab{
+    overflow-y: scroll;
+    overflow-x: scroll;
+    width: 100%;
+    height: 95%;
 }
 #memesTable table{
     border: grey solid 1px;
@@ -111,4 +118,18 @@
 }
 #memesTable table tr td img{
     -webkit-user-drag: none;
+}
+#memeOut{
+    display: inline-block;
+    float: right;
+    margin:5px 5px;
+    border: none;
+    background-color: #39C5BB;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 110%;
+}
+#meme{
+    display: inline-block;
+    font-size: 150%;
 }

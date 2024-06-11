@@ -68,19 +68,4 @@ switch (langCookie){
         document.documentElement.lang='ja';
         indexlangset('JP');
         break;
-    case langCookie == '':
-        switch (navigator.language){
-            case 'zh-CN':
-                setCookie('lang','SC','365','/')
-                break;
-            case 'zh-TW':
-                setCookie('lang','TC','365','/')
-                break;
-            case 'en':
-                setCookie('lang','EN','365','/')
-                break;
-            case 'ja':
-                setCookie('lang','JP','365','/')
-                break;
-        }
 }

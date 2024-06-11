@@ -102,7 +102,7 @@
                 <div id="page-commit">
                     <form method="post" action="php/commitPush.php">
                         <textarea onkeyup="onkey()" id="commit-text" name="commit-text" class="scrollbar" maxlength="200" title="MAX:200" disabled placeholder="网络一线牵，珍惜这段缘:)">请先登录</textarea>
-	                    <button id="memes" style="display: none">☻</button>
+	                    <a id="memes" onclick="document.getElementById('memesTable').style.display = 'block'">&nbsp;☻&nbsp;</a>
                         <input id="commit-but" type="submit" name="submit" value="发布" disabled onclick="document.getElementById('commit-text').innerHTML=''">
                         <label id="commit-len">(0)</label>
                     </form>
@@ -120,103 +120,107 @@
                 </div>
 	            <div id="memesTable" class="scrollbar">
 		            <script src="script/memes.js"></script>
-		            <table cellpadding="0">
-                        <a>¤</a>
-			            <tr>
-				            <td><input type="image" onclick="InputMeme('0001')" src="memes/b_0001.png"></td>
-				            <td><input type="image" onclick="InputMeme('0002')" src="memes/b_0002.png"></td>
-				            <td><input type="image" onclick="InputMeme('0003')" src="memes/b_0003.png"></td>
-				            <td><input type="image" onclick="InputMeme('0004')" src="memes/b_0004.png"></td>
-				            <td><input type="image" onclick="InputMeme('0005')" src="memes/b_0005.png"></td>
-			            </tr>
-			            <tr>
-                            <td><input type="image" onclick="InputMeme('0006')" src="memes/b_0006.png"></td>
-                            <td><input type="image" onclick="InputMeme('0007')" src="memes/b_0007.png"></td>
-                            <td><input type="image" onclick="InputMeme('0008')" src="memes/b_0008.png"></td>
-                            <td><input type="image" onclick="InputMeme('0009')" src="memes/b_0009.png"></td>
-                            <td><input type="image" onclick="InputMeme('0010')" src="memes/b_0010.png"></td>
-			            </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0011')" src="memes/b_0011.png"></td>
-                            <td><input type="image" onclick="InputMeme('0012')" src="memes/b_0012.png"></td>
-                            <td><input type="image" onclick="InputMeme('0013')" src="memes/b_0013.png"></td>
-                            <td><input type="image" onclick="InputMeme('0014')" src="memes/b_0014.png"></td>
-                            <td><input type="image" onclick="InputMeme('0015')" src="memes/b_0015.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0016')" src="memes/b_0016.png"></td>
-                            <td><input type="image" onclick="InputMeme('0017')" src="memes/b_0017.png"></td>
-                            <td><input type="image" onclick="InputMeme('0018')" src="memes/b_0018.png"></td>
-                            <td><input type="image" onclick="InputMeme('0019')" src="memes/b_0019.png"></td>
-                            <td><input type="image" onclick="InputMeme('0020')" src="memes/b_0020.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0021')" src="memes/b_0021.png"></td>
-                            <td><input type="image" onclick="InputMeme('0022')" src="memes/b_0022.png"></td>
-                            <td><input type="image" onclick="InputMeme('0023')" src="memes/b_0023.png"></td>
-                            <td><input type="image" onclick="InputMeme('0024')" src="memes/b_0024.png"></td>
-                            <td><input type="image" onclick="InputMeme('0025')" src="memes/b_0025.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0026')" src="memes/b_0026.png"></td>
-                            <td><input type="image" onclick="InputMeme('0027')" src="memes/b_0027.png"></td>
-                            <td><input type="image" onclick="InputMeme('0028')" src="memes/b_0028.png"></td>
-                            <td><input type="image" onclick="InputMeme('0029')" src="memes/b_0029.png"></td>
-                            <td><input type="image" onclick="InputMeme('0030')" src="memes/b_0030.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0031')" src="memes/b_0031.png"></td>
-                            <td><input type="image" onclick="InputMeme('0032')" src="memes/b_0032.png"></td>
-                            <td><input type="image" onclick="InputMeme('0033')" src="memes/b_0033.png"></td>
-                            <td><input type="image" onclick="InputMeme('0034')" src="memes/b_0034.png"></td>
-                            <td><input type="image" onclick="InputMeme('0035')" src="memes/b_0035.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0036')" src="memes/b_0036.png"></td>
-                            <td><input type="image" onclick="InputMeme('0037')" src="memes/b_0037.png"></td>
-                            <td><input type="image" onclick="InputMeme('0038')" src="memes/b_0038.png"></td>
-                            <td><input type="image" onclick="InputMeme('0039')" src="memes/b_0039.png"></td>
-                            <td><input type="image" onclick="InputMeme('0040')" src="memes/b_0040.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0041')" src="memes/b_0041.png"></td>
-                            <td><input type="image" onclick="InputMeme('0042')" src="memes/b_0042.png"></td>
-                            <td><input type="image" onclick="InputMeme('0043')" src="memes/b_0043.png"></td>
-                            <td><input type="image" onclick="InputMeme('0044')" src="memes/b_0044.png"></td>
-                            <td><input type="image" onclick="InputMeme('0045')" src="memes/b_0045.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0046')" src="memes/b_0046.png"></td>
-                            <td><input type="image" onclick="InputMeme('0047')" src="memes/b_0047.png"></td>
-                            <td><input type="image" onclick="InputMeme('0048')" src="memes/b_0048.png"></td>
-                            <td><input type="image" onclick="InputMeme('0049')" src="memes/b_0049.png"></td>
-                            <td><input type="image" onclick="InputMeme('0050')" src="memes/b_0050.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0051')" src="memes/b_0051.png"></td>
-                            <td><input type="image" onclick="InputMeme('0052')" src="memes/b_0052.png"></td>
-                            <td><input type="image" onclick="InputMeme('0053')" src="memes/b_0053.png"></td>
-                            <td><input type="image" onclick="InputMeme('0054')" src="memes/b_0054.png"></td>
-                            <td><input type="image" onclick="InputMeme('0055')" src="memes/b_0055.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0056')" src="memes/b_0056.png"></td>
-                            <td><input type="image" onclick="InputMeme('0057')" src="memes/b_0057.png"></td>
-                            <td><input type="image" onclick="InputMeme('0058')" src="memes/b_0058.png"></td>
-                            <td><input type="image" onclick="InputMeme('0059')" src="memes/b_0059.png"></td>
-                            <td><input type="image" onclick="InputMeme('0060')" src="memes/b_0060.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0061')" src="memes/b_0061.png"></td>
-                            <td><input type="image" onclick="InputMeme('0062')" src="memes/b_0062.png"></td>
-                            <td><input type="image" onclick="InputMeme('0063')" src="memes/b_0063.png"></td>
-                            <td><input type="image" onclick="InputMeme('0064')" src="memes/b_0064.png"></td>
-                            <td><input type="image" onclick="InputMeme('0065')" src="memes/b_0065.png"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="image" onclick="InputMeme('0066')" src="memes/b_0066.png"></td>
-                        </tr>
-		            </table>
+		            <p id="meme">表情包</p>
+		            <a id="memeOut" onclick="document.getElementById('memesTable').style.display = 'none'">&nbsp;✘&nbsp;</a>
+		            <div id="memesTable-tab" class="scrollbar">
+			            <table cellpadding="0">
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0001')" src="memes/b_0001.png"></td>
+					            <td><input type="image" onclick="InputMeme('0002')" src="memes/b_0002.png"></td>
+					            <td><input type="image" onclick="InputMeme('0003')" src="memes/b_0003.png"></td>
+					            <td><input type="image" onclick="InputMeme('0004')" src="memes/b_0004.png"></td>
+					            <td><input type="image" onclick="InputMeme('0005')" src="memes/b_0005.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0006')" src="memes/b_0006.png"></td>
+					            <td><input type="image" onclick="InputMeme('0007')" src="memes/b_0007.png"></td>
+					            <td><input type="image" onclick="InputMeme('0008')" src="memes/b_0008.png"></td>
+					            <td><input type="image" onclick="InputMeme('0009')" src="memes/b_0009.png"></td>
+					            <td><input type="image" onclick="InputMeme('0010')" src="memes/b_0010.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0011')" src="memes/b_0011.png"></td>
+					            <td><input type="image" onclick="InputMeme('0012')" src="memes/b_0012.png"></td>
+					            <td><input type="image" onclick="InputMeme('0013')" src="memes/b_0013.png"></td>
+					            <td><input type="image" onclick="InputMeme('0014')" src="memes/b_0014.png"></td>
+					            <td><input type="image" onclick="InputMeme('0015')" src="memes/b_0015.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0016')" src="memes/b_0016.png"></td>
+					            <td><input type="image" onclick="InputMeme('0017')" src="memes/b_0017.png"></td>
+					            <td><input type="image" onclick="InputMeme('0018')" src="memes/b_0018.png"></td>
+					            <td><input type="image" onclick="InputMeme('0019')" src="memes/b_0019.png"></td>
+					            <td><input type="image" onclick="InputMeme('0020')" src="memes/b_0020.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0021')" src="memes/b_0021.png"></td>
+					            <td><input type="image" onclick="InputMeme('0022')" src="memes/b_0022.png"></td>
+					            <td><input type="image" onclick="InputMeme('0023')" src="memes/b_0023.png"></td>
+					            <td><input type="image" onclick="InputMeme('0024')" src="memes/b_0024.png"></td>
+					            <td><input type="image" onclick="InputMeme('0025')" src="memes/b_0025.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0026')" src="memes/b_0026.png"></td>
+					            <td><input type="image" onclick="InputMeme('0027')" src="memes/b_0027.png"></td>
+					            <td><input type="image" onclick="InputMeme('0028')" src="memes/b_0028.png"></td>
+					            <td><input type="image" onclick="InputMeme('0029')" src="memes/b_0029.png"></td>
+					            <td><input type="image" onclick="InputMeme('0030')" src="memes/b_0030.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0031')" src="memes/b_0031.png"></td>
+					            <td><input type="image" onclick="InputMeme('0032')" src="memes/b_0032.png"></td>
+					            <td><input type="image" onclick="InputMeme('0033')" src="memes/b_0033.png"></td>
+					            <td><input type="image" onclick="InputMeme('0034')" src="memes/b_0034.png"></td>
+					            <td><input type="image" onclick="InputMeme('0035')" src="memes/b_0035.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0036')" src="memes/b_0036.png"></td>
+					            <td><input type="image" onclick="InputMeme('0037')" src="memes/b_0037.png"></td>
+					            <td><input type="image" onclick="InputMeme('0038')" src="memes/b_0038.png"></td>
+					            <td><input type="image" onclick="InputMeme('0039')" src="memes/b_0039.png"></td>
+					            <td><input type="image" onclick="InputMeme('0040')" src="memes/b_0040.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0041')" src="memes/b_0041.png"></td>
+					            <td><input type="image" onclick="InputMeme('0042')" src="memes/b_0042.png"></td>
+					            <td><input type="image" onclick="InputMeme('0043')" src="memes/b_0043.png"></td>
+					            <td><input type="image" onclick="InputMeme('0044')" src="memes/b_0044.png"></td>
+					            <td><input type="image" onclick="InputMeme('0045')" src="memes/b_0045.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0046')" src="memes/b_0046.png"></td>
+					            <td><input type="image" onclick="InputMeme('0047')" src="memes/b_0047.png"></td>
+					            <td><input type="image" onclick="InputMeme('0048')" src="memes/b_0048.png"></td>
+					            <td><input type="image" onclick="InputMeme('0049')" src="memes/b_0049.png"></td>
+					            <td><input type="image" onclick="InputMeme('0050')" src="memes/b_0050.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0051')" src="memes/b_0051.png"></td>
+					            <td><input type="image" onclick="InputMeme('0052')" src="memes/b_0052.png"></td>
+					            <td><input type="image" onclick="InputMeme('0053')" src="memes/b_0053.png"></td>
+					            <td><input type="image" onclick="InputMeme('0054')" src="memes/b_0054.png"></td>
+					            <td><input type="image" onclick="InputMeme('0055')" src="memes/b_0055.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0056')" src="memes/b_0056.png"></td>
+					            <td><input type="image" onclick="InputMeme('0057')" src="memes/b_0057.png"></td>
+					            <td><input type="image" onclick="InputMeme('0058')" src="memes/b_0058.png"></td>
+					            <td><input type="image" onclick="InputMeme('0059')" src="memes/b_0059.png"></td>
+					            <td><input type="image" onclick="InputMeme('0060')" src="memes/b_0060.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0061')" src="memes/b_0061.png"></td>
+					            <td><input type="image" onclick="InputMeme('0062')" src="memes/b_0062.png"></td>
+					            <td><input type="image" onclick="InputMeme('0063')" src="memes/b_0063.png"></td>
+					            <td><input type="image" onclick="InputMeme('0064')" src="memes/b_0064.png"></td>
+					            <td><input type="image" onclick="InputMeme('0065')" src="memes/b_0065.png"></td>
+				            </tr>
+				            <tr>
+					            <td><input type="image" onclick="InputMeme('0066')" src="memes/b_0066.png"></td>
+					            <td><input type="image" onclick="InputMeme('0067')" src="memes/b_0067.png"></td>
+				            </tr>
+			            </table>
+		            </div>
 	            </div>
             </div>
         </div>
