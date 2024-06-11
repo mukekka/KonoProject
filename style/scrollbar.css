@@ -8,9 +8,8 @@
 	background-color: #a8a8a8;
 	margin-right: 1px;
 }
-
 .scrollbar::-webkit-scrollbar{/*¹ö¶¯Ìõ*/
-	width: 6px;
+	width: 3px;
 }
 .scrollbar::-webkit-scrollbar-track{/*»¬¹ì*/
 	color: #00000000;

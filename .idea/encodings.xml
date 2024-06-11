@@ -13,7 +13,10 @@
     <file url="file://$PROJECT_DIR$/json/index-lang/jp.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/index-lang/sc.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/index-lang/tc.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/json/meme.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/json/memes.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/page/t.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/page/t.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/UserInfoSubmit.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/commitPush.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/php/headload.php" charset="UTF-8" />
@@ -23,7 +26,6 @@
     <file url="file://$PROJECT_DIR$/script/popup.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/script/userset.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/style/User/user.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/t.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/text/crop.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/text/upload.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/text/uploade.php" charset="UTF-8" />

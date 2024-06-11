@@ -88,11 +88,18 @@
     font-size: 140%;
 }
 #memesTable{
+    border: gray solid 1px;
+    /*display: block;*/
+    margin: auto 100px auto auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
     top: 0;
-    width: 50%;
-    /*position: absolute;*/
+    height: 600px;
+    width: 600px;
+    position: absolute;
     z-index: 1000;
-    transform: scale(40%);
+    transform: scale(50%);
+    display: none;
 }
 #memesTable table{
     border: grey solid 1px;
@@ -103,4 +110,5 @@
     border: grey solid 1px;
 }
 #memesTable table tr td img{
+    -webkit-user-drag: none;
 }

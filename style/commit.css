@@ -70,4 +70,5 @@ p{
 .Commit-Meme{
     width: 20%;
     height: 20%;
+    -webkit-user-drag: none;
 }

@@ -28,7 +28,7 @@ CREATE TABLE `commit` (
   `Commit` varchar(105) NOT NULL COMMENT '评论内容',
   `Time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '发布时间',
   PRIMARY KEY (`Num`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `commit` (
 
 LOCK TABLES `commit` WRITE;
 /*!40000 ALTER TABLE `commit` DISABLE KEYS */;
-INSERT INTO `commit` VALUES (1,1,'HelloWorld','2024-06-06 08:52:27'),(2,1,'HelloWorld2','2024-06-06 08:52:44'),(3,2,'还行','2024-06-06 13:49:55'),(4,3,'これはいくらですか？','2024-06-06 14:07:53');
+INSERT INTO `commit` VALUES (1,1,'HelloWorld','2024-06-06 08:52:27'),(2,1,'HelloWorld2','2024-06-06 08:52:44'),(3,2,'还行','2024-06-06 13:49:55'),(4,3,'これはいくらですか？','2024-06-06 14:07:53'),(5,1,'[心照不宣]表情包测试','2024-06-10 23:06:07');
 /*!40000 ALTER TABLE `commit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-10  2:12:28
+-- Dump completed on 2024-06-11 10:54:07
