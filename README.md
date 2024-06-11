@@ -7,6 +7,7 @@ JS库:Jquery3.2.1,Jquery3.6.0
 音频处理:Howler.js  
 字体:思源黑体,Tachyon Light  
 Wave效果:https://www.bilibili.com/video/BV1mp4y1d7bU  
+聊天室文章:https://www.cnblogs.com/zjfree/p/15352443.html  
 投喂铃仙:https://gitee.com/touhousupport/reisen ，https://www.bilibili.com/video/BV1f541177yY  
 音效:QQ  
 英语,日语翻译:BingTranslator  
@@ -23,6 +24,7 @@ CSDN-http://csdn.net
 # 开发环境
 GoogleChrome 125.0.6422.142 x64  
 PhpStrom 2022.3.1  
-Apache 2.4.39  
+Apache 2.4.39 
+Nginx1.15.11  
 MySQL 5.7.26  
-PHP 7.3.4nts
+PHP 7.3.4nts  

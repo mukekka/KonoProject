@@ -33,8 +33,15 @@
 #flushed{
     background: #00000000 url("../../image/ico/flushed.svg") no-repeat;
     background-size:cover;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
+    border: none;
+}
+#jump-to-chatRoom{
+    background: #00000000 url("../../image/ico/jump.svg") no-repeat;
+    background-size:cover;
+    height: 16px;
+    width: 16px;
     border: none;
 }
 #page-side hr{
