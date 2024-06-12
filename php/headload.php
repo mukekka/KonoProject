@@ -6,52 +6,26 @@
 	{
 		echo "<script>console.log('$conlog');</script>";
 	}
-	echo $_FILES['upload_file']['name'];
-	switch ($_FILES['upload_file']['type']){
-		case 'image/jpeg':
-			$tojpgfilename = $targetFile = $_FILES['upload_file']["name"]; // 获取上传文件的路径
-			$tojpg = 'jpg';
-			break;
-		case 'image/png':
-			$tojpgfilename = $targetFile = $_FILES['upload_file']["name"]; // 获取上传文件的路径
-			$tojpg = 'png';
-			break;
-		default:
-			alt("不支持的文件格式,仅支持jpg、png");
-			header('location:../Userset.php');
-	}
-	$tempDir = "../tmp/";//网站临时文件夹
-	if (move_uploaded_file($_FILES['upload_file']["tmp_name"], $tempDir.$targetFile)) {//从本地上传到网站文件夹
-		echo "文件已成功上传.";
-	} else {
-		echo "上传文件失败.";
+	$mimeTypeArr=['image/jpeg','image/png','image/gif','image/webp','image/bmp','image/tiff','image/ico','image/svg+xml'];
+	$imageFile =$_FILES['upload_file'];
+	if($imageFile['size']>33554432){
+		alt('图片过大!不能大于32MiB');
+	}else{
+		$mimeType=mime_content_type($imageFile['tmp_name']);
+		if (in_array($mimeType,$mimeTypeArr)){
+			$Base64 = base64_encode(file_get_contents($imageFile['tmp_name']));
+			$imageBase64 = "data:{$mimeType};base64,{$Base64}";
+		}else{
+				alt('请输入正确格式的图片:JPEG,PNG,GIF,WEBP,BMP,TIFF,ICO,SVG');
+				header('location:../Userset.php');
+		}
 	}
 	$link = new mysqli('localhost', 'user', '123456', 'users');
 	if ($link->connect_error){alt('服务器连接失败');exit();}
 	else con('连接成功');
 	$UserName = urldecode($_COOKIE['user']);
 	$ID=mysqli_fetch_array(mysqli_query($link,"select UserID from users where UserName='$UserName'"))[0];
-	switch ($tojpg){
-		case 'jpg':
-			$src = $tempDir.$targetFile;
-			rename($src,$tempDir.$ID.'.jpg');
-			break;
-		case 'png':
-			$src = $tempDir.$targetFile;
-			$png = imagecreatefrompng($src);
-			$upload_file = imagejpeg($png,$tempDir.$ID.'.jpg');
-			unlink($src);
-			if ($upload_file) {
-				echo "转换成功！";
-			} else {
-				echo "转换失败！";
-			}
-			break;
-	}
-	$targetDir = "../head/"; //指定文件夹的路径
-	$headHash = hash('sha256',$ID);
-	rename($tempDir.$ID.'.jpg',$targetDir.$headHash.'.jpg');
-	mysqli_query($link,"update users set Head = '$headHash' where UserName='$UserName'");
+	mysqli_query($link,"update head set Head = '$imageBase64' where UserID=$ID");
 	mysqli_close($link);
 	header('location:../Userset.php');
 ?>

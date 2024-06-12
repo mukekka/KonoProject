@@ -32,7 +32,7 @@
     <div id="page-side1" class="scrollbar">
 	    <?php
 		    for($i=$commitRowLen;$i>=1;$i--){
-			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,users.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday,commit.IP FROM users,commit WHERE commit.Num = $i and users.UserID = commit.UserID"));
+			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,head.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday,commit.IP FROM users,commit,head WHERE commit.Num = $i and users.UserID = commit.UserID and head.UserID = users.UserID"));
 			    $commitContent = $commitItem[4];
                 if ($commitContent=='') continue;
 				$memesjson = $json;
@@ -51,7 +51,7 @@
 			    echo "<table title='$IP'>
                         <tr>
                             <td class='Commit-Head' rowspan='2'>
-	                            <image class='Head' src='../head/$commitItem[2].jpg' title='用户ID:$commitItem[10]\n简介:$commitItem[7]\n邮箱:$commitItem[9]\n性别:$commitItem[6]\n生日:$commitItem[12]\n账号状态:$commitItem[8]\n入驻时间:$commitItem[11]'>
+	                            <image class='Head' src='$commitItem[2]' title='用户ID:$commitItem[10]\n简介:$commitItem[7]\n邮箱:$commitItem[9]\n性别:$commitItem[6]\n生日:$commitItem[12]\n账号状态:$commitItem[8]\n入驻时间:$commitItem[11]'>
                             </td>
 	                        <td class='Commit-UserName' colspan='2'><p>$commitItem[1]</p></td>
 	                        <td class='Commit-Tag'>$commitItem[3]</td>
