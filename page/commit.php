@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="../style/commit.css" rel="stylesheet" type="text/css">
-    <link href="../style/scrollbar.css" rel="stylesheet" type="text/css">
+    <link href="/style/commit.css" rel="stylesheet" type="text/css">
+    <link href="/style/scrollbar.css" rel="stylesheet" type="text/css">
 </head>
 <body class="scrollbar">
     <?php

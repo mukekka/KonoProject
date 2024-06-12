@@ -35,9 +35,9 @@ function displayPassword(){
     }
 }
 function showNotification(title,body,ico,time,audio){
-    if (ico==null) ico='image/Logo16.ico';
+    if (ico==null) ico='/image/Logo16.ico';
     if (time==null) time=5000;
-    if (audio==null) audio='audio/system.wav';
+    if (audio==null) audio='/audio/system.wav';
     var sound = new Howl({
         src: [audio],
         autoplay: true, // 是否自动播放

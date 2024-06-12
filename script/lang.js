@@ -1,6 +1,6 @@
 var langSelect,value;
 function indexlangset(lang){
-    var jsonurl = 'json/index-lang/'+lang+'-lang.json';
+    var jsonurl = '/json/index-lang/'+lang+'-lang.json';
     $.getJSON(jsonurl,function (data){
         for (var i = 0; i < Object.keys(data['lang']).length; i++) {
             if ((data['lang'][i]['id']=='UserID')&&(getCookie('user')!='')) continue;

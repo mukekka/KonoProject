@@ -40,6 +40,6 @@
 			$commitText = str_replace("你妈","我妈",$commitText);
 			$commitLoad=mysqli_query($link,"insert into commit (UserID,Commit,IP) values ((select UserID from users where UserName = '$UserName'),'$commitText',$IP)");
 		}
-		header('location:../Index.html');
+		header('location:/Index.html');
 	}
 ?>

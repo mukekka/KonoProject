@@ -20,7 +20,7 @@
 <body class="scrollbar">
     <div class="header">
         <div id="logo">
-            <a href="Index.html">
+            <a href="/Index.html">
                 <p id="logoContent">INFINITY</p>
             </a>
         </div>
@@ -30,9 +30,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle1">高通</a>
                         <div class="dropdown-content" style="left: -10px;">
-                            <p><a href="SecondaryInterface/Snapdragon/8Gen1/Snap8Gen1.html" id="navTitle1Opt1">骁龙8Gen1</a></p>
-                            <p><a href="SecondaryInterface/Snapdragon/8Gen2/Snap8Gen2.html" id="navTitle1Opt2">骁龙8Gen2</a></p>
-                            <p><a href="SecondaryInterface/Snapdragon/8Gen3/Snap8Gen3.html" id="navTitle1Opt3">骁龙8Gen3</a></p>
+                            <p><a href="/SecondaryInterface/Snapdragon/8Gen1/Snap8Gen1.html" id="navTitle1Opt1">骁龙8Gen1</a></p>
+                            <p><a href="/SecondaryInterface/Snapdragon/8Gen2/Snap8Gen2.html" id="navTitle1Opt2">骁龙8Gen2</a></p>
+                            <p><a href="/SecondaryInterface/Snapdragon/8Gen3/Snap8Gen3.html" id="navTitle1Opt3">骁龙8Gen3</a></p>
                         </div>
                     </div>
                 </li>
@@ -40,9 +40,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle2">联发科</a>
                         <div class="dropdown-content" style="left: -10px;">
-                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209000/MTK9000.html" id="navTitle2Opt1">天玑9000</a></p>
-                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209200/MTK9200.html" id="navTitle2Opt2">天玑9200</a></p>
-                            <p><a href="SecondaryInterface/MediaTek/MediaTek%209300/MTK9300.html" id="navTitle2Opt3">天玑9300</a></p>
+                            <p><a href="/SecondaryInterface/MediaTek/MediaTek%209000/MTK9000.html" id="navTitle2Opt1">天玑9000</a></p>
+                            <p><a href="/SecondaryInterface/MediaTek/MediaTek%209200/MTK9200.html" id="navTitle2Opt2">天玑9200</a></p>
+                            <p><a href="/SecondaryInterface/MediaTek/MediaTek%209300/MTK9300.html" id="navTitle2Opt3">天玑9300</a></p>
                         </div>
                     </div>
                 </li>
@@ -50,9 +50,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle3">海思</a>
                         <div class="dropdown-content" style="left: -15px;">
-                            <p><a href="SecondaryInterface/Kirin/Kirin%20990/Kirin%20990.html" id="navTitle3Opt1">麒麟900</a></p>
-                            <p><a href="SecondaryInterface/Kirin/Kirin%209000/Kirin%209000.html" id="navTitle3Opt2">麒麟9000</a></p>
-                            <p><a href="SecondaryInterface/Kirin/Kirin%209000S/Kirin%209000S.html" id="navTitle3Opt3">麒麟9000S</a></p>
+                            <p><a href="/SecondaryInterface/Kirin/Kirin%20990/Kirin%20990.html" id="navTitle3Opt1">麒麟900</a></p>
+                            <p><a href="/SecondaryInterface/Kirin/Kirin%209000/Kirin%209000.html" id="navTitle3Opt2">麒麟9000</a></p>
+                            <p><a href="/SecondaryInterface/Kirin/Kirin%209000S/Kirin%209000S.html" id="navTitle3Opt3">麒麟9000S</a></p>
                         </div>
                     </div>
                 </li>
@@ -60,9 +60,9 @@
                     <div class="dropdown">
                         <a href="#" id="navTitle4">苹果</a>
                         <div class="dropdown-content" style="left: -15px;">
-                            <p><a href="SecondaryInterface/Apple/A15/A15.html" id="navTitle4Opt1">A15</a></p>
-                            <p><a href="SecondaryInterface/Apple/A16/A16.html" id="navTitle4Opt2">A16</a></p>
-                            <p><a href="SecondaryInterface/Apple/A17Pro/A17Pro.html" id="navTitle4Opt3">A17Pro</a></p>
+                            <p><a href="/SecondaryInterface/Apple/A15/A15.html" id="navTitle4Opt1">A15</a></p>
+                            <p><a href="/SecondaryInterface/Apple/A16/A16.html" id="navTitle4Opt2">A16</a></p>
+                            <p><a href="/SecondaryInterface/Apple/A17Pro/A17Pro.html" id="navTitle4Opt3">A17Pro</a></p>
                         </div>
                     </div>
                 </li>
@@ -92,7 +92,7 @@
     <div id="subject">
         <div id="main">
             <div id="page-main">
-				<iframe src="page/mediatek-main.html" width="100%" height="100%" style="border: none;display: block;margin: auto"></iframe>
+				<iframe src="/page/main.html" width="100%" height="100%" style="border: none;display: block;margin: auto"></iframe>
             </div>
             <div id="page-side">
 	            <h style="text-align: center" id="chat">聊天区</h>
@@ -108,6 +108,20 @@
                         <label id="commit-len">(0)</label>
                     </form>
                     <script>
+	                    $("#commit-text").keydown( function(event){
+		                    // var msgInput=$(this).val()
+		                    event=(event)?event:((window.event)?window.event:"");
+		                    var keyCode=event.keyCode?event.keyCode:(event.which?event.which:event.charCode);
+		                    var altKey = event.ctrlKey || event.metaKey;
+		                    if(keyCode == 13 && altKey){ //ctrl+enter换行
+			                    var newDope=$(this).val()+"\n";// 获取textarea数据进行 换行
+			                    $(this).val(newDope);
+		                    }else if(keyCode==13){ //enter发送
+			                    document.getElementById('commit-but').click();
+			                    event.preventDefault();//禁止回车的默认换行
+		                    }
+	                    });
+						
                         if(getCookie('user')!=''){
                             document.getElementById('commit-but').disabled=false;
                             document.getElementById('commit-but').style.background = '#39C5BB';
@@ -245,7 +259,7 @@
             <a onclick="showPopup('popup','privacy')" id="privacy">隐私</a>
             <a onclick="showPopup('popup','trademark')" id="trademark">商标</a>
             <a onclick="showPopup('popup','use')" id="usearticle">使用条款</a>
-            <script src="script/popup.js"></script>
+            <script src="/script/popup.js"></script>
         </div>
     </div>
   </body>

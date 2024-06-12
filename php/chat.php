@@ -6,6 +6,24 @@
 	$room = $_REQUEST['room'] ?? 'default';
 	$type = $_REQUEST['type'] ?? 'enter';
 	$type = strtolower($type);
+	$forbidIP = json_decode(file_get_contents('../json/forbidIP.json'),true);
+	function getIP(){
+		if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP") , "unknown")) {
+			$ipaddress = getenv("HTTP_CLIENT_IP");
+		} else if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR") , "unknown")) {
+			$ipaddress = getenv("HTTP_X_FORWARDED_FOR");
+		} else if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR") , "unknown")) {
+			$ipaddress = getenv("REMOTE_ADDR");
+		} else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) {
+			$ipaddress = $_SERVER['REMOTE_ADDR'];
+		} else {
+			$ipaddress = "unknown";
+		}
+		return $ipaddress;
+	}//获取IP
+	function alt($altinfo){
+		echo "<script>alert($altinfo);</script>";
+	}
 	// 创建新房间
 	function newRoom($room)
 	{
@@ -18,6 +36,7 @@
 				'encode' => array_combine($key_list, $key1_list),
 				'list' => [],
 				'time' => date('Y-m-d H:i:s'),
+				'ip' => getIP()
 		];
 		file_put_contents($room_file, json_encode($room_data));
 	}
@@ -48,6 +67,11 @@
 		}
 		return $msg_list;
 	}
+	if (in_array(getIP(),$forbidIP['IP'])){
+		alt('您不被允许进入聊天室');
+		header('location:../Index.html');
+		exit();
+	}
 	$room_file = '../tmp/' . $room . '.txt';
 	switch ($type) {
 		case 'enter':   // 进入房间
@@ -75,6 +99,7 @@
 					'user' => $_REQUEST['user'],
 					'content' => $_REQUEST['content'],
 					'time' => date('Y-m-d H:i:s'),
+					'ip' => getIP()
 			];
 			$room_data = json_decode(file_get_contents($room_file), true);
 			$room_data['list'][] = $item;
@@ -115,7 +140,7 @@
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>聊天室</title>
-	<link href="../style/normalize.min.css" rel="stylesheet">
+	<link href="/style/normalize.min.css" rel="stylesheet">
 	<style>
 		body {
 			padding: 0 10px;
@@ -128,9 +153,8 @@
 			color: gray;
 		}
 	</style>
-	<script src="../script/jquery-3.2.1.min.js"></script>
-	<script>
-	</script>
+	<script src="/script/jquery-3.2.1.min.js"></script>
+	<script src="/script/funclib.js"></script>
 </head>
 <body>
 <!--<h1>PHP 在线聊天</h1>-->
@@ -180,7 +204,11 @@
 		let html = '';
 		for (let k in res.list) {
 			let r = res.list[k];
-			html = '<div><span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+			if (getCookie('user')=='Koizumi'){
+				html = '<div><span style="color: red" ">'+r.ip+'</span>-<span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+			}else{
+				html = '<div><span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+			}
 		}
 		$('#divList').prepend(html);
 	};

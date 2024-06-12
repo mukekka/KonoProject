@@ -1,0 +1,187 @@
+<!--https://q32757468.github.io/2019/08/07/%E8%AF%A6%E8%A7%A3%E4%BD%BF%E7%94%A8jQuery%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8%E8%BD%AE%E6%92%AD%E5%9B%BE/-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link href="/style/scrollbar.css" rel="stylesheet" type="text/css">
+	<style>
+		* {
+			list-style: none;
+			background: #000000;
+			padding: 0;
+			margin: 0;
+		}
+		.bannerWrap {
+			/*margin: 15px 15px auto auto;*/
+			width: 1050px;
+			height: 590px;
+			overflow: hidden;
+			position: relative;
+		}
+		img,video {
+			width: 1050px;
+			height: 590px;
+		}
+		button {
+			position: absolute;
+			width: 64px;
+			height: 64px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.pre {
+			left: 50px;
+			background: url("/image/ico/left.svg");
+			border: none;
+		}
+		.next {
+			right: 50px;
+			background: url("/image/ico/right.svg");
+			border: none;
+		}
+		.optionList {
+			position: absolute;
+			right: 60px;
+			bottom: 40px;
+			display: flex;
+			background: #00000000;
+		}
+		.optionList li {
+			margin-left: 5px;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #fff;
+			background: #00000000;
+		}
+		.imgList {
+			display: flex;
+			/*margin-left: -800px;*/
+		}
+	</style>
+	<link>
+</head>
+<body class="scrollbar">
+<div class="bannerWrap">
+	<button class="pre"></button>
+	<button class="next"></button>
+	<ul class="imgList">
+		<li><img src="/image/主页1.jpg" alt=""></li>
+		<li><video muted autoplay="autoplay" loop="loop" alt=""><source src="/media/主页2.mp4" type="video/mp4"></source></video></li>
+		<li><video muted autoplay="autoplay" loop="loop" alt=""><source src="/media/主页4.mkv" type="video/mp4"></source></video></li>
+		<li><img src="/image/主页6.jpg" alt=""></li>
+		<li><img src="/image/主页8.jpg" alt=""></li>
+		<li><img src="/image/主页9.jpg" alt=""></li>
+	</ul>
+	<ul class="optionList">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script src="/script/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			const bannerWrap = $('.bannerWrap');
+			const imgList = $('.imgList');
+			const optionList = $('.optionList');
+			const preBt = $('.pre');
+			const nextBt = $('.next');
+			let timer;
+			const imgWidth = bannerWrap.width();
+			let index = 1;
+			//通过js来添加两张图片
+			imgList.prepend(imgList.children().last().get(0).outerHTML)//一定要写在获取长度之前
+			imgList.append(imgList.children().get(1).outerHTML)//一定要写在获取长度之前
+			const len = imgList.children().length;
+			
+			function autoSlide() {
+				timer = setInterval(next, 2000)
+			}
+			autoSlide();
+			
+			function suspend() {
+				bannerWrap.hover(function () {
+					clearInterval(timer)
+				}, function () {
+					clearInterval(timer)
+					autoSlide();
+				})
+			}
+			suspend();
+			
+			// 滑动到下一张的函数，由于多了两张图片，所以要注意index的值
+			function next() {
+				index++;
+				// 这里的stop方法要格外注意一下，必须像这样加参数
+				imgList.stop(false, true).animate({
+					'marginLeft': -imgWidth * index
+				}, function () {
+					if (index >= (len - 1)) {
+						index = 1;
+						// 重点就是这个动画执行完毕后的回调，通过这个回调来讲图片重新调回想要的位置以实现无限
+						imgList.css({
+							'marginLeft': -imgWidth
+						})
+					}
+				})
+				console.log(index);
+			}
+			
+			// 滑动到前一张的函数，与next函数类似
+			function pre() {
+				index--;
+				if (index <= (-1)) {
+					index = (len - 2);
+					imgList.css({
+						'marginLeft': -imgWidth * (index)
+					})
+				}
+				
+				imgList.stop(false, true).animate({
+					'marginLeft': -imgWidth * index
+				}, function () {
+					if (index <= 0) {
+						index = (len - 2);
+						imgList.css({
+							'marginLeft': -imgWidth * (index)
+						})
+					}
+				})
+			}
+			
+			nextBt.click(function () {
+				next();
+			})
+			preBt.click(function () {
+				pre();
+			})
+			
+			// 小圆点跳转的函数，这里由于多了两张图片，所以也要稍微修改一下
+			function jump() {
+				for (let i = 0; i < len - 2; i++) {
+					optionList.children().eq(i).click(function () {
+						imgList.stop().animate({
+							'marginLeft': -imgWidth * (i + 1)
+						})
+					})
+				}
+			}
+			jump();
+			
+			$(window).blur(function () {
+				clearInterval(timer)
+			})
+			$(window).focus(function () {
+				clearInterval(timer)
+				autoSlide();
+			})
+		})
+	</script>
+</div>
+</body>
+</html>

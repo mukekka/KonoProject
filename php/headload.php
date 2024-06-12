@@ -17,7 +17,7 @@
 			$imageBase64 = "data:{$mimeType};base64,{$Base64}";
 		}else{
 				alt('请输入正确格式的图片:JPEG,PNG,GIF,WEBP,BMP,TIFF,ICO,SVG');
-				header('location:../Userset.php');
+				header('location:/Userset.php');
 		}
 	}
 	$link = new mysqli('localhost', 'user', '123456', 'users');
@@ -27,5 +27,5 @@
 	$ID=mysqli_fetch_array(mysqli_query($link,"select UserID from users where UserName='$UserName'"))[0];
 	mysqli_query($link,"update head set Head = '$imageBase64' where UserID=$ID");
 	mysqli_close($link);
-	header('location:../Userset.php');
+	header('location:/Userset.php');
 ?>

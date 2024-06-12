@@ -148,7 +148,7 @@
                 <!--用户信息-->
             </table>
             <script>
-                var jsonurl = 'json/UserInfo/'+getCookie('lang')+'-UserInfo.json';
+                var jsonurl = '/json/UserInfo/'+getCookie('lang')+'-UserInfo.json';
                 $.getJSON(jsonurl,function (data){
                     for (var i = 0; i < Object.keys(data['lang']).length; i++) {
                         var lable = data['lang'][i]['type'];

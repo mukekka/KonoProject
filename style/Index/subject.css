@@ -13,8 +13,10 @@
 }
 #page-main{
     padding-left: 1%;
-    width: 79%;
-    height: 90%;
+    /*width: 79%;*/
+    /*height: 90%;*/
+    width: 1050px;
+    height: 590px;
     text-align: center;
     float: left;
     margin: 45px auto auto 10px;
@@ -22,7 +24,7 @@
     border-radius: 5px;
 }
 #page-side{
-    width: 17%;
+    width: 14%;
     height: 90%;
     text-align: center;
     float: right;
