@@ -61,23 +61,12 @@
     </form>
     <div style="display: none">
         <?php
-            if (isset($_POST["submit"])) {
-            function con($conlog){
-                echo "<script>console.log('$conlog');</script>";
-            }
-            function alt($altinfo){
-                echo "<script>alert('$altinfo');</script>";
-            }
-            function getHash($ID,$Pass){
-                if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Pass=Hash+salt=UserHash
-            }//获取用户哈希
-
+	        include 'php/functionLib.php';
+	
+	        if (isset($_POST["submit"])) {
+		        include 'php/connentSQL.php';
             $username = $_POST["UserName"];
             $password = $_POST["Password"];
-
-            $link = new mysqli('localhost','user','123456','users');//连接到数据库
-            if($link->connect_error)con('连接失败');//die('连接失败:'.$link->connect_error);//连接失败
-            else con('连接成功');//连接成功
 
             $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
             if($UserInfo[0]){

@@ -1,12 +1,5 @@
 <?php
-	function alt($altinfo){
-		echo "<script>alert($altinfo);</script>";
-	}
-	function con($conlog)
-	{
-		echo "<script>console.log('$conlog');</script>";
-	}
-	$mimeTypeArr=['image/jpeg','image/png','image/gif','image/webp','image/bmp','image/tiff','image/ico','image/svg+xml'];
+	include 'functionLib.php';
 	$imageFile =$_FILES['upload_file'];
 	if($imageFile['size']>33554432){
 		alt('图片过大!不能大于32MiB');
@@ -20,9 +13,7 @@
 				header('location:/Userset.php');
 		}
 	}
-	$link = new mysqli('localhost', 'user', '123456', 'users');
-	if ($link->connect_error){alt('服务器连接失败');exit();}
-	else con('连接成功');
+	include 'connentSQL.php';
 	$UserName = urldecode($_COOKIE['user']);
 	$ID=mysqli_fetch_array(mysqli_query($link,"select UserID from users where UserName='$UserName'"))[0];
 	mysqli_query($link,"update head set Head = '$imageBase64' where UserID=$ID");

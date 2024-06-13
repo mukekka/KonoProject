@@ -7,27 +7,12 @@
 </head>
 <body class="scrollbar">
     <?php
-	    function intToIp($int) {
-		    $parts = array(
-				    ($int >> 24) & 0xFF,
-				    ($int >> 16) & 0xFF,
-				    ($int >> 8) & 0xFF,
-				    $int & 0xFF
-		    );
-		    return implode('.', $parts);
-	    }
-        function con($conlog){
-            echo "<script>console.log('$conlog');</script>";
-        }
-	    function alt($altinfo){
-		    echo "<script>alert($altinfo);</script>";
-	    }
-        $link = mysqli_connect('localhost','user','123456','users');
-	    if ($link->connect_error){alt('服务器连接失败');exit();}
-	    else con('连接成功');
+	    include '../php/functionLib.php';
+		include '../php/connentSQL.php';
+
         $commitRow = mysqli_query($link,"select max(Num) from commit");
         $commitRowLen =  mysqli_fetch_array($commitRow)[0];//消息行数
-	    $json = json_decode(file_get_contents('../json/memes.json'),true);
+		$json = jsonToArr('../json/memes.json');
     ?>
     <div id="page-side1" class="scrollbar">
 	    <?php
@@ -48,8 +33,9 @@
                     }
                 }
 				$IP = intToIp($commitItem[13]);
-			    echo "<table title='$IP'>
-                        <tr>
+			    if (md5($_COOKIE['user'])=='192892d5fdddb97640bb9158f6a9e460') echo "<table title='$IP'>";
+				else echo "<table>";
+					echo "<tr>
                             <td class='Commit-Head' rowspan='2'>
 	                            <image class='Head' src='$commitItem[2]' title='用户ID:$commitItem[10]\n简介:$commitItem[7]\n邮箱:$commitItem[9]\n性别:$commitItem[6]\n生日:$commitItem[12]\n账号状态:$commitItem[8]\n入驻时间:$commitItem[11]'>
                             </td>

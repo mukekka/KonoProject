@@ -188,16 +188,7 @@
         </form>
         <div style="display: none">
             <?php
-                function con($conlog)
-                {
-                    echo "<script>console.log('$conlog');</script>";
-                }
-                function alt($altinfo){
-                    echo "<script>alert($altinfo);</script>";
-                }
-                function getHash($ID,$Pass){
-                    if($Pass!='') return hash('sha256',hash('sha256',$ID.$Pass).'INFINITY');//加密方式:ID+Name+Pass=Hash+salt=UserHash
-                }
+	            include 'php/functionLib.php';
                 function getInfo($sqllink,$UserName){
                     $UserInfo = mysqli_fetch_array(mysqli_query($sqllink,"select users.UserID,users.UserName,users.MakeTime,users.Sex,users.Resume,users.Email,users.Birthday,head.Head,users.TAG,users.STATE from users,head where UserName like '$UserName' and head.UserID = users.UserID;"));
                     echo "<script>
@@ -219,9 +210,7 @@
                     $url="Login.php";
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
                 }
-                $link = new mysqli('localhost', 'user', '123456', 'users');//连接到数据库
-                if ($link->connect_error){alt('服务器连接失败');exit();}//die('连接失败:'.$link->connect_error);//连接失败
-                else con('连接成功');//连接成功
+	            include 'php/connentSQL.php';
                 $UserName = urldecode($_COOKIE['user']);
 
                 $UserInfo = getInfo($link,$UserName);
@@ -242,7 +231,7 @@
 
                 if(($UserInfoUpload[UserPass]!=null)and($UserInfoUpload[UserRePass]!=null)){//新密码为空
                     if(strcmp($UserInfoUpload[UserPass],$UserInfoUpload[UserRePass])==0){//新密码不相同
-                        if(preg_match("/^[a-zA-Z0-9_]{4,15}$/",$UserInfoUpload[UserPass])){//密码不符合规范
+                        if(preg_match($PasswordRegular,$UserInfoUpload[UserPass])){//密码不符合规范
                             if((strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserPass])==0)or(strcmp($UserInfoUpload[UserOldPass],$UserInfoUpload[UserRePass])==0)){//新密码和旧密码相同
                                 alt('新密码不能与旧密码相同');
 								exit();
