@@ -12,6 +12,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/codeStyles" />
       <excludeFolder url="file://$MODULE_DIR$/SecondaryInterface" />
       <excludeFolder url="file://$MODULE_DIR$/SecondaryInterface/Kirin/Kirin 990/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/text" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

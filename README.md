@@ -24,8 +24,9 @@
    3. 主页1……:略
 4. media/:首页视频文件
 5. page/:
-   1. commit.php:聊天区
-   2. main.html:首页(滑动窗口)
+   1. chat.php:聊天室
+   2. commit.php:聊天区
+   3. main.html:首页(滑动窗口)
 6. style/:  
    1. Index/:首页样式  
       1. global.css:全局样式
@@ -41,12 +42,11 @@
    5. popup.css:弹窗样式
    6. scrollbar.css:滑动条样式
 7. PHP/:
-   1. chat.php:聊天室
-   2. commitDelete.php:删除聊天
-   3. commitPush.php:发布聊天
-   4. conntentSQL.php:连接数据库  
-   5. functionLib.php:一些功能函数和变量,比如输出打印和正则表达式
-   6. headload.php:上传头像
+   1. commitDelete.php:删除聊天
+   2. commitPush.php:发布聊天
+   3. conntentSQL.php:连接数据库  
+   4. functionLib.php:一些功能函数和变量,比如输出打印和正则表达式
+   5. headload.php:上传头像
 8. JavaScript/:
    1. blueimp-md5.md5.js:MD5库
    2. script/funclib.js:一些功能函数,比如修改cookie,发出通知

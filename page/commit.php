@@ -5,50 +5,72 @@
     <link href="/style/commit.css" rel="stylesheet" type="text/css">
     <link href="/style/scrollbar.css" rel="stylesheet" type="text/css">
 </head>
-<body class="scrollbar">
+<body clASs="scrollbar">
     <?php
 	    include '../php/functionLib.php';
 		include '../php/connentSQL.php';
-
-        $commitRow = mysqli_query($link,"select max(Num) from commit");
-        $commitRowLen =  mysqli_fetch_array($commitRow)[0];//消息行数
 		$json = jsonToArr('../json/memes.json');
     ?>
-    <div id="page-side1" class="scrollbar">
+    <div id="page-side1" clASs="scrollbar">
 	    <?php
-		    for($i=$commitRowLen;$i>=1;$i--){
-			    $commitItem =  mysqli_fetch_row(mysqli_query($link,"SELECT commit.Num,users.UserName,head.Head,users.TAG,commit.Commit,commit.Time,users.Sex,users.Resume,users.STATE,users.Email,users.UserID,users.MakeTime,users.Birthday,commit.IP FROM users,commit,head WHERE commit.Num = $i and users.UserID = commit.UserID and head.UserID = users.UserID"));
-			    $commitContent = $commitItem[4];
-                if ($commitContent=='') continue;
-				$memesjson = $json;
-                $matches = [];$uniqueMatches = [];
-                if (preg_match_all('/\[([^\]]*)\]/i', $commitContent, $matches)) {
-                    $fullCaptures = $matches[0];
-                    foreach ($fullCaptures as $fullCapture) {
-                        $uniqueMatches[] = $fullCapture;
-                    }
-                    $uniqueMatches = array_intersect($memesjson,array_unique($uniqueMatches));
-                    foreach ($memesjson as $key => $value){
-                        $commitContent = str_replace($value,"<img class='Commit-Meme' src='../memes/b_".$key.".png'>",$commitContent);
-                    }
-                }
-				$IP = intToIp($commitItem[13]);
+		    $selectSQL = "
+		    SELECT
+				commit.Num AS Num,
+   				commit.UserID AS UserID,
+   				commit.Commit AS Commit,
+   				commit.Time AS Time,
+   				commit.IP AS IP,
+   				head.Head AS Head,
+   				users.UserName AS UserName,
+   				users.MakeTime AS MakeTime,
+   				users.Sex AS Sex,
+   				users.Resume AS Resume,
+   				users.Email AS Email,
+		    	users.Birthday AS Birthday,
+		    	users.TAG AS TAG,
+		    	users.STATE AS STATE
+			FROM
+				users,commit,head
+			/*LEFT JOIN head ON commit.UserID = head.UserID */
+			WHERE
+				head.UserID = commit.UserID
+				AND
+				users.UserID = commit.UserID
+			ORDER BY commit.Num DESC
+		    ";
+		    $result = mysqli_query($link,$selectSQL);
+		    foreach ($result as $row){
+			    $commitContent = $row['Commit'];
+			    if ($commitContent=='') continue;
+			    $memesjson = $json;
+			    $matches = [];$uniqueMatches = [];
+			    if (preg_match_all('/\[([^\]]*)\]/i', $commitContent, $matches)) {
+				    $fullCaptures = $matches[0];
+				    foreach ($fullCaptures as $fullCapture) {
+					    $uniqueMatches[] = $fullCapture;
+				    }
+				    $uniqueMatches = array_intersect($memesjson,array_unique($uniqueMatches));
+				    foreach ($memesjson as $key => $value){
+					    $commitContent = str_replace($value,"<img clASs='Commit-Meme' src='../memes/b_".$key.".png'>",$commitContent);
+				    }
+			    }
+			    $IP = intToIp($row['IP']);
 			    if (md5($_COOKIE['user'])=='192892d5fdddb97640bb9158f6a9e460') echo "<table title='$IP'>";
-				else echo "<table>";
-					echo "<tr>
-                            <td class='Commit-Head' rowspan='2'>
-	                            <image class='Head' src='$commitItem[2]' title='用户ID:$commitItem[10]\n简介:$commitItem[7]\n邮箱:$commitItem[9]\n性别:$commitItem[6]\n生日:$commitItem[12]\n账号状态:$commitItem[8]\n入驻时间:$commitItem[11]'>
+			    else echo "<table>";
+			    echo "<tr>
+                            <td clASs='Commit-Head' rowspan='2'>
+	                            <image clASs='Head' src='{$row['Head']}' title='用户ID:{$row['UserID']}\n简介:{$row['Resume']}\n邮箱:{$row['Email']}\n性别:{$row['Sex']}\n生日:{$row['Birthday']}\n账号状态:{$row['STATE']}\n入驻时间:{$row['MakeTime']}'>
                             </td>
-	                        <td class='Commit-UserName' colspan='2'><p>$commitItem[1]</p></td>
-	                        <td class='Commit-Tag'>$commitItem[3]</td>
+	                        <td clASs='Commit-UserName' colspan='2'><p>{$row['UserName']}</p></td>
+	                        <td clASs='Commit-Tag'>{$row['TAG']}</td>
 	                    </tr>
 	                    <tr>
-	                        <td class='Commit-Floor'>$commitItem[0]</td>
-		                    <td class='Commit-Time' colspan='3'>$commitItem[5]</td>";
-				if($commitItem[1]==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$commitItem[0]}'><input class='delete' type='submit' value='删除'></form></td>";
-				echo "</tr>
+	                        <td clASs='Commit-Floor'>{$row['Num']}</td>
+		                    <td clASs='Commit-Time' colspan='3'>{$row['Time']}</td>";
+			    if($row[1]==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$row['Num']}'><input clASs='delete' type='submit' value='删除'></form></td>";
+			    echo "</tr>
 	                    <tr>
-		                    <td class='Commit-Content' colspan='4'>$commitContent</td>
+		                    <td clASs='Commit-Content' colspan='4'>$commitContent</td>
 	                    </tr>
                     </table>
 	                <hr>";
