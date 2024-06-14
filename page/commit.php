@@ -5,13 +5,13 @@
     <link href="/style/commit.css" rel="stylesheet" type="text/css">
     <link href="/style/scrollbar.css" rel="stylesheet" type="text/css">
 </head>
-<body clASs="scrollbar">
+<body class="scrollbar">
     <?php
 	    include '../php/functionLib.php';
 		include '../php/connentSQL.php';
 		$json = jsonToArr('../json/memes.json');
     ?>
-    <div id="page-side1" clASs="scrollbar">
+    <div id="page-side1" class="scrollbar">
 	    <?php
 		    $selectSQL = "
 		    SELECT
@@ -51,26 +51,26 @@
 				    }
 				    $uniqueMatches = array_intersect($memesjson,array_unique($uniqueMatches));
 				    foreach ($memesjson as $key => $value){
-					    $commitContent = str_replace($value,"<img clASs='Commit-Meme' src='../memes/b_".$key.".png'>",$commitContent);
+					    $commitContent = str_replace($value,"<img class='Commit-Meme' src='../memes/b_".$key.".png'>",$commitContent);
 				    }
 			    }
 			    $IP = intToIp($row['IP']);
 			    if (md5($_COOKIE['user'])=='192892d5fdddb97640bb9158f6a9e460') echo "<table title='$IP'>";
 			    else echo "<table>";
 			    echo "<tr>
-                            <td clASs='Commit-Head' rowspan='2'>
-	                            <image clASs='Head' src='{$row['Head']}' title='用户ID:{$row['UserID']}\n简介:{$row['Resume']}\n邮箱:{$row['Email']}\n性别:{$row['Sex']}\n生日:{$row['Birthday']}\n账号状态:{$row['STATE']}\n入驻时间:{$row['MakeTime']}'>
+                            <td class='Commit-Head' rowspan='2'>
+	                            <image class='Head' src='{$row['Head']}' title='用户ID:{$row['UserID']}\n简介:{$row['Resume']}\n邮箱:{$row['Email']}\n性别:{$row['Sex']}\n生日:{$row['Birthday']}\n账号状态:{$row['STATE']}\n入驻时间:{$row['MakeTime']}'>
                             </td>
-	                        <td clASs='Commit-UserName' colspan='2'><p>{$row['UserName']}</p></td>
-	                        <td clASs='Commit-Tag'>{$row['TAG']}</td>
+	                        <td class='Commit-UserName' colspan='2'><p>{$row['UserName']}</p></td>
+	                        <td class='Commit-Tag'>{$row['TAG']}</td>
 	                    </tr>
 	                    <tr>
-	                        <td clASs='Commit-Floor'>{$row['Num']}</td>
-		                    <td clASs='Commit-Time' colspan='3'>{$row['Time']}</td>";
-			    if($row[1]==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$row['Num']}'><input clASs='delete' type='submit' value='删除'></form></td>";
+	                        <td class='Commit-Floor'>{$row['Num']}</td>
+		                    <td class='Commit-Time' colspan='3'>{$row['Time']}</td>";
+			    if($row['UserName']==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$row['Num']}'><input class='delete' type='submit' value='删除'></form></td>";
 			    echo "</tr>
 	                    <tr>
-		                    <td clASs='Commit-Content' colspan='4'>$commitContent</td>
+		                    <td class='Commit-Content' colspan='4'>$commitContent</td>
 	                    </tr>
                     </table>
 	                <hr>";

@@ -48,7 +48,7 @@ p,a,span,label{
     animation: toLong 0.25s;
     animation-fill-mode: forwards;
 }
-#PW,#DISPW,#Wasure,#REG{
+#PW,#DISPW,#Wasure,#REG,#Keep {
     display: inline-block;
 }
 label,a{

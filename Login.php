@@ -50,6 +50,10 @@
             <div id="Wasure">
                 <a href="#">忘记密码</a>
             </div>
+	        <div id="Keep">
+		        <input id="Keeplogin" type="checkbox" name="keepLogin">
+		        <label>记住密码</label>
+	        </div>
         </div>
         <div id="REG">
             <a href="Registered.php">注册</a>
@@ -65,16 +69,22 @@
 	
 	        if (isset($_POST["submit"])) {
 		        include 'php/connentSQL.php';
-            $username = $_POST["UserName"];
-            $password = $_POST["Password"];
+                $username = $_POST["UserName"];
+                $password = $_POST["Password"];
+				$Keep = $_POST['keepLogin'];
 
             $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
             if($UserInfo[0]){
                 con('用户存在');
                 $signinHash = getHash($UserInfo[0],$password);//计算用户Hash
                 if($UserInfo[2]==$signinHash){//相符=密码正确
-                    setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
-                    setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
+					if ($Keep){
+						setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
+						setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
+					}else{
+						setcookie('user',$UserInfo[1]);
+						setcookie('hash',$UserInfo[2]);
+					}
                     alt('登录成功。点击跳转至主页');
                     $url = "Index.html";
                     echo "<meta http-equiv='refresh' content ='0;url=$url'>";
