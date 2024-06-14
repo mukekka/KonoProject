@@ -58,7 +58,7 @@
    8. nav.js:页面下拉收回导航栏
    9. popup.js:弹出弹窗和关闭弹窗
    10. wave.js:波动字体
-   11. cryptojs-3.1.9.md5.min.js
+   11. cryptojs-3.1.9.md5.min.js(MD5库)
    12. cryptojs-3.1.9.core.min.js:未使用
 9. JSON/:
     article/:四种语言的条款  
