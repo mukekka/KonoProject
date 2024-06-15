@@ -16,6 +16,7 @@
     <link href="/style/Index/subject.css" rel="stylesheet" type="text/css"><!-- 主体 -->
     <link href="/style/Index/footer.css" rel="stylesheet" type="text/css"><!-- 页脚 -->
 	<link href="/style/scrollbar.css" rel="stylesheet" type="text/css"><!--滑动条-->
+	<link href="/style/Index/search-bar.css" rel="stylesheet" type="text/css"><!--搜索框-->
 </head>
 <body class="scrollbar">
     <div class="header">
@@ -79,13 +80,10 @@
             </ul>
         </div>
         <div class="container">
-            <form action="" class="parent">
-                <input type="text" placeholder="热搜" id="hotsearch">
-                <input type="button" value="搜索" id="search" onclick="showNotification('系统消息','这个还没做')">
+            <form action="page/search.php" class="parent" method="post">
+                <input type="text" placeholder="热搜" id="hotsearch" name="search">
+                <input type="submit" value="搜索" id="search" name="submit"><!--onclick="showNotification('系统消息','这个还没做')">-->
             </form>
-            <style>
-                @import '/style/Index/search-bar.css';
-            </style>
             <script src="/script/nav.js"></script>
         </div>
     </div>

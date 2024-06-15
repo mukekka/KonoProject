@@ -1,0 +1,14 @@
+{
+	"骁龙8Gen1" : "/SecondaryInterface/Snapdragon/8Gen1/Snap8Gen1.html",
+	"骁龙8Gen2" : "/SecondaryInterface/Snapdragon/8Gen2/Snap8Gen2.html",
+	"骁龙8Gen3" : "/SecondaryInterface/Snapdragon/8Gen3/Snap8Gen3.html",
+	"天玑9000"  : "/SecondaryInterface/MediaTek/MediaTek%209000/MTK9000.html",
+	"天玑9200"  : "/SecondaryInterface/MediaTek/MediaTek%209200/MTK9200.html",
+	"天玑9300"  : "/SecondaryInterface/MediaTek/MediaTek%209300/MTK9300.html",
+	"麒麟990"   : "/SecondaryInterface/Kirin/Kirin%20990/Kirin%20990.html",
+	"麒麟9900"  : "/SecondaryInterface/Kirin/Kirin%209900/Kirin%209900.html",
+	"麒麟9900S" : "/SecondaryInterface/Kirin/Kirin%209000S/Kirin%209000S.html",
+	"苹果A15"   : "/SecondaryInterface/Apple/A15/A15.html",
+	"苹果A16"   : "/SecondaryInterface/Apple/A16/A16.html",
+	"苹果A17Pro": "/SecondaryInterface/Apple/A17Pro/A17Pro.html"
+}

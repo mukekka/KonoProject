@@ -73,29 +73,29 @@
                 $password = $_POST["Password"];
 				$Keep = $_POST['keepLogin'];
 
-            $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
-            if($UserInfo[0]){
-                con('用户存在');
-                $signinHash = getHash($UserInfo[0],$password);//计算用户Hash
-                if($UserInfo[2]==$signinHash){//相符=密码正确
-					if ($Keep){
-						setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
-						setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
-					}else{
-						setcookie('user',$UserInfo[1]);
-						setcookie('hash',$UserInfo[2]);
-					}
-                    alt('登录成功。点击跳转至主页');
-                    $url = "Index.html";
-                    echo "<meta http-equiv='refresh' content ='0;url=$url'>";
+                $UserInfo=mysqli_fetch_array(mysqli_query($link,"select UserID,UserName,Hash from users where UserName like '$username';"));
+                if($UserInfo[0]){
+                    con('用户存在');
+                    $signinHash = getHash($UserInfo[0],$password);//计算用户Hash
+                    if($UserInfo[2]==$signinHash){//相符=密码正确
+						if ($Keep){
+							setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
+							setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
+						}else{
+							setcookie('user',$UserInfo[1]);
+							setcookie('hash',$UserInfo[2]);
+						}
+                        alt('登录成功。点击跳转至主页');
+                        $url = "Index.html";
+                        echo "<meta http-equiv='refresh' content ='0;url=$url'>";
+                    }else{
+	                    alt('密码错误');
+                    }
                 }else{
-                    alt('密码错误');
+                    alt('用户不存在');
                 }
-            }else{
-                alt('用户不存在');
-            }
-            mysqli_close($link);
-            }
+                mysqli_close($link);
+			}
         ?>
 </div>
 </body>

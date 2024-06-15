@@ -113,9 +113,10 @@
             }
         }
 
-        $UserInfo['UserName'] = UserNameText($UserName,$link);
-        $UserInfo['UserPass'] = PasswordText($Password,$rePassword);
-        $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserPass']);
+            $UserInfo['UserName'] = UserNameText($UserName,$link);
+            $UserInfo['UserPass'] = PasswordText($Password,$rePassword);
+            $UserInfo['UserHash'] = getHash($getNewID,$UserInfo['UserPass']);
+			
             $regToSqlVal1 = $UserInfo['UserName'];
             $regToSqlVal2 = $UserInfo['UserHash'];
             $regToSql = "INSERT INTO users (UserName,Hash) VALUES ('$regToSqlVal1','$regToSqlVal2')";
@@ -127,7 +128,7 @@
             alt('点击跳转至登录');
             $url = "Login.php";
             echo "<meta http-equiv='refresh' content ='0;url=$url'>";
-        mysqli_close($link);//结束连接
+            mysqli_close($link);//结束连接
         }
     ?>
     </div>
