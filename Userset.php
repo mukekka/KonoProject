@@ -178,7 +178,7 @@
                 <input type="submit" id="submit" name="submit" value="保存">
                 <a href="Index.html"><input type="button" id="back" value="退出"></a>
                 <span id="loginbut"><a href="Login.php"><input type="button" id="signin" value="登录"></a></span>
-                <span><a><input type="button" id="logoff" value="登出" onclick="setCookie('user','','365','/');setCookie('hash','','365','/');location.reload();"></a></span>
+                <span><a><input type="button" id="logoff" value="登出" onclick="setCookie('user','','365','/');location.reload();"></a></span>
                 <span><a href="Money.html"><input type="button" id="okanekudasai" value="投喂"></a></span>
 	            <script>
 		            if(getCookie('user')=='') document.getElementById('loginbut').style.display = 'revert';
@@ -239,7 +239,6 @@
 								alt('密码正确');
 								$newhash = getHash($UserInfo[UserID],$UserInfoUpload[UserPass]);
 								mysqli_query($link,"update users set Hash = '$newhash' where users.UserID = $UserInfo[UserID]");
-								echo "<script>setCookie('hash','$newhash','365','/');</script>";
                             }else{//密码不正确
                                 alt('原密码不正确');
 								exit();

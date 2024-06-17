@@ -80,10 +80,8 @@
                     if($UserInfo[2]==$signinHash){//相符=密码正确
 						if ($Keep){
 							setcookie('user',$UserInfo[1],time()+60*60*24*30*12);
-							setcookie('hash',$UserInfo[2],time()+60*60*24*30*12);
 						}else{
 							setcookie('user',$UserInfo[1]);
-							setcookie('hash',$UserInfo[2]);
 						}
                         alt('登录成功。点击跳转至主页');
                         $url = "Index.html";
