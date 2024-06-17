@@ -1,5 +1,5 @@
 <?php
-	include 'functionLib.php';
+	include '../php/functionLib.php';
 	$forbidIP = jsonToArr('../json/forbidIP.json');
 	// 系统入口
 	date_default_timezone_set("PRC");
@@ -124,6 +124,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../image/ico/Logo32.ico" type="image/x-icon" sizes="32x32">
+	<link rel="icon" href="../image/ico/Logo16.ico" type="image/x-icon" sizes="16x16">
 	<title>聊天室</title>
 	<style>
 		body {
