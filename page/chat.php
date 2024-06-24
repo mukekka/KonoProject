@@ -8,7 +8,6 @@
 	$room = $_REQUEST['room'] ?? 'default';
 	$type = $_REQUEST['type'] ?? 'enter';
 	$type = strtolower($type);
-	
 	// 创建新房间
 	function newRoom($room)
 	{
@@ -17,11 +16,10 @@
 		$key1_list = $key_list;
 		shuffle($key1_list);
 		$room_data = [
-				'name' => $room,
+				'name'   => $room,
 				'encode' => array_combine($key_list, $key1_list),
-				'list' => [],
-				'time' => date('Y-m-d H:i:s'),
-				'ip' => getIP()
+				'list'   => [],
+				'time'   => date('Y-m-d H:i:s'),
 		];
 		file_put_contents($room_file, json_encode($room_data));
 	}
@@ -57,6 +55,7 @@
 		header('location:../Index.html');
 		exit();
 	}
+	
 	$room_file = '../tmp/' . $room . '.txt';
 	switch ($type) {
 		case 'enter':   // 进入房间
@@ -124,8 +123,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="../image/ico/Logo32.ico" type="image/x-icon" sizes="32x32">
-	<link rel="icon" href="../image/ico/Logo16.ico" type="image/x-icon" sizes="16x16">
 	<title>聊天室</title>
 	<style>
 		body {
@@ -138,6 +135,19 @@
 		#divList span {
 			color: gray;
 		}
+		.admin p{
+			display: inline;
+			color:red;
+		}
+		.admin b{
+			background: linear-gradient(to right, #ff0000, #0000ff);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent
+		}
+		.admin{
+			color: red;
+			font-size: 15px;
+		}
 	</style>
 	<script src="../script/jquery-3.2.1.min.js"></script>
 	<script src="../script/blueimp-md5.md5.js"></script>
@@ -146,8 +156,9 @@
 <body>
 <!--<h1>PHP 在线聊天</h1>-->
 <div class="divMain">
-	昵称：<input id="txtUser" type="text" maxlength="50" value="<?= $user ?>"/>
+	昵称：<input id="txtUser" type="text" maxlength="50" value="<?= $user ?>" onkeyup="if ((document.getElementById('txtUser').value=='Koizumi')&&(md5(getCookie('user'))!='192892d5fdddb97640bb9158f6a9e460')){alert('用户名不符合规范');document.getElementById('txtUser').value=''}"/>
 	<button onclick="$('#divList').html('');">清空</button>
+	<!--	<a href="chat.php?type=new">新房间</a>-->
 	<br>
 	内容：<input id="txtContent" type="text" value="" maxlength="100" style="width: 300px;"/>
 	<button onclick="sendMsg();">发送</button>
@@ -192,9 +203,13 @@
 		for (let k in res.list) {
 			let r = res.list[k];
 			if (md5(getCookie('user'))=='192892d5fdddb97640bb9158f6a9e460'){
-				html = '<div><span style="color: red" ">'+r.ip+'</span>-<span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+				html = '<div><span style="color:red">'+r.ip+'</span>-<span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + ' </div>' + html;
 			}else{
-				html = '<div><span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+				if(r.user=='Koizumi'){
+					html = '<div class="admin"><span style="color: green">' + r.time + '</span> <b style="color: ">' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+				}else{
+					html = '<div><span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
+				}
 			}
 		}
 		$('#divList').prepend(html);
