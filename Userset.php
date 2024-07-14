@@ -215,6 +215,7 @@
 
                 $UserInfo = getInfo($link,$UserName);
 
+//				------------------------------------------------------------------------------
                 if (isset($_POST["submit"])) {
                 $UserInfoUpload = array(
                     "UserName"=>$_POST['name'],
@@ -226,6 +227,8 @@
                     "UserPass"=>$_POST['passwordinput'],
                     "UserRePass"=>$_POST['repasswordinput']
                 );
+				if (mysqli_query($link,"SELECT UserName FROM users WHERE users.UserName = '$UserInfoUpload[UserName]'")) exit();
+				
                 $upload = mysqli_query($link,"update users set UserName = '$UserInfoUpload[UserName]',Sex = '$UserInfoUpload[UserSex]',Birthday = '$UserInfoUpload[UserBirthday]',Resume = '$UserInfoUpload[UserResume]',Email = '$UserInfoUpload[UserEmail]' where users.UserID = $UserInfo[UserID];");
                 echo "<script>setCookie('user','$UserInfoUpload[UserName]','365','/')</script>";
 

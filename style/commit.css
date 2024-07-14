@@ -40,8 +40,8 @@ p{
     -webkit-user-drag: none;
 }
 .Commit-Head{
-    height: 25%;
-    width: 25%;
+    height: 30px;
+    width: 30px;
 }
 .Commit-UserName{
     height: 5%;

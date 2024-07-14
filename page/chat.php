@@ -205,7 +205,7 @@
 			if (md5(getCookie('user'))=='192892d5fdddb97640bb9158f6a9e460'){
 				html = '<div><span style="color:red">'+r.ip+'</span>-<span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + ' </div>' + html;
 			}else{
-				if(r.user=='Koizumi'){
+				if(md5(r.user)=='192892d5fdddb97640bb9158f6a9e460'){
 					html = '<div class="admin"><span style="color: green">' + r.time + '</span> <b style="color: ">' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
 				}else{
 					html = '<div><span>' + r.time + '</span> <b>' + r.user + ':</b>' + decodeContent(r.content) + '</div>' + html;
